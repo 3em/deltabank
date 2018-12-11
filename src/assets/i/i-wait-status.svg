@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15743.5 6167.5 107 135.9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e3334e;
+        opacity: 0.2;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #e3334e;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        fill: #eeeae6;
+      }
+    </style>
+  </defs>
+  <g id="Group_2672" data-name="Group 2672" transform="translate(-15743.5 6167.6)">
+    <path id="Path_302" data-name="Path 302" class="cls-1" d="M53.4,30.5V81.4l46.9-20.1S94.7,47.7,84,40.2,53.4,30.5,53.4,30.5Z"/>
+    <circle id="Ellipse_51" data-name="Ellipse 51" class="cls-2" cx="52" cy="52" r="52" transform="translate(1.5 30.3)"/>
+    <line id="Line_204" data-name="Line 204" class="cls-2" y1="7.7" x2="17.5" transform="translate(65.3 69)"/>
+    <circle id="Ellipse_52" data-name="Ellipse 52" class="cls-3" cx="7.2" cy="7.2" r="7.2" transform="translate(46.3 75.1)"/>
+    <line id="Line_205" data-name="Line 205" class="cls-2" y2="4.7" transform="translate(53.5 35.5)"/>
+    <line id="Line_206" data-name="Line 206" class="cls-2" y2="4.8" transform="translate(53.5 124.2)"/>
+    <line id="Line_207" data-name="Line 207" class="cls-2" x2="4.7" transform="translate(6.8 82.2)"/>
+    <line id="Line_208" data-name="Line 208" class="cls-2" x2="4.8" transform="translate(95.5 82.2)"/>
+    <path id="Path_303" data-name="Path 303" class="cls-2" d="M41,23.2V14.1a12.7,12.7,0,0,1,25.4,0v9.1"/>
+    <line id="Line_209" data-name="Line 209" class="cls-2" x2="12.9" transform="translate(47.2 23.2)"/>
+  </g>
+</svg>

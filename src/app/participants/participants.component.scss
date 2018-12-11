@@ -1,0 +1,54 @@
+@import "../../assets/scss/variables";
+
+.b-title{
+  max-width: none;
+}
+
+.b-participants__form-button{
+  margin-top: 60px;
+
+  .ui-button{
+    width: 200px;
+    margin-right: 50px;
+  }
+
+  .b-link-icon{
+    margin-top: 8px;
+    font-size: $biggerFontSize;
+  }
+}
+
+.b-participants__list{
+  position: relative;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px){
+
+  .b-wrapper.b-wrapper_top{
+    padding-top: 0;
+  }
+
+
+  .b-participants__form-button{
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 65px;
+    position: relative;
+
+    .ui-button{
+      width: 100%;
+    }
+
+    .b-link-icon{
+      margin-top: 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      white-space: nowrap;
+      font-size: 15px;
+    }
+  }
+}

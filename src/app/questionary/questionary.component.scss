@@ -1,0 +1,265 @@
+@import "../../assets/scss/variables";
+
+.b-about-nav{
+  position: relative;
+  margin-top: 60px;
+  min-height: 83px;
+  margin-bottom: 9px;
+  z-index: 3;
+
+  &.fixed{
+    .b-about-nav__box{
+      //position: fixed;
+      background: #fff;
+      transition: background .15s .25s;
+
+      .b-about-nav__icon{
+        background: none;
+      }
+    }
+  }
+
+  &.grey{
+    .b-about-nav__box{
+      background: #f2f2f2;
+    }
+  }
+}
+.b-about-nav__ul{
+  display: block;
+}
+.b-about-nav__box{
+  position: relative;
+  margin-top: 23px;
+  top:0;
+  left: 0;
+  border-top: 1px solid rgba(0,0,0, .2);
+  transition: background .25s;
+
+  .b-wrapper{
+    padding-top: 0;
+  }
+
+  &.size-8{
+    .b-about-nav__icon{
+      &.left-1{
+        left: 12.5%;
+      }
+      &.left-2{
+        left: 25%;
+      }
+      &.left-3{
+        left: 37.5%;
+      }
+      &.left-4{
+        left: 50%;
+      }
+      &.left-5{
+        left: 62.5%;
+      }
+      &.left-6{
+        left: 75%;
+      }
+      &.left-7{
+        left: 87.5%;
+      }
+    }
+  }
+
+  .b-about-nav__icon{
+    position: absolute;
+    top: -23px;
+    left: 0;
+    margin-left: 22px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: $linkColor url("../../assets/i/i-time.svg") no-repeat center;
+    background-size: 11px auto;
+    z-index: 2;
+    transition: left .5s;
+
+    &.left-1{
+      left: 14.2%;
+    }
+    &.left-2{
+      left: 28.4%;
+    }
+    &.left-3{
+      left: 42.6%;
+    }
+    &.left-4{
+      left: 56.8%;
+    }
+    &.left-5{
+      left: 71%;
+    }
+    &.left-6{
+      left: 85.2%;
+    }
+
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 1px;
+      margin-top: -1px;
+      width: 10000%;
+      right: 50%;
+      background: $linkColor;
+    }
+  }
+}
+
+.b-questionary__content{
+  position: relative;
+
+  .b-wrapper{
+    z-index: 2;
+    padding-top: 0;
+    overflow: hidden;
+
+    &.overflow{
+      overflow: visible;
+    }
+  }
+}
+
+.b-questionary__content_bg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1024px;
+  transform: translate(-50%, 0);
+  background: #fff;
+  border-radius: 6px;
+  z-index: 1;
+  box-shadow: 0 50px 50px rgba(0,0,0, .1);
+  transition: width .25s, border-radius .25s;
+
+  &.no-shadow{
+    box-shadow: none;
+  }
+
+  &.width{
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.b-questionary__button{
+  position: relative;
+  margin-left: 295px;
+  padding-bottom: 120px;
+
+  &.left{
+    margin-left: 55px;
+  }
+
+  .b-questionary__button_back{
+    float: left;
+    vertical-align: top;
+    height: 62px;
+    width: 62px;
+    border-radius: 6px;
+    background: url("../../assets/i/i-form-back-scroll.svg") no-repeat 47% 50%;
+    background-size: 11px auto;
+    border: 1px solid rgba(227,51,78, .2);
+    transition: border-color .25s, background-color .25s;
+    margin-right: 18px;
+
+    &:hover{
+      background-color: rgba(227,51,78, .08);
+      border-color: transparent;
+    }
+    &:active{
+      background-color: rgba(227,51,78, .12);
+    }
+  }
+}
+
+@media only screen and (max-width: 1064px){
+  .b-questionary__content_bg{
+    width: 90%;
+  }
+  .b-questionary__button{
+    margin-left: 55px;
+  }
+}
+@media only screen and (max-width: 900px){
+  .b-about-nav{
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .b-about-nav__box{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 18px;
+    margin-top: 0;
+    border-top: none;
+    display: block;
+    float: left;
+    vertical-align: top;
+
+    .b-about-nav__icon{
+      width: 35px;
+      height: 35px;
+      top: -17px;
+    }
+
+    .b-wrapper{
+      min-width: 650px;
+
+      &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0, .2);
+        height: 1px;
+      }
+    }
+    .b-about-nav__icon{
+      margin-left: 6px;
+    }
+  }
+  .b-about-nav{
+    min-height: 78px;
+    margin-bottom: 0;
+  }
+
+  .b-questionary__content{
+    .b-wrapper{
+      width: 95% !important;
+    }
+  }
+  .b-questionary__content_bg{
+    width: 95%;
+  }
+
+  .b-questionary__button{
+    margin-left: 63px;
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .ui-button{
+      width: 100%;
+    }
+
+    .b-questionary__button_back{
+      width: 52px;
+      height: 52px;
+      position: absolute;
+      left: -63px;
+      top: 0;
+      margin-left: 5%;
+    }
+
+  }
+}
+

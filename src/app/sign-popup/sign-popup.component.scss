@@ -1,0 +1,67 @@
+.b-sign-img{
+  position: relative;
+  margin: 100px auto 200px;
+  padding: 0 5%;
+  text-align: center;
+
+  .b-sign-img__img{
+    display: block;
+    margin: auto;
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.b-sign__bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 0 60px rgba(0,0,0, .06);
+  padding: 11px 0 17px;
+  z-index: 100;
+
+  .b-wrapper{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.b-sign-img__overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+  z-index: 1;
+}
+
+.b-sign__bottom_checkbox{
+  float: left;
+  vertical-align: top;
+  width: 54%;
+}
+.b-sign__bottom_submit{
+  float: right;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 767px){
+
+  .b-sign__bottom_checkbox{
+    width: 100%;
+  }
+
+  .b-sign__bottom_submit{
+    width: 100%;
+
+    .ui-button{
+      width: 100%;
+    }
+  }
+
+}

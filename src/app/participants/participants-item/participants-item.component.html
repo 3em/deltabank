@@ -1,0 +1,340 @@
+<a href="#" (click)="accordionToggle($event)" class="u-clear-fix b-participants__toogle" [class.open]="!hideStatusThisItem">
+  <span class="b-participants__toogle_title">{{hideBarName}}</span>
+  <span class="b-participants__status" [class.disabled]="proveStatusDisabled" [class.proved]="proveStatus">{{proveStatusText}}</span>
+</a>
+<div [formGroup]="group" id={{item}} class="b-participants" *ngIf="!hideStatusThisItem">
+
+  <app-row-input-radio
+          [labelText]="participantsFormFields[item+'Role'].labelText"
+          [group]="group"
+          [currentValue]="participantsFormFields[item+'Role'].currentValue"
+          [nameInput]="participantsFormFields[item+'Role'].nameInput"
+          [inputs]="participantsFormFields[item+'Role'].inputs"
+          (changeCurrentValue)="changeCurrentValueRole($event)">
+  </app-row-input-radio>
+
+  <div *ngIf="!roleStatus">
+    <app-row-dropdown
+            id="block-{{participantsFormFields[item+'Contractor'].id}}"
+            [showErrorStatus]="participantsFormFields[item+'Contractor'].showErrorStatus"
+            [errorText]="participantsFormFields[item+'Contractor'].errorText"
+            [labelText]="participantsFormFields[item+'Contractor'].labelText"
+            [placeholder]="participantsFormFields[item+'Contractor'].placeholder"
+            [group]="group"
+            [formControlName]="participantsFormFields[item+'Contractor'].id"
+            [idInput]="participantsFormFields[item+'Contractor'].id"
+            [nameInput]="participantsFormFields[item+'Contractor'].nameInput"
+            [appendElem]="participantsFormFields[item+'Contractor'].appendElem"
+            [values]="participantsFormFields[item+'Contractor'].values"
+            [selectedItem]="participantsFormFields[item+'Contractor'].selectedItem"
+            [panelClass]="participantsFormFields[item+'Contractor'].panelClass"
+            (errorStatusChange)="participantsFormFields[item+'Contractor'].showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueContractor($event)">
+    </app-row-dropdown>
+
+    <div (click)="deleteUserClick($event)" class="b-participants__del" *ngIf="hideStatus">
+      <a href="#" class="b-link-icon delete">
+        <span class="b-link-icon__i"></span>
+        Удалить участника
+      </a>
+    </div>
+
+  </div>
+
+  <div *ngIf="roleStatus">
+    <app-row-dropdown
+            id="block-{{participantsFormFields[item+'personalType'].id}}"
+            [showErrorStatus]="participantsFormFields[item+'personalType'].showErrorStatus"
+            [errorText]="participantsFormFields[item+'personalType'].errorText"
+            [labelText]="participantsFormFields[item+'personalType'].labelText"
+            [placeholder]="participantsFormFields[item+'personalType'].placeholder"
+            [group]="group"
+            [formControlName]="participantsFormFields[item+'personalType'].id"
+            [idInput]="participantsFormFields[item+'personalType'].id"
+            [nameInput]="participantsFormFields[item+'personalType'].nameInput"
+            [appendElem]="participantsFormFields[item+'personalType'].appendElem"
+            [values]="participantsFormFields[item+'personalType'].values"
+            [selectedItem]="participantsFormFields[item+'personalType'].selectedItem"
+            [panelClass]="participantsFormFields[item+'personalType'].panelClass"
+            (errorStatusChange)="participantsFormFields[item+'personalType'].showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValuePersonalType($event)">
+    </app-row-dropdown>
+
+    <app-row-input *ngIf="individualStatus === false"
+            id="block-{{participantsFormFields[item+'nameCompany'].id}}"
+            [showErrorStatus]="participantsFormFields[item+'nameCompany'].showErrorStatus"
+            [errorText]="participantsFormFields[item+'nameCompany'].errorText"
+            [type]="participantsFormFields[item+'nameCompany'].type"
+            [labelText]="participantsFormFields[item+'nameCompany'].labelText"
+            [placeholder]="participantsFormFields[item+'nameCompany'].placeholder"
+            [group]="group"
+            [someVal]="participantsFormFields[item+'nameCompany'].someVal"
+            [formControlName]="participantsFormFields[item+'nameCompany'].id"
+            [idInput]="participantsFormFields[item+'nameCompany'].id"
+            [nameInput]="participantsFormFields[item+'nameCompany'].nameInput"
+            (errorStatusChange)="participantsFormFields[item+'nameCompany'].showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueNameCompany($event)">
+    </app-row-input>
+
+    <app-row-input *ngIf="individualStatus"
+            id="block-{{participantsFormFields[item+'surname'].id}}"
+            [showErrorStatus]="participantsFormFields[item+'surname'].showErrorStatus"
+            [errorText]="participantsFormFields[item+'surname'].errorText"
+            [type]="participantsFormFields[item+'surname'].type"
+            [labelText]="participantsFormFields[item+'surname'].labelText"
+            [placeholder]="participantsFormFields[item+'surname'].placeholder"
+            [group]="group"
+            [someVal]="participantsFormFields[item+'surname'].someVal"
+            [formControlName]="participantsFormFields[item+'surname'].id"
+            [idInput]="participantsFormFields[item+'surname'].id"
+            [nameInput]="participantsFormFields[item+'surname'].nameInput"
+            [cyrillicValidation]="participantsFormFields[item+'surname'].cyrillicValidation"
+            (errorStatusChange)="participantsFormFields[item+'surname'].showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueSurname($event)">
+    </app-row-input>
+
+    <app-row-input *ngIf="individualStatus"
+            id="block-{{participantsFormFields[item+'name'].id}}"
+            [showErrorStatus]="participantsFormFields[item+'name'].showErrorStatus"
+            [errorText]="participantsFormFields[item+'name'].errorText"
+            [type]="participantsFormFields[item+'name'].type"
+            [labelText]="participantsFormFields[item+'name'].labelText"
+            [placeholder]="participantsFormFields[item+'name'].placeholder"
+            [group]="group"
+            [someVal]="participantsFormFields[item+'name'].someVal"
+            [formControlName]="participantsFormFields[item+'name'].id"
+            [idInput]="participantsFormFields[item+'name'].id"
+            [nameInput]="participantsFormFields[item+'name'].nameInput"
+            [cyrillicValidation]="participantsFormFields[item+'name'].cyrillicValidation"
+            (errorStatusChange)="participantsFormFields[item+'name'].showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueName($event)">
+    </app-row-input>
+
+    <app-row-input *ngIf="individualStatus"
+            id="block-{{participantsFormFields[item+'secondName'].id}}"
+            [showErrorStatus]="participantsFormFields[item+'secondName'].showErrorStatus"
+            [errorText]="participantsFormFields[item+'secondName'].errorText"
+            [type]="participantsFormFields[item+'secondName'].type"
+            [labelText]="participantsFormFields[item+'secondName'].labelText"
+            [placeholder]="participantsFormFields[item+'secondName'].placeholder"
+            [group]="group"
+            [someVal]="participantsFormFields[item+'secondName'].someVal"
+            [formControlName]="participantsFormFields[item+'secondName'].id"
+            [idInput]="participantsFormFields[item+'secondName'].id"
+            [nameInput]="participantsFormFields[item+'secondName'].nameInput"
+            [cyrillicValidation]="participantsFormFields[item+'secondName'].cyrillicValidation"
+            (errorStatusChange)="participantsFormFields[item+'secondName'].showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueSecondName($event)">
+    </app-row-input>
+
+    <app-row-input-radio *ngIf="individualStatus"
+                         [labelText]="participantsFormFields[item+'Sex'].labelText"
+                         [group]="group"
+                         [currentValue]="participantsFormFields[item+'Sex'].currentValue"
+                         [nameInput]="participantsFormFields[item+'Sex'].nameInput"
+                         [inputs]="participantsFormFields[item+'Sex'].inputs"
+                         (changeCurrentValue)="changeCurrentValueSex($event)">
+    </app-row-input-radio>
+
+    <app-row-datapicker *ngIf="individualStatus"
+                        id="block-{{participantsFormFields[item+'Birthday'].id}}"
+                        [showErrorStatus]="participantsFormFields[item+'Birthday'].showErrorStatus"
+                        [errorText]="participantsFormFields[item+'Birthday'].errorText"
+                        [labelText]="participantsFormFields[item+'Birthday'].labelText"
+                        [placeholder]="participantsFormFields[item+'Birthday'].placeholder"
+                        [group]="group"
+                        [date]="participantsFormFields[item+'Birthday'].date"
+                        [formControlName]="participantsFormFields[item+'Birthday'].id"
+                        [idInput]="participantsFormFields[item+'Birthday'].id"
+                        [nameInput]="participantsFormFields[item+'Birthday'].nameInput"
+                        (errorStatusChange)="participantsFormFields[item+'Birthday'].showErrorStatus = $event"
+                        (changeCurrentValue)="changeCurrentValueDate($event)">
+    </app-row-datapicker>
+
+    <app-row-input-autocomplete *ngIf="individualStatus"
+            id="block-{{participantsFormFields[item+'Citizenship'].id}}"
+            [showErrorStatus]="participantsFormFields[item+'Citizenship'].showErrorStatus"
+            [errorText]="participantsFormFields[item+'Citizenship'].errorText"
+            [list]="countries"
+            [labelText]="participantsFormFields[item+'Citizenship'].labelText"
+            [placeholder]="participantsFormFields[item+'Citizenship'].placeholder"
+            [group]="group"
+            [idInput]="participantsFormFields[item+'Citizenship'].id"
+            [formControlName]="participantsFormFields[item+'Citizenship'].id"
+            (errorStatusChange)="participantsFormFields[item+'Citizenship'].showErrorStatus = $event">
+    </app-row-input-autocomplete>
+
+    <app-row-dropdown *ngIf="individualStatus"
+                      id="block-{{participantsFormFields[item+'personalDoc'].id}}"
+                      [showErrorStatus]="participantsFormFields[item+'personalDoc'].showErrorStatus"
+                      [errorText]="participantsFormFields[item+'personalDoc'].errorText"
+                      [labelText]="participantsFormFields[item+'personalDoc'].labelText"
+                      [placeholder]="participantsFormFields[item+'personalDoc'].placeholder"
+                      [group]="group"
+                      [formControlName]="participantsFormFields[item+'personalDoc'].id"
+                      [idInput]="participantsFormFields[item+'personalDoc'].id"
+                      [nameInput]="participantsFormFields[item+'personalDoc'].nameInput"
+                      [values]="participantsFormFields[item+'personalDoc'].values"
+                      [selectedItem]="participantsFormFields[item+'personalDoc'].selectedItem"
+                      [panelClass]="participantsFormFields[item+'personalDoc'].panelClass"
+                      (errorStatusChange)="participantsFormFields[item+'personalDoc'].showErrorStatus = $event"
+                      (changeCurrentValue)="changeCurrentValuePersonalDoc($event)">
+    </app-row-dropdown>
+
+    <app-row-input-mask *ngIf="personalDocNumberMaskStatus && individualStatus"
+                        id="block-{{participantsFormFields[item+'personalDocNumber'].id}}"
+                        [showErrorStatus]="participantsFormFields[item+'personalDocNumber'].showErrorStatus"
+                        [errorText]="participantsFormFields[item+'personalDocNumber'].errorText"
+                        [type]="participantsFormFields[item+'personalDocNumber'].type"
+                        [labelText]="participantsFormFields[item+'personalDocNumber'].labelText"
+                        [placeholder]="participantsFormFields[item+'personalDocNumber'].placeholder"
+                        [group]="group"
+                        [formControlName]="participantsFormFields[item+'personalDocNumber'].id"
+                        [idInput]="participantsFormFields[item+'personalDocNumber'].id"
+                        [nameInput]="participantsFormFields[item+'personalDocNumber'].nameInput"
+                        [mask]="participantsFormFields[item+'personalDocNumber'].mask"
+                        (errorStatusChange)="participantsFormFields[item+'personalDocNumber'].showErrorStatus = $event">
+    </app-row-input-mask>
+    <app-row-input *ngIf="!personalDocNumberMaskStatus && individualStatus"
+                   id="block-{{participantsFormFields[item+'personalDocNumber'].id}}"
+                   [showErrorStatus]="participantsFormFields[item+'personalDocNumber'].showErrorStatus"
+                   [errorText]="participantsFormFields[item+'personalDocNumber'].errorText"
+                   [type]="participantsFormFields[item+'personalDocNumber'].type"
+                   [labelText]="participantsFormFields[item+'personalDocNumber'].labelText"
+                   [placeholder]="participantsFormFields[item+'personalDocNumber'].placeholder"
+                   [group]="group"
+                   [formControlName]="participantsFormFields[item+'personalDocNumber'].id"
+                   [idInput]="participantsFormFields[item+'personalDocNumber'].id"
+                   [nameInput]="participantsFormFields[item+'personalDocNumber'].nameInput"
+                   (errorStatusChange)="participantsFormFields[item+'personalDocNumber'].showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-mask *ngIf="personalDocNumberMaskStatus && individualStatus"
+                        id="block-{{participantsFormFields[item+'unitCode'].id}}"
+                        [showErrorStatus]="participantsFormFields[item+'unitCode'].showErrorStatus"
+                        [errorText]="participantsFormFields[item+'unitCode'].errorText"
+                        [type]="participantsFormFields[item+'unitCode'].type"
+                        [labelText]="participantsFormFields[item+'unitCode'].labelText"
+                        [placeholder]="participantsFormFields[item+'unitCode'].placeholder"
+                        [group]="group"
+                        [formControlName]="participantsFormFields[item+'unitCode'].id"
+                        [idInput]="participantsFormFields[item+'unitCode'].id"
+                        [nameInput]="participantsFormFields[item+'unitCode'].nameInput"
+                        [mask]="participantsFormFields[item+'unitCode'].mask"
+                        (errorStatusChange)="participantsFormFields[item+'unitCode'].showErrorStatus = $event">
+    </app-row-input-mask>
+
+    <app-row-datapicker *ngIf="individualStatus"
+                        id="block-{{participantsFormFields[item+'docsIssueDate'].id}}"
+                        [showErrorStatus]="participantsFormFields[item+'docsIssueDate'].showErrorStatus"
+                        [errorText]="participantsFormFields[item+'docsIssueDate'].errorText"
+                        [labelText]="participantsFormFields[item+'docsIssueDate'].labelText"
+                        [placeholder]="participantsFormFields[item+'docsIssueDate'].placeholder"
+                        [group]="group"
+                        [date]="participantsFormFields[item+'docsIssueDate'].date"
+                        [formControlName]="participantsFormFields[item+'docsIssueDate'].id"
+                        [idInput]="participantsFormFields[item+'docsIssueDate'].id"
+                        [nameInput]="participantsFormFields[item+'docsIssueDate'].nameInput"
+                        (errorStatusChange)="participantsFormFields[item+'docsIssueDate'].showErrorStatus = $event"
+                        (changeCurrentValue)="changeCurrentValueDocsIssueDate($event)">
+    </app-row-datapicker>
+
+    <app-row-input *ngIf="individualStatus"
+                   id="block-{{participantsFormFields[item+'passportIssuedBy'].id}}"
+                   [showErrorStatus]="participantsFormFields[item+'passportIssuedBy'].showErrorStatus"
+                   [errorText]="participantsFormFields[item+'passportIssuedBy'].errorText"
+                   [type]="participantsFormFields[item+'passportIssuedBy'].type"
+                   [labelText]="participantsFormFields[item+'passportIssuedBy'].labelText"
+                   [placeholder]="participantsFormFields[item+'passportIssuedBy'].placeholder"
+                   [group]="group"
+                   [formControlName]="participantsFormFields[item+'passportIssuedBy'].id"
+                   [idInput]="participantsFormFields[item+'passportIssuedBy'].id"
+                   [nameInput]="participantsFormFields[item+'passportIssuedBy'].nameInput"
+                   (errorStatusChange)="participantsFormFields[item+'passportIssuedBy'].showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input *ngIf="individualStatus"
+                   id="block-{{participantsFormFields[item+'burnPlace'].id}}"
+                   [showErrorStatus]="participantsFormFields[item+'burnPlace'].showErrorStatus"
+                   [errorText]="participantsFormFields[item+'burnPlace'].errorText"
+                   [type]="participantsFormFields[item+'burnPlace'].type"
+                   [labelText]="participantsFormFields[item+'burnPlace'].labelText"
+                   [placeholder]="participantsFormFields[item+'burnPlace'].placeholder"
+                   [group]="group"
+                   [formControlName]="participantsFormFields[item+'burnPlace'].id"
+                   [idInput]="participantsFormFields[item+'burnPlace'].id"
+                   [nameInput]="participantsFormFields[item+'burnPlace'].nameInput"
+                   (errorStatusChange)="participantsFormFields[item+'burnPlace'].showErrorStatus = $event">
+    </app-row-input>
+
+    <div class="b-participants__del" *ngIf="hideStatus">
+      <a href="#" class="b-link-icon delete">
+        <span class="b-link-icon__i"></span>
+        Удалить участника
+      </a>
+    </div>
+
+    <div class="b-participants__agreement-box" *ngIf="individualStatus">
+
+      <h6>Необходимо согласие от продавца на обработку персональных данных</h6>
+
+      <app-row-input-radio
+              [labelText]="participantsFormFields[item+'SignType'].labelText"
+              [group]="group"
+              [currentValue]="participantsFormFields[item+'SignType'].currentValue"
+              [nameInput]="participantsFormFields[item+'SignType'].nameInput"
+              [inputs]="participantsFormFields[item+'SignType'].inputs"
+              (changeCurrentValue)="changeCurrentValueSignType($event)">
+      </app-row-input-radio>
+
+      <app-row-input *ngIf="signTypeStatus"
+                     id="block-{{participantsFormFields[item+'email'].id}}"
+                     [showErrorStatus]="participantsFormFields[item+'email'].showErrorStatus"
+                     [errorText]="participantsFormFields[item+'email'].errorText"
+                     [type]="participantsFormFields[item+'email'].type"
+                     [labelText]="participantsFormFields[item+'email'].labelText"
+                     [placeholder]="participantsFormFields[item+'email'].placeholder"
+                     [group]="group"
+                     [formControlName]="participantsFormFields[item+'email'].id"
+                     [idInput]="participantsFormFields[item+'email'].id"
+                     [nameInput]="participantsFormFields[item+'email'].nameInput"
+                     (errorStatusChange)="participantsFormFields[item+'email'].showErrorStatus = $event">
+      </app-row-input>
+
+      <div class="b-participants__agreement-upload" *ngIf="!signTypeStatus">
+
+        <ol class="b-participants__upload-list">
+
+          <li class="b-participants__upload-list_item">
+            <p>Скачайте согласие на обработку перс. данных</p>
+            <a href="#" download class="b-link-icon download">
+              <span class="b-link-icon__i"></span>
+              Скачать согласие
+            </a>
+          </li>
+
+          <li class="b-participants__upload-list_item">
+            <p>
+              Распечатайте, передайте на подпись участнику
+              сделки и отсканируйте
+            </p>
+          </li>
+
+          <li class="b-participants__upload-list_item">
+            <p>Загрузите подписанное участником согласие</p>
+
+            <app-file-upload
+                    (onSelectFunc)="changeProveStatus($event)"
+                    [uploadClass]="'b-custom-upload'"
+                    [chooseTextLabel]="'Загрузить согласие'">
+            </app-file-upload>
+          </li>
+        </ol>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

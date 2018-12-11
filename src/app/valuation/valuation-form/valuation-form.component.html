@@ -1,0 +1,93 @@
+<div class="b-title">
+  <h1>Оценка недвижимости</h1>
+  <p>
+    Вы можете заказать оценку объекта недвижимости. Укажите данные человека, который будет показывать объект недвижимости
+  </p>
+</div>
+
+<form id="valuation-form" class="b-valuation" [formGroup]="valuationform" (ngSubmit)="onSubmit()">
+
+  <div class="b-valuation__wrapper" (window:resize)="onResize($event)">
+    <app-row-input
+            id='block-{{valuationFormFields.name.id}}'
+            [showErrorStatus]=valuationFormFields.name.showErrorStatus
+            [errorText]=valuationFormFields.name.errorText
+            [type]=valuationFormFields.name.type
+            [labelText]=valuationFormFields.name.labelText
+            [placeholder]=valuationFormFields.name.placeholder
+            [group]="valuationform"
+            [formControlName]=valuationFormFields.name.id
+            [idInput]=valuationFormFields.name.id
+            [nameInput]=valuationFormFields.name.nameInput
+            [cyrillicValidation]=valuationFormFields.name.cyrillicValidation
+            (errorStatusChange)="valuationFormFields.name.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-phone
+            id='block-{{valuationFormFields.phone.id}}'
+            [showErrorStatus]=valuationFormFields.phone.showErrorStatus
+            [errorText]=valuationFormFields.phone.errorText
+            [type]=valuationFormFields.phone.type
+            [labelText]=valuationFormFields.phone.labelText
+            [placeholder]=valuationFormFields.phone.placeholder
+            [group]="valuationform"
+            [formControlName]=valuationFormFields.phone.id
+            [idInput]=valuationFormFields.phone.id
+            [nameInput]=valuationFormFields.phone.nameInput
+            [alertHtmlShow]=valuationFormFields.phone.alertHtmlShow
+            [mask]=valuationFormFields.phone.mask
+            (errorStatusChange)="valuationFormFields.phone.showErrorStatus = $event">
+    </app-row-input-phone>
+
+    <app-row-input-radio
+            [labelText]=valuationFormFields.statusEvaluatingCompany.labelText
+            [group]="valuationform"
+            [currentValue]=valuationFormFields.statusEvaluatingCompany.currentValue
+            [nameInput]=valuationFormFields.statusEvaluatingCompany.nameInput
+            [inputs]="valuationFormFields.statusEvaluatingCompany.inputs"
+            (changeCurrentValue)="changeCurrentValueStatusEvaluatingCompany($event)">
+    </app-row-input-radio>
+
+    <app-row-dropdown *ngIf="showEvaluatingCompany"
+                      id='block-{{valuationFormFields.evaluatingCompany.id}}'
+                      [showErrorStatus]=valuationFormFields.evaluatingCompany.showErrorStatus
+                      [errorText]=valuationFormFields.evaluatingCompany.errorText
+                      [labelText]=valuationFormFields.evaluatingCompany.labelText
+                      [placeholder]=valuationFormFields.evaluatingCompany.placeholder
+                      [group]="valuationform"
+                      [formControlName]=valuationFormFields.evaluatingCompany.id
+                      [idInput]=valuationFormFields.evaluatingCompany.id
+                      [nameInput]=valuationFormFields.evaluatingCompany.nameInput
+                      [values]=valuationFormFields.evaluatingCompany.values
+                      [selectedItem]=valuationFormFields.evaluatingCompany.selectedItem
+                      [panelClass]=valuationFormFields.evaluatingCompany.panelClass
+                      [appendElem]="'body'"
+                      (errorStatusChange)="valuationFormFields.evaluatingCompany.showErrorStatus = $event"
+                      [changeChange]="changeChange"
+                      (changeCurrentValue)="changeCurrentValueEvaluatingCompany($event)">
+    </app-row-dropdown>
+
+    <app-row-input-radio *ngIf="showEvaluatingCompany"
+                         [labelText]=valuationFormFields.statusReport.labelText
+                         [group]="valuationform"
+                         [currentValue]=valuationFormFields.statusReport.currentValue
+                         [nameInput]=valuationFormFields.statusReport.nameInput
+                         [inputs]="valuationFormFields.statusReport.inputs"
+                         (changeCurrentValue)="changeCurrentValueStatusReport($event)">
+    </app-row-input-radio>
+
+    <div class="b-valuation__upload" *ngIf="showEvaluatingCompany && showReportUpload">
+      <app-file-upload
+              [uploadClass]="'b-custom-upload'"
+              [chooseTextLabel]="fileUploadText">
+      </app-file-upload>
+    </div>
+
+
+  </div>
+
+  <div class="b-valuation__button">
+    <button pButton type="submit"  label="Заказать оценку"></button>
+  </div>
+
+</form>

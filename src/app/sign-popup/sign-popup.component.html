@@ -1,0 +1,31 @@
+<p-sidebar [(visible)]="display" [fullScreen]=true [blockScroll]=true [styleClass]="'b-sign__overlay'" class="b-agree__overlay b-sign__overlay" [appendTo]="'body'" (onHide)="hideFn">
+
+  <div class="b-sign-img__overlay">
+    <div class="b-sign-img">
+      <img src="../../../assets/i/__tmp.jpg" alt="" class="b-sign-img__img">
+    </div>
+  </div>
+
+  <form class="b-sign__bottom" [formGroup]="signform" (ngSubmit)="onSubmit()">
+    <div class="u-clear-fix b-wrapper">
+
+      <app-row-checkbox class="b-sign__bottom_checkbox"
+                        id='block-{{signFormFields.agree.id}}'
+                        [nameInput]=signFormFields.agree.nameInput
+                        [idInput]=signFormFields.agree.id
+                        [group]="signform"
+                        [formControlName]=signFormFields.agree.id
+                        [label]=signFormFields.agree.label
+                        [labelText]=signFormFields.agree.labelText
+                        [value]=signFormFields.agree.value
+                        (changeCurrentValue)="changeCurrentValueAgree($event)">
+      </app-row-checkbox>
+
+      <div class="b-sign__bottom_submit">
+        <button pButton type="submit"  label="Сохранить"></button>
+      </div>
+
+    </div>
+  </form>
+
+</p-sidebar>

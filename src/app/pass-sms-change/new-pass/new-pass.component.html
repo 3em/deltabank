@@ -1,0 +1,44 @@
+<div class="b-login__box b-login__box_newpass">
+
+  <div class="b-sms-prove">Код введен верно</div>
+
+  <div class="b-title">
+    <h1>Введите новый пароль</h1>
+  </div>
+
+  <form [formGroup]="newpassform" (ngSubmit)="onSubmit(newpassform.value)">
+    <app-row-input-password
+            id='block-{{newpassFormFields.password.id}}'
+            [showErrorStatus]=newpassFormFields.password.showErrorStatus
+            [errorText]=newpassFormFields.password.errorText
+            [type]=newpassFormFields.password.type
+            [labelText]=newpassFormFields.password.labelText
+            [placeholder]=newpassFormFields.password.placeholder
+            [group]="newpassform"
+            [formControlName]=newpassFormFields.password.id
+            [idInput]=newpassFormFields.password.id
+            [nameInput]=newpassFormFields.password.nameInput
+            [descText]=newpassFormFields.password.descText
+            (errorStatusChange)="newpassFormFields.password.showErrorStatus = $event">
+    </app-row-input-password>
+
+    <app-row-input-password
+            id='block-{{newpassFormFields.passwordRepeat.id}}'
+            [showErrorStatus]=newpassFormFields.passwordRepeat.showErrorStatus
+            [errorText]=newpassFormFields.passwordRepeat.errorText
+            [type]=newpassFormFields.passwordRepeat.type
+            [labelText]=newpassFormFields.passwordRepeat.labelText
+            [placeholder]=newpassFormFields.passwordRepeat.placeholder
+            [group]="newpassform"
+            [formControlName]=newpassFormFields.passwordRepeat.id
+            [idInput]=newpassFormFields.passwordRepeat.id
+            [nameInput]=newpassFormFields.passwordRepeat.nameInput
+            (errorStatusChange)="newpassFormFields.passwordRepeat.showErrorStatus = $event">
+    </app-row-input-password>
+
+    <div class="b-form__row b-form__row_button">
+      <button pButton type="submit"  label="Войти"></button>
+    </div>
+  </form>
+
+</div>

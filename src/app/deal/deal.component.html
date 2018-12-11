@@ -1,0 +1,227 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="false" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div id="wrapper" class="b-wrapper b-wrapper_top">
+
+  <div class="b-title">
+    <h1>Расскажите о кредите и запишитесь на прием в банк для оформления сделки</h1>
+  </div>
+
+  <form id="deal-form" [formGroup]="dealform" (ngSubmit)="onSubmit()" class="b-deal">
+
+    <div class="b-deal__main">
+
+      <app-row-input-price
+              id='block-{{dealFormFields.creditSum.id}}'
+              [showErrorStatus]=dealFormFields.creditSum.showErrorStatus
+              [errorText]=dealFormFields.creditSum.errorText
+              [type]=dealFormFields.creditSum.type
+              [labelText]=dealFormFields.creditSum.labelText
+              [placeholder]=dealFormFields.creditSum.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.creditSum.id
+              [idInput]=dealFormFields.creditSum.id
+              [nameInput]=dealFormFields.creditSum.nameInput
+              [someVal]=dealFormFields.creditSum.someVal
+              [disabledStatus]=dealFormFields.creditSum.disabledStatus
+              (errorStatusChange)="dealFormFields.creditSum.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-input-price
+              id='block-{{dealFormFields.prepaid.id}}'
+              [showErrorStatus]=dealFormFields.prepaid.showErrorStatus
+              [errorText]=dealFormFields.prepaid.errorText
+              [type]=dealFormFields.prepaid.type
+              [labelText]=dealFormFields.prepaid.labelText
+              [placeholder]=dealFormFields.prepaid.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.prepaid.id
+              [idInput]=dealFormFields.prepaid.id
+              [nameInput]=dealFormFields.prepaid.nameInput
+              [someVal]=dealFormFields.prepaid.someVal
+              [disabledStatus]=dealFormFields.prepaid.disabledStatus
+              (errorStatusChange)="dealFormFields.prepaid.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-dropdown
+              id='block-{{dealFormFields.feature.id}}'
+              [showErrorStatus]=dealFormFields.feature.showErrorStatus
+              [errorText]=dealFormFields.feature.errorText
+              [labelText]=dealFormFields.feature.labelText
+              [placeholder]=dealFormFields.feature.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.feature.id
+              [idInput]=dealFormFields.feature.id
+              [nameInput]=dealFormFields.feature.nameInput
+              [values]=dealFormFields.feature.values
+              [selectedItem]=dealFormFields.feature.selectedItem
+              [panelClass]=dealFormFields.feature.panelClass
+              [disabledStatus]=dealFormFields.feature.disabledStatus
+              (errorStatusChange)="dealFormFields.feature.showErrorStatus = $event"
+              (changeCurrentValue)="changeCurrentValueFeature($event)">
+      </app-row-dropdown>
+
+      <app-row-input-price *ngIf="showSumTangibleCapital"
+              id='block-{{dealFormFields.motherCapital.id}}'
+              [showErrorStatus]=dealFormFields.motherCapital.showErrorStatus
+              [errorText]=dealFormFields.motherCapital.errorText
+              [type]=dealFormFields.motherCapital.type
+              [labelText]=dealFormFields.motherCapital.labelText
+              [placeholder]=dealFormFields.motherCapital.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.motherCapital.id
+              [idInput]=dealFormFields.motherCapital.id
+              [nameInput]=dealFormFields.motherCapital.nameInput
+              [someVal]=dealFormFields.motherCapital.someVal
+              [disabledStatus]=dealFormFields.motherCapital.disabledStatus
+              (errorStatusChange)="dealFormFields.motherCapital.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-dropdown
+              id='block-{{dealFormFields.paymentForm.id}}'
+              [showErrorStatus]=dealFormFields.paymentForm.showErrorStatus
+              [errorText]=dealFormFields.paymentForm.errorText
+              [labelText]=dealFormFields.paymentForm.labelText
+              [placeholder]=dealFormFields.paymentForm.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.paymentForm.id
+              [idInput]=dealFormFields.paymentForm.id
+              [nameInput]=dealFormFields.paymentForm.nameInput
+              [values]=dealFormFields.paymentForm.values
+              [selectedItem]=dealFormFields.paymentForm.selectedItem
+              [panelClass]=dealFormFields.paymentForm.panelClass
+              [disabledStatus]=dealFormFields.paymentForm.disabledStatus
+              (errorStatusChange)="dealFormFields.paymentForm.showErrorStatus = $event"
+              (changeCurrentValue)="changeCurrentValuePaymentForm($event)">
+      </app-row-dropdown>
+
+      <app-row-dropdown
+              id='block-{{dealFormFields.lawType.id}}'
+              [showErrorStatus]=dealFormFields.lawType.showErrorStatus
+              [errorText]=dealFormFields.lawType.errorText
+              [labelText]=dealFormFields.lawType.labelText
+              [placeholder]=dealFormFields.lawType.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.lawType.id
+              [idInput]=dealFormFields.lawType.id
+              [nameInput]=dealFormFields.lawType.nameInput
+              [values]=dealFormFields.lawType.values
+              [selectedItem]=dealFormFields.lawType.selectedItem
+              [panelClass]=dealFormFields.lawType.panelClass
+              [disabledStatus]=dealFormFields.lawType.disabledStatus
+              (errorStatusChange)="dealFormFields.lawType.showErrorStatus = $event"
+              (changeCurrentValue)="changeCurrentValueLawType($event)">
+      </app-row-dropdown>
+
+      <app-row-input-price
+              id='block-{{dealFormFields.propertyCost.id}}'
+              [showErrorStatus]=dealFormFields.propertyCost.showErrorStatus
+              [errorText]=dealFormFields.propertyCost.errorText
+              [type]=dealFormFields.propertyCost.type
+              [labelText]=dealFormFields.propertyCost.labelText
+              [placeholder]=dealFormFields.propertyCost.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.propertyCost.id
+              [idInput]=dealFormFields.propertyCost.id
+              [nameInput]=dealFormFields.propertyCost.nameInput
+              [someVal]=dealFormFields.propertyCost.someVal
+              [disabledStatus]=dealFormFields.propertyCost.disabledStatus
+              (errorStatusChange)="dealFormFields.propertyCost.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-input-price
+              id='block-{{dealFormFields.initialFee.id}}'
+              [showErrorStatus]=dealFormFields.initialFee.showErrorStatus
+              [errorText]=dealFormFields.initialFee.errorText
+              [type]=dealFormFields.initialFee.type
+              [labelText]=dealFormFields.initialFee.labelText
+              [placeholder]=dealFormFields.initialFee.placeholder
+              [group]="dealform"
+              [formControlName]=dealFormFields.initialFee.id
+              [idInput]=dealFormFields.initialFee.id
+              [nameInput]=dealFormFields.initialFee.nameInput
+              [someVal]=dealFormFields.initialFee.someVal
+              [disabledStatus]=dealFormFields.initialFee.disabledStatus
+              (errorStatusChange)="dealFormFields.initialFee.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <div class="u-clear-fix b-deal__docs">
+        <span class="b-deal__docs_label">Документы для&nbsp;ознакомления</span>
+        <ul class="b-deal__docs_list">
+          <li class="b-deal__docs_item">
+            <a href="" download class="b-deal__docs_link">Права и обязанности граждан и банков в ипотечном кредитовании.pdf</a>
+          </li>
+          <li class="b-deal__docs_item">
+            <a href="" download class="b-deal__docs_link">Права и обязанности созаемщика.pdf</a>
+          </li>
+          <li class="b-deal__docs_item">
+            <a href="" download class="b-deal__docs_link">Виды ипотечного кредита в Росбанке.pdf</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="b-deal__meeting">
+      <h6>Укажите желаемое время для проведения сделки</h6>
+
+      <div class="u-clear-fix b-deal__meeting_form">
+        <div class="b-deal__meeting_date">
+          <app-row-datapicker 
+                  id='block-{{dealFormFields.date.id}}'
+                  [showErrorStatus]=dealFormFields.date.showErrorStatus
+                  [errorText]=dealFormFields.date.errorText
+                  [labelText]=dealFormFields.date.labelText
+                  [placeholder]=dealFormFields.date.placeholder
+                  [group]="dealform"
+                  [date]=dealFormFields.date.date
+                  [formControlName]=dealFormFields.date.id
+                  [idInput]=dealFormFields.date.id
+                  [nameInput]=dealFormFields.date.nameInput
+                  [inlineStatus]=dealFormFields.date.inlineStatus
+                  [navigator]=dealFormFields.date.navigator
+                  (errorStatusChange)="dealFormFields.date.showErrorStatus = $event"
+                  (changeCurrentValue)="changeCurrentValueDate($event)">
+          </app-row-datapicker>
+        </div>
+        <div class="b-deal__meeting_time">
+          <div class="b-deal__meeting_text">
+            {{meetingTime}}
+          </div>
+          <div class="b-deal__meeting_radio">
+            <app-row-input-radio
+                    [labelText]=dealFormFields.time1.labelText
+                    [group]="dealform"
+                    [currentValue]=dealFormFields.time1.currentValue
+                    [nameInput]=dealFormFields.time1.nameInput
+                    [inputs]="dealFormFields.time1.inputs"
+                    (changeCurrentValue)="changeCurrentValueTime($event, 1)">
+            </app-row-input-radio>
+            <app-row-input-radio
+                    [labelText]=dealFormFields.time2.labelText
+                    [group]="dealform"
+                    [currentValue]=dealFormFields.time2.currentValue
+                    [nameInput]=dealFormFields.time2.nameInput
+                    [inputs]="dealFormFields.time2.inputs"
+                    (changeCurrentValue)="changeCurrentValueTime($event, 2)">
+            </app-row-input-radio>
+            <app-row-input-radio
+                    [labelText]=dealFormFields.time3.labelText
+                    [group]="dealform"
+                    [currentValue]=dealFormFields.time3.currentValue
+                    [nameInput]=dealFormFields.time3.nameInput
+                    [inputs]="dealFormFields.time3.inputs"
+                    (changeCurrentValue)="changeCurrentValueTime($event, 3)">
+            </app-row-input-radio>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="b-deal__button">
+      <button pButton type="submit" label="Записаться на сделку"></button>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,212 @@
+@import "../../assets/scss/variables";
+
+.b-deal{
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.b-deal__main{
+  padding: 20px 55px 75px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.b-deal__button{
+  position: relative;
+  margin-top: 60px;
+}
+
+.b-deal__docs{
+  position: relative;
+  padding: 17px 0 0;
+
+  .b-deal__docs_label{
+    position: relative;
+    float: left;
+    vertical-align: top;
+    width: 220px;
+    margin-right: 20px;
+    font-size: 16px;
+    line-height: 21px;
+    padding-top: 22px;
+    margin-bottom: 2px;
+  }
+
+  .b-deal__docs_list{
+    float: left;
+    vertical-align: top;
+    position: relative;
+    width: 674px;
+    padding-top: 27px;
+
+    .b-deal__docs_item{
+      position: relative;
+      margin-bottom: 20px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    .b-deal__docs_link{
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      font-size: 20px;
+      line-height: 30px;
+      padding-top: 4px;
+      padding-left: 70px;
+      text-decoration: none;
+      border: none;
+      min-height: 55px;
+      transition: color .25s;
+
+      &:hover{
+        color: $linkColor;
+      }
+
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 47px;
+        height: 51px;
+        background: url("../../assets/i/i-pdf.svg") no-repeat;
+      }
+    }
+  }
+}
+
+.b-deal__meeting{
+  padding-top: 50px;
+  position: relative;
+  display: table;
+}
+
+.b-deal__meeting_date{
+  display: table-cell;
+  vertical-align: top;
+  width: 388px;
+}
+.b-deal__meeting_time{
+  display: table-cell;
+  vertical-align: top;
+  width: 636px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 50px 50px rgba(0,0,0, .1);
+  padding: 0;
+
+  .b-deal__meeting_radio{
+    position: relative;
+    padding: 11px 30px 0;
+  }
+
+  .b-deal__meeting_text{
+    display: block;
+    position: relative;
+    font-size: 20px;
+    padding: 16px 30px 15px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+@media only screen and (max-width: 1064px) {
+  .b-deal__main {
+    padding: 30px 5% 50px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .b-deal__meeting{
+    display: block;
+  }
+  .b-deal__meeting_date{
+    display: block;
+    margin-bottom: 20px;
+  }
+  .b-deal__meeting_time{
+    display: block;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+
+}
+
+
+@media only screen and (max-width: 767px) {
+  .b-deal__main {
+    padding: 10px 5% 30px;
+  }
+  .b-deal__button{
+    margin-top: 40px;
+
+    .ui-button{
+      width: 100%;
+    }
+  }
+  .b-wrapper{
+    &.b-wrapper_top{
+      padding-top: 0;
+    }
+  }
+
+  .b-deal__docs {
+    padding-top: 13px;
+
+    .b-deal__docs_label {
+      font-size: 10px;
+      padding-top: 0;
+      line-height: 25px;
+      float: none;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .b-deal__docs_list{
+      float: none;
+      width: 100%;
+      padding-top: 5px;
+
+      .b-deal__docs_link{
+        padding-left: 42px;
+        font-size: 15px;
+        line-height: 24px;
+        padding-top: 0;
+        min-height: 35px;
+
+        &:before{
+          width: 32px;
+          height: 35px;
+        }
+      }
+    }
+  }
+
+  .b-deal__meeting_date{
+    width: 100%;
+    text-align: center;
+  }
+
+  .b-deal__meeting_time{
+    padding-bottom: 0;
+
+    .b-deal__meeting_text{
+      font-size: 15px;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .b-deal__meeting_radio{
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }
+  .b-deal{
+    margin-bottom: 60px;
+  }
+}

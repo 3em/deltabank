@@ -1,0 +1,33 @@
+<div class="b-main-nav__wrapper" [class.short]="!bigNavStatus">
+
+  <p-scrollPanel class="b-main-nav__scroll">
+    <div #mainNav class="b-main-nav__overlay">
+
+      <div #navIcon class="b-main-nav__icon" [class.finish]="finish" [ngStyle]="{left: iconLeftPosition+'px'}"></div>
+
+      <ul class="u-clear-fix b-main-nav">
+
+        <ng-container *ngFor="let item of navItems">
+          <li class="b-main-nav__item" *ngIf="item.display" [id]="'nav-'+item.id" [ngClass]="getStatus(item.id)">
+            <a href='{{item.hash}}' class="b-main-nav__link" (click)="itemNavClick($event, item.id, item.hash)" [class.wait]="participantsProveStatus && item.id === 4">
+              {{item.label}}
+
+              <span *ngIf="item.percent" class="b-main-nav__link_percent-box" [class.hover]="item.faq">
+                <span  class="b-main-nav__link_percent" (mouseenter)="alertShow($event, faqToolip, item.faq)" (mouseleave)="alertHide($event, faqToolip, item.faq)">
+                  {{item.percent}}%
+                </span>
+                <p-overlayPanel appendTo="body" #faqToolip styleClass="b-main-nav__link_faq">
+                  <p>
+                    {{item.faq}}
+                  </p>
+                </p-overlayPanel>
+              </span>
+            </a>
+          </li>
+        </ng-container>
+
+      </ul>
+    </div>
+  </p-scrollPanel>
+
+</div>

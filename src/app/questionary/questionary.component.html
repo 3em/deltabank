@@ -1,0 +1,54 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<div class="b-wrapper b-wrapper_top">
+
+    <div class="b-title">
+        <h1>Узнайте решение банка по&nbsp;ипотеке уже через 10 минут</h1>
+        <p>
+            Понизим ставку еще на&nbsp;<span class="b-title__percent"><span>0,25%</span></span> при заполнении данных онлайн
+        </p>
+    </div>
+
+</div>
+
+<div class="b-about-nav" [class.fixed]="fixNavStatus" [class.grey]="bgGrey">
+    <p-scrollPanel class="b-about-nav__scroll">
+        <div class="b-about-nav__box" [class.size-8]="familyStatus">
+            <div class="b-wrapper">
+                <span class="b-about-nav__icon left-{{activeIndex}}"></span>
+                <p-steps [model]="(!familyStatus) ? navItems : navItemsBig" [(activeIndex)]="activeIndex" [readonly]="false" class="b-about-nav__ul"></p-steps>
+            </div>
+        </div>
+    </p-scrollPanel>
+</div>
+
+<div id="questionary" class="b-questionary__content">
+    <div class="b-questionary__content_bg" [class.width]="fixNavStatus" [class.no-shadow]="bgGrey"></div>
+
+    <form [formGroup]="questionaryform" class="b-wrapper" [class.overflow]="fixNavStatus" (ngSubmit)="onSubmit()">
+
+        <app-questionary-about [showNextStep]="showStepNumber" [showErrors]="showErrors" (sexStatusGlobal)="sexStatusGlobal($event)" (showUnitCodeGlobal)="showUnitCodeGlobal($event)" (changeRegistration)="changeRegistration($event)" (changeCurrentAddress)="changeCurrentAddress($event)" (changeNameGlobal)="changeNameGlobal($event)" (familyStatusGlobal)="familyStatusGlobal($event)" (changeNextStatePrev)="changeNextStatePrev($event)" [group]="questionaryform.controls.questionaryformAbout"></app-questionary-about>
+
+        <app-questionary-work *ngIf="showStepNumber >= 1" (showMoreCompInfo)="showMoreCompInfo($event)" (showMoreCompInfoDop)="showMoreCompInfoDop($event)" (changeIsAnotherJob)="changeIsAnotherJob($event)" (changeIsOfficialJob)="changeIsOfficialJob($event)" [isAnotherJob]="isAnotherJob" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock" [group]="questionaryform.controls.questionaryformWork"></app-questionary-work>
+
+        <app-questionary-income *ngIf="showStepNumber >= 2" [isAnotherJob]="isAnotherJob" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock" [group]="questionaryform.controls.questionaryformIncome"></app-questionary-income>
+
+        <app-questionary-costs *ngIf="showStepNumber >= 3" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock" [group]="questionaryform.controls.questionaryformCosts"></app-questionary-costs>
+
+        <app-questionary-questions *ngIf="showStepNumber >= 4" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock" [group]="questionaryform.controls.questionaryformQuestions"></app-questionary-questions>
+
+        <app-questionary-questions-agree *ngIf="showStepNumber >= 4" [group]="questionaryform.controls.questionaryformAgree" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock"></app-questionary-questions-agree>
+
+        <app-questionary-spouse [sexStatus]="sexStatus" *ngIf="familyStatus && showStepNumber >= 5" (changeSpouseIncome)="changeSpouseIncome($event)" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock" [group]="questionaryform.controls.questionaryformSpouse"></app-questionary-spouse>
+
+        <app-questionary-mortgage *ngIf="showStepNumber >= 5+plusOneStep" [showCalcBottom]="showCalcBottom" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock" [group]="questionaryform.controls.questionaryformMortgage"></app-questionary-mortgage>
+
+        <app-questionary-saved-calc *ngIf="showStepNumber >= 5+plusOneStep && showCalcBottom"></app-questionary-saved-calc>
+
+        <div *ngIf="showStepNumber >= 1 && showStepNumber < 5+plusOneStep " class="u-clear-fix b-questionary__button" [class.left]="showStepNumber === 4+plusOneStep">
+            <a href="#" class="b-questionary__button_back" (click)="scrollToPrevBlock($event)"></a>
+            <button pButton type="submit"  label="Далее"></button>
+        </div>
+
+    </form>
+</div>

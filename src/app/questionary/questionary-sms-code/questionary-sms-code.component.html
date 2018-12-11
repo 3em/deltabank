@@ -1,0 +1,29 @@
+<div class="b-questionary__sms" [formGroup]="group">
+
+  <div *ngIf="!submitted" class="b-questionary__sms_box">
+    <div class="b-questionary__sms_text">
+      <p>Для подтверждения согласия введите код из СМС высланный на&nbsp;указанный номер телефона</p>
+    </div>
+    <app-row-input
+            id='block-{{questionarySmsForm.code.id}}'
+            [showErrorStatus]=questionarySmsForm.code.showErrorStatus
+            [errorText]=questionarySmsForm.code.errorText
+            [type]=questionarySmsForm.code.type
+            [labelText]=questionarySmsForm.code.labelText
+            [placeholder]=questionarySmsForm.code.placeholder
+            [group]="group"
+            [formControlName]=questionarySmsForm.code.id
+            [idInput]=questionarySmsForm.code.id
+            [nameInput]=questionarySmsForm.code.nameInput
+            (errorStatusChange)="questionarySmsForm.code.showErrorStatus = $event">
+    </app-row-input>
+    <div class="b-sms__change">
+      <button pButton type="button" *ngIf="!changeSms" (click)="sendNewSms($event)" label="Отправить снова"></button>
+      <p class="b-sms__change_text" *ngIf="changeSms">Отправить снова можно через {{timing}} {{timingWord}}</p>
+    </div>
+    <button id="sms-submit" pButton type="button" (click)="onSubmit(group.value)" class="hidden"  label="Отправить"></button>
+  </div>
+
+  <div *ngIf="submitted" class="b-questionary__sms_done">Код введен верно</div>
+
+</div>

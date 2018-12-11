@@ -1,0 +1,71 @@
+@import "../../../assets/scss/variables";
+
+.b-questionary__sms{
+  margin-left: 240px;
+  position: relative;
+  margin-top: 45px;
+}
+
+.b-questionary__sms_box{
+  position: relative;
+  background: #F6F6F6;
+  border-radius: 6px;
+  margin-left: -45px;
+  margin-right: -45px;
+  padding: 45px;
+  font-size: $biggerFontSize;
+  line-height: $biggerFontLineHeight;
+  overflow: hidden;
+
+  .b-sms__change{
+    padding-top: 23px;
+
+    button{
+      margin-top: 17px;
+    }
+    .b-sms__change_text{
+      color: rgba(0,0,0, .35);
+    }
+  }
+}
+
+.b-questionary__sms_done{
+  display: inline-block;
+  vertical-align: top;
+  height: 62px;
+  line-height: 62px;
+  font-weight: 600;
+  padding: 0 30px 0 60px;
+  border-radius: 7px;
+  background: rgba(0,0,0, .03);
+  position: relative;
+
+  &:before{
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 23px;
+    height: 14px;
+    background: url("assets/i-sms-done.svg") no-repeat;
+  }
+}
+
+@media only screen and (max-width: 1064px){
+  .b-questionary__sms{
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .b-questionary__sms_box{
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .b-sms__change{
+    .ui-button{
+      width: 100%;
+    }
+  }
+}

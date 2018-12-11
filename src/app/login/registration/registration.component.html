@@ -1,0 +1,139 @@
+<form [formGroup]="registrationform" class="b-registration" (ngSubmit)="onSubmit(registrationform.value)">
+
+    <app-row-input
+            id='block-{{registrationFormFields.surname.id}}'
+            [showErrorStatus]=registrationFormFields.surname.showErrorStatus
+            [errorText]=registrationFormFields.surname.errorText
+            [type]=registrationFormFields.surname.type
+            [labelText]=registrationFormFields.surname.labelText
+            [placeholder]=registrationFormFields.surname.placeholder
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.surname.id
+            [idInput]=registrationFormFields.surname.id
+            [nameInput]=registrationFormFields.surname.nameInput
+            [cyrillicValidation]=registrationFormFields.surname.cyrillicValidation
+            (errorStatusChange)="registrationFormFields.surname.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input
+            id='block-{{registrationFormFields.name.id}}'
+            [showErrorStatus]=registrationFormFields.name.showErrorStatus
+            [errorText]=registrationFormFields.name.errorText
+            [type]=registrationFormFields.name.type
+            [labelText]=registrationFormFields.name.labelText
+            [placeholder]=registrationFormFields.name.placeholder
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.name.id
+            [idInput]=registrationFormFields.name.id
+            [nameInput]=registrationFormFields.name.nameInput
+            [cyrillicValidation]=registrationFormFields.name.cyrillicValidation
+            (errorStatusChange)="registrationFormFields.name.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input
+            id='block-{{registrationFormFields.secondName.id}}'
+            [showErrorStatus]=registrationFormFields.secondName.showErrorStatus
+            [errorText]=registrationFormFields.secondName.errorText
+            [type]=registrationFormFields.secondName.type
+            [labelText]=registrationFormFields.secondName.labelText
+            [placeholder]=registrationFormFields.secondName.placeholder
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.secondName.id
+            [idInput]=registrationFormFields.secondName.id
+            [nameInput]=registrationFormFields.secondName.nameInput
+            [cyrillicValidation]=registrationFormFields.secondName.cyrillicValidation
+            (errorStatusChange)="registrationFormFields.secondName.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-phone
+            id='block-{{registrationFormFields.phone.id}}'
+            [showErrorStatus]=registrationFormFields.phone.showErrorStatus
+            [errorText]=registrationFormFields.phone.errorText
+            [type]=registrationFormFields.phone.type
+            [labelText]=registrationFormFields.phone.labelText
+            [placeholder]=registrationFormFields.phone.placeholder
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.phone.id
+            [idInput]=registrationFormFields.phone.id
+            [nameInput]=registrationFormFields.phone.nameInput
+            [alertHtmlShow]=registrationFormFields.phone.alertHtmlShow
+            [mask]=registrationFormFields.phone.mask
+            (errorStatusChange)="registrationFormFields.phone.showErrorStatus = $event">
+    </app-row-input-phone>
+
+    <app-row-input
+            id='block-{{registrationFormFields.email.id}}'
+            [showErrorStatus]=registrationFormFields.email.showErrorStatus
+            [errorText]=registrationFormFields.email.errorText
+            [type]=registrationFormFields.email.type
+            [labelText]=registrationFormFields.email.labelText
+            [placeholder]=registrationFormFields.email.placeholder
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.email.id
+            [idInput]=registrationFormFields.email.id
+            [nameInput]=registrationFormFields.email.nameInput
+            (errorStatusChange)="registrationFormFields.email.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-autocomplete
+            id='block-{{registrationFormFields.regions.id}}'
+            [showErrorStatus]=registrationFormFields.regions.showErrorStatus
+            [errorText]=registrationFormFields.regions.errorText
+            [list]="regions"
+            [labelText]=registrationFormFields.regions.labelText
+            [placeholder]=registrationFormFields.regions.placeholder
+            [group]="registrationform"
+            [idInput]=registrationFormFields.regions.id
+            [formControlName]=registrationFormFields.regions.id
+            (errorStatusChange)="registrationFormFields.regions.showErrorStatus = $event">
+    </app-row-input-autocomplete>
+
+    <app-row-input-password
+            id='block-{{registrationFormFields.password.id}}'
+            [showErrorStatus]=registrationFormFields.password.showErrorStatus
+            [errorText]=registrationFormFields.password.errorText
+            [type]=registrationFormFields.password.type
+            [labelText]=registrationFormFields.password.labelText
+            [placeholder]=registrationFormFields.password.placeholder
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.password.id
+            [idInput]=registrationFormFields.password.id
+            [nameInput]=registrationFormFields.password.nameInput
+            [descText]=registrationFormFields.password.descText
+            (errorStatusChange)="registrationFormFields.password.showErrorStatus = $event">
+    </app-row-input-password>
+
+    <app-row-input-password
+            id='block-{{registrationFormFields.passwordRepeat.id}}'
+            [showErrorStatus]=registrationFormFields.passwordRepeat.showErrorStatus
+            [errorText]=registrationFormFields.passwordRepeat.errorText
+            [type]=registrationFormFields.passwordRepeat.type
+            [labelText]=registrationFormFields.passwordRepeat.labelText
+            [placeholder]=registrationFormFields.passwordRepeat.placeholder
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.passwordRepeat.id
+            [idInput]=registrationFormFields.passwordRepeat.id
+            [nameInput]=registrationFormFields.passwordRepeat.nameInput
+            (errorStatusChange)="registrationFormFields.passwordRepeat.showErrorStatus = $event">
+    </app-row-input-password>
+
+    <app-checkbox-with-link
+            id='block-{{registrationFormFields.agree.id}}'
+            [nameInput]=registrationFormFields.agree.nameInput
+            [idInput]=registrationFormFields.agree.id
+            [group]="registrationform"
+            [formControlName]=registrationFormFields.agree.id
+            [label]=registrationFormFields.agree.label
+            [value]=registrationFormFields.agree.value
+            [linkText]=registrationFormFields.agree.linkText
+            (fn) = "showPersonalDataPopup($event)"
+            [display] = display>
+    </app-checkbox-with-link>
+
+    <div class="b-form__row b-form__row_button">
+        <button pButton type="submit"  label="Зарегистрироваться"></button>
+    </div>
+
+</form>
+
+<app-personal-data-agree-popup [display]="display" (fn)="showPersonalDataPopup($event)" ></app-personal-data-agree-popup>

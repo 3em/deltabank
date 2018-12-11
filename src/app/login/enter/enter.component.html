@@ -1,0 +1,41 @@
+<form [formGroup]="enterform" class="b-enter" (ngSubmit)="onSubmit(enterform.value)">
+
+  <app-row-input-phone
+          id='block-{{enterFormFields.enterPhone.id}}'
+          [showErrorStatus]=enterFormFields.enterPhone.showErrorStatus
+          [errorText]=enterFormFields.enterPhone.errorText
+          [type]=enterFormFields.enterPhone.type
+          [labelText]=enterFormFields.enterPhone.labelText
+          [placeholder]=enterFormFields.enterPhone.placeholder
+          [group]="enterform"
+          [formControlName]=enterFormFields.enterPhone.id
+          [idInput]=enterFormFields.enterPhone.id
+          [nameInput]=enterFormFields.enterPhone.nameInput
+          [alertHtmlShow]=enterFormFields.enterPhone.alertHtmlShow
+          [mask]=enterFormFields.enterPhone.mask
+          (errorStatusChange)="enterFormFields.enterPhone.showErrorStatus = $event">
+  </app-row-input-phone>
+
+  <div class="b-enter__field">
+    <app-row-input-password
+            id='block-{{enterFormFields.enterPassword.id}}'
+            [showErrorStatus]=enterFormFields.enterPassword.showErrorStatus
+            [errorText]=enterFormFields.enterPassword.errorText
+            [type]=enterFormFields.enterPassword.type
+            [labelText]=enterFormFields.enterPassword.labelText
+            [placeholder]=enterFormFields.enterPassword.placeholder
+            [group]="enterform"
+            [formControlName]=enterFormFields.enterPassword.id
+            [idInput]=enterFormFields.enterPassword.id
+            [nameInput]=enterFormFields.enterPassword.nameInput
+            (errorStatusChange)="enterFormFields.enterPassword.showErrorStatus = $event">
+    </app-row-input-password>
+    <a routerLink="/recover" class="b-link">Забыли?</a>
+  </div>
+
+  <div class="b-form__row b-form__row_button">
+    <button pButton type="submit"  label="Войти"></button>
+    <span class="b-enter__error" *ngIf="globalError">Пароль или телефон неверны</span>
+  </div>
+
+</form>

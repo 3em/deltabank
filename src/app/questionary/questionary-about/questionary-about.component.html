@@ -1,0 +1,447 @@
+<section id="about" class="b-questionary b-questionary__about" [formGroup]="group">
+
+    <app-row-input
+            id='block-{{questionaryFormFields.surname.id}}'
+            [showErrorStatus]=questionaryFormFields.surname.showErrorStatus
+            [errorText]=questionaryFormFields.surname.errorText
+            [type]=questionaryFormFields.surname.type
+            [labelText]=questionaryFormFields.surname.labelText
+            [placeholder]=questionaryFormFields.surname.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.surname.id
+            [idInput]=questionaryFormFields.surname.id
+            [nameInput]=questionaryFormFields.surname.nameInput
+            [cyrillicValidation]=questionaryFormFields.surname.cyrillicValidation
+            (errorStatusChange)="questionaryFormFields.surname.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input
+            id='block-{{questionaryFormFields.name.id}}'
+            [showErrorStatus]=questionaryFormFields.name.showErrorStatus
+            [errorText]=questionaryFormFields.name.errorText
+            [type]=questionaryFormFields.name.type
+            [labelText]=questionaryFormFields.name.labelText
+            [placeholder]=questionaryFormFields.name.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.name.id
+            [idInput]=questionaryFormFields.name.id
+            [nameInput]=questionaryFormFields.name.nameInput
+            [cyrillicValidation]=questionaryFormFields.name.cyrillicValidation
+            (errorStatusChange)="questionaryFormFields.name.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input
+            id='block-{{questionaryFormFields.secondName.id}}'
+            [showErrorStatus]=questionaryFormFields.secondName.showErrorStatus
+            [errorText]=questionaryFormFields.secondName.errorText
+            [type]=questionaryFormFields.secondName.type
+            [labelText]=questionaryFormFields.secondName.labelText
+            [placeholder]=questionaryFormFields.secondName.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.secondName.id
+            [idInput]=questionaryFormFields.secondName.id
+            [nameInput]=questionaryFormFields.secondName.nameInput
+            [cyrillicValidation]=questionaryFormFields.secondName.cyrillicValidation
+            (errorStatusChange)="questionaryFormFields.secondName.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input
+            id='block-{{questionaryFormFields.email.id}}'
+            [showErrorStatus]=questionaryFormFields.email.showErrorStatus
+            [errorText]=questionaryFormFields.email.errorText
+            [type]=questionaryFormFields.email.type
+            [labelText]=questionaryFormFields.email.labelText
+            [placeholder]=questionaryFormFields.email.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.email.id
+            [idInput]=questionaryFormFields.email.id
+            [nameInput]=questionaryFormFields.email.nameInput
+            (errorStatusChange)="questionaryFormFields.email.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-radio
+            [labelText]=questionaryFormFields.changeName.labelText
+            [group]="group"
+            [currentValue]=questionaryFormFields.changeName.currentValue
+            [nameInput]=questionaryFormFields.changeName.nameInput
+            [inputs]="questionaryFormFields.changeName.inputs"
+            (changeCurrentValue)="changeCurrentValueChangeName($event)">
+    </app-row-input-radio>
+
+    <app-row-input-mask *ngIf="showPrevNames"
+                        id='block-{{questionaryFormFields.changeNameYear.id}}'
+                        [showErrorStatus]=questionaryFormFields.changeNameYear.showErrorStatus
+                        [errorText]=questionaryFormFields.changeNameYear.errorText
+                        [type]=questionaryFormFields.changeNameYear.type
+                        [labelText]=questionaryFormFields.changeNameYear.labelText
+                        [placeholder]=questionaryFormFields.changeNameYear.placeholder
+                        [group]="group"
+                        [formControlName]=questionaryFormFields.changeNameYear.id
+                        [idInput]=questionaryFormFields.changeNameYear.id
+                        [nameInput]=questionaryFormFields.changeNameYear.nameInput
+                        [mask]=questionaryFormFields.changeNameYear.mask
+                        (errorStatusChange)="questionaryFormFields.changeNameYear.showErrorStatus = $event">
+    </app-row-input-mask>
+
+    <app-row-input *ngIf="showPrevNames"
+            id='block-{{questionaryFormFields.prevSurname.id}}'
+            [showErrorStatus]=questionaryFormFields.prevSurname.showErrorStatus
+            [errorText]=questionaryFormFields.prevSurname.errorText
+            [type]=questionaryFormFields.prevSurname.type
+            [labelText]=questionaryFormFields.prevSurname.labelText
+            [placeholder]=questionaryFormFields.prevSurname.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.prevSurname.id
+            [idInput]=questionaryFormFields.prevSurname.id
+            [nameInput]=questionaryFormFields.prevSurname.nameInput
+            [cyrillicValidation]=questionaryFormFields.prevSurname.cyrillicValidation
+            (errorStatusChange)="questionaryFormFields.prevSurname.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input *ngIf="showPrevNames"
+            id='block-{{questionaryFormFields.prevName.id}}'
+            [showErrorStatus]=questionaryFormFields.prevName.showErrorStatus
+            [errorText]=questionaryFormFields.prevName.errorText
+            [type]=questionaryFormFields.prevName.type
+            [labelText]=questionaryFormFields.prevName.labelText
+            [placeholder]=questionaryFormFields.prevName.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.prevName.id
+            [idInput]=questionaryFormFields.prevName.id
+            [nameInput]=questionaryFormFields.prevName.nameInput
+            [cyrillicValidation]=questionaryFormFields.prevName.cyrillicValidation
+            (errorStatusChange)="questionaryFormFields.prevName.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input *ngIf="showPrevNames"
+            id='block-{{questionaryFormFields.prevSecondName.id}}'
+            [showErrorStatus]=questionaryFormFields.prevSecondName.showErrorStatus
+            [errorText]=questionaryFormFields.prevSecondName.errorText
+            [type]=questionaryFormFields.prevSecondName.type
+            [labelText]=questionaryFormFields.prevSecondName.labelText
+            [placeholder]=questionaryFormFields.prevSecondName.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.prevSecondName.id
+            [idInput]=questionaryFormFields.prevSecondName.id
+            [nameInput]=questionaryFormFields.prevSecondName.nameInput
+            [cyrillicValidation]=questionaryFormFields.prevSecondName.cyrillicValidation
+            (errorStatusChange)="questionaryFormFields.prevSecondName.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-radio
+            [labelText]=questionaryFormFields.sex.labelText
+            [group]="group"
+            [currentValue]=questionaryFormFields.sex.currentValue
+            [nameInput]=questionaryFormFields.sex.nameInput
+            [inputs]="questionaryFormFields.sex.inputs"
+            (changeCurrentValue)="changeCurrentValueSex($event)">
+    </app-row-input-radio>
+
+    <app-row-datapicker id='block-{{questionaryFormFields.birthday.id}}'
+            [showErrorStatus]=questionaryFormFields.birthday.showErrorStatus
+            [errorText]=questionaryFormFields.birthday.errorText
+            [labelText]=questionaryFormFields.birthday.labelText
+            [placeholder]=questionaryFormFields.birthday.placeholder
+            [group]="group"
+            [date]=questionaryFormFields.birthday.date
+            [formControlName]=questionaryFormFields.birthday.id
+            [idInput]=questionaryFormFields.birthday.id
+            [nameInput]=questionaryFormFields.birthday.nameInput
+            (errorStatusChange)="questionaryFormFields.birthday.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueDate($event)">
+    </app-row-datapicker>
+
+
+
+    <app-row-dropdown id='block-{{questionaryFormFields.familystatus.id}}'
+          [showErrorStatus]=questionaryFormFields.familystatus.showErrorStatus
+          [errorText]=questionaryFormFields.familystatus.errorText
+          [labelText]=questionaryFormFields.familystatus.labelText
+          [placeholder]=questionaryFormFields.familystatus.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.familystatus.id
+          [idInput]=questionaryFormFields.familystatus.id
+          [nameInput]=questionaryFormFields.familystatus.nameInput
+          [values]=questionaryFormFields.familystatus.values
+          [selectedItem]=questionaryFormFields.familystatus.selectedItem
+          [panelClass]=questionaryFormFields.familystatus.panelClass
+          (errorStatusChange)="questionaryFormFields.familystatus.showErrorStatus = $event"
+          (changeCurrentValue)="changeCurrentValueFamilystatus($event)">
+    </app-row-dropdown>
+
+    <app-row-dropdown id='block-{{questionaryFormFields.education.id}}'
+          [showErrorStatus]=questionaryFormFields.education.showErrorStatus
+          [errorText]=questionaryFormFields.education.errorText
+          [labelText]=questionaryFormFields.education.labelText
+          [placeholder]=questionaryFormFields.education.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.education.id
+          [idInput]=questionaryFormFields.education.id
+          [nameInput]=questionaryFormFields.education.nameInput
+          [values]=questionaryFormFields.education.values
+          [selectedItem]=questionaryFormFields.education.selectedItem
+          [panelClass]=questionaryFormFields.education.panelClass
+          (errorStatusChange)="questionaryFormFields.education.showErrorStatus = $event"
+          (changeCurrentValue)="changeCurrentValueEducation($event)">
+    </app-row-dropdown>
+
+    <app-row-dropdown id='block-{{questionaryFormFields.personalDoc.id}}'
+          [showErrorStatus]=questionaryFormFields.personalDoc.showErrorStatus
+          [errorText]=questionaryFormFields.personalDoc.errorText
+          [labelText]=questionaryFormFields.personalDoc.labelText
+          [placeholder]=questionaryFormFields.personalDoc.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.personalDoc.id
+          [idInput]=questionaryFormFields.personalDoc.id
+          [nameInput]=questionaryFormFields.personalDoc.nameInput
+          [values]=questionaryFormFields.personalDoc.values
+          [selectedItem]=questionaryFormFields.personalDoc.selectedItem
+          [panelClass]=questionaryFormFields.personalDoc.panelClass
+          (errorStatusChange)="questionaryFormFields.personalDoc.showErrorStatus = $event"
+          (changeCurrentValue)="changeCurrentValuePersonaldoc($event)">
+    </app-row-dropdown>
+
+    <app-row-input-autocomplete *ngIf="!personalDocNumberMaskStatus"
+            id='block-{{questionaryFormFields.citizenship.id}}'
+            [showErrorStatus]=questionaryFormFields.citizenship.showErrorStatus
+            [errorText]=questionaryFormFields.citizenship.errorText
+            [list]="countries"
+            [labelText]=questionaryFormFields.citizenship.labelText
+            [placeholder]=questionaryFormFields.citizenship.placeholder
+            [group]="group"
+            [idInput]=questionaryFormFields.citizenship.id
+            [formControlName]=questionaryFormFields.citizenship.id
+            (errorStatusChange)="questionaryFormFields.citizenship.showErrorStatus = $event">
+    </app-row-input-autocomplete>
+
+    <app-row-input-mask *ngIf="personalDocNumberMaskStatus"
+            id='block-{{questionaryFormFields.personalDocNumber.id}}'
+            [showErrorStatus]=questionaryFormFields.personalDocNumber.showErrorStatus
+            [errorText]=questionaryFormFields.personalDocNumber.errorText
+            [type]=questionaryFormFields.personalDocNumber.type
+            [labelText]=questionaryFormFields.personalDocNumber.labelText
+            [placeholder]=questionaryFormFields.personalDocNumber.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.personalDocNumber.id
+            [idInput]=questionaryFormFields.personalDocNumber.id
+            [nameInput]=questionaryFormFields.personalDocNumber.nameInput
+            [mask]=questionaryFormFields.personalDocNumber.mask
+            (errorStatusChange)="questionaryFormFields.personalDocNumber.showErrorStatus = $event">
+    </app-row-input-mask>
+    <app-row-input *ngIf="!personalDocNumberMaskStatus"
+            id='block-{{questionaryFormFields.personalDocNumber.id}}'
+            [showErrorStatus]=questionaryFormFields.personalDocNumber.showErrorStatus
+            [errorText]=questionaryFormFields.personalDocNumber.errorText
+            [type]=questionaryFormFields.personalDocNumber.type
+            [labelText]=questionaryFormFields.personalDocNumber.labelText
+            [placeholder]=questionaryFormFields.personalDocNumber.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.personalDocNumber.id
+            [idInput]=questionaryFormFields.personalDocNumber.id
+            [nameInput]=questionaryFormFields.personalDocNumber.nameInput
+            (errorStatusChange)="questionaryFormFields.personalDocNumber.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-datapicker id='block-{{questionaryFormFields.docsIssueDate.id}}'
+                        [showErrorStatus]=questionaryFormFields.docsIssueDate.showErrorStatus
+                        [errorText]=questionaryFormFields.docsIssueDate.errorText
+                        [labelText]=questionaryFormFields.docsIssueDate.labelText
+                        [placeholder]=questionaryFormFields.docsIssueDate.placeholder
+                        [group]="group"
+                        [date]=questionaryFormFields.docsIssueDate.date
+                        [formControlName]=questionaryFormFields.docsIssueDate.id
+                        [idInput]=questionaryFormFields.docsIssueDate.id
+                        [nameInput]=questionaryFormFields.docsIssueDate.nameInput
+                        (errorStatusChange)="questionaryFormFields.docsIssueDate.showErrorStatus = $event"
+                        (changeCurrentValue)="changeCurrentValueDocsIssueDate($event)">
+    </app-row-datapicker>
+
+    <app-row-input-mask *ngIf="personalDocNumberMaskStatus"
+            id='block-{{questionaryFormFields.unitCode.id}}'
+            [showErrorStatus]=questionaryFormFields.unitCode.showErrorStatus
+            [errorText]=questionaryFormFields.unitCode.errorText
+            [type]=questionaryFormFields.unitCode.type
+            [labelText]=questionaryFormFields.unitCode.labelText
+            [placeholder]=questionaryFormFields.unitCode.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.unitCode.id
+            [idInput]=questionaryFormFields.unitCode.id
+            [nameInput]=questionaryFormFields.unitCode.nameInput
+            [mask]=questionaryFormFields.unitCode.mask
+            (errorStatusChange)="questionaryFormFields.unitCode.showErrorStatus = $event">
+    </app-row-input-mask>
+
+    <app-row-input
+            id='block-{{questionaryFormFields.passportIssuedBy.id}}'
+            [showErrorStatus]=questionaryFormFields.passportIssuedBy.showErrorStatus
+            [errorText]=questionaryFormFields.passportIssuedBy.errorText
+            [type]=questionaryFormFields.passportIssuedBy.type
+            [labelText]=questionaryFormFields.passportIssuedBy.labelText
+            [placeholder]=questionaryFormFields.passportIssuedBy.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.passportIssuedBy.id
+            [idInput]=questionaryFormFields.passportIssuedBy.id
+            [nameInput]=questionaryFormFields.passportIssuedBy.nameInput
+            (errorStatusChange)="questionaryFormFields.passportIssuedBy.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input
+            id='block-{{questionaryFormFields.burnPlace.id}}'
+            [showErrorStatus]=questionaryFormFields.burnPlace.showErrorStatus
+            [errorText]=questionaryFormFields.burnPlace.errorText
+            [type]=questionaryFormFields.burnPlace.type
+            [labelText]=questionaryFormFields.burnPlace.labelText
+            [placeholder]=questionaryFormFields.burnPlace.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.burnPlace.id
+            [idInput]=questionaryFormFields.burnPlace.id
+            [nameInput]=questionaryFormFields.burnPlace.nameInput
+            (errorStatusChange)="questionaryFormFields.burnPlace.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input *ngIf="prevPassportStatus"
+                   id='block-{{questionaryFormFields.personalDocNumberPrev.id}}'
+                   [showErrorStatus]=questionaryFormFields.personalDocNumberPrev.showErrorStatus
+                   [errorText]=questionaryFormFields.personalDocNumberPrev.errorText
+                   [type]=questionaryFormFields.personalDocNumberPrev.type
+                   [labelText]=questionaryFormFields.personalDocNumberPrev.labelText
+                   [placeholder]=questionaryFormFields.personalDocNumberPrev.placeholder
+                   [group]="group"
+                   [formControlName]=questionaryFormFields.personalDocNumberPrev.id
+                   [idInput]=questionaryFormFields.personalDocNumberPrev.id
+                   [nameInput]=questionaryFormFields.personalDocNumberPrev.nameInput
+                   [descText]=questionaryFormFields.personalDocNumberPrev.descText
+                   (errorStatusChange)="questionaryFormFields.personalDocNumberPrev.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-datapicker *ngIf="prevPassportStatus"
+                        id='block-{{questionaryFormFields.docsIssueDatePrev.id}}'
+                        [showErrorStatus]=questionaryFormFields.docsIssueDatePrev.showErrorStatus
+                        [errorText]=questionaryFormFields.docsIssueDatePrev.errorText
+                        [labelText]=questionaryFormFields.docsIssueDatePrev.labelText
+                        [placeholder]=questionaryFormFields.docsIssueDatePrev.placeholder
+                        [group]="group"
+                        [date]=questionaryFormFields.docsIssueDatePrev.date
+                        [formControlName]=questionaryFormFields.docsIssueDatePrev.id
+                        [idInput]=questionaryFormFields.docsIssueDatePrev.id
+                        [nameInput]=questionaryFormFields.docsIssueDatePrev.nameInput
+                        (errorStatusChange)="questionaryFormFields.docsIssueDatePrev.showErrorStatus = $event"
+                        (changeCurrentValue)="changeCurrentValueDocsIssueDatePrev($event)">
+    </app-row-datapicker>
+
+    <app-row-input-mask *ngIf="prevPassportStatus"
+                        id='block-{{questionaryFormFields.unitCodePrev.id}}'
+                        [showErrorStatus]=questionaryFormFields.unitCodePrev.showErrorStatus
+                        [errorText]=questionaryFormFields.unitCodePrev.errorText
+                        [type]=questionaryFormFields.unitCodePrev.type
+                        [labelText]=questionaryFormFields.unitCodePrev.labelText
+                        [placeholder]=questionaryFormFields.unitCodePrev.placeholder
+                        [group]="group"
+                        [formControlName]=questionaryFormFields.unitCodePrev.id
+                        [idInput]=questionaryFormFields.unitCodePrev.id
+                        [nameInput]=questionaryFormFields.unitCodePrev.nameInput
+                        [mask]=questionaryFormFields.unitCodePrev.mask
+                        (errorStatusChange)="questionaryFormFields.unitCodePrev.showErrorStatus = $event">
+    </app-row-input-mask>
+
+    <app-row-input-radio
+            [labelText]=questionaryFormFields.registration.labelText
+            [group]="group"
+            [currentValue]=questionaryFormFields.registration.currentValue
+            [nameInput]=questionaryFormFields.registration.nameInput
+            [inputs]="questionaryFormFields.registration.inputs"
+            (changeCurrentValue)="changeCurrentValueRegistration($event)">
+    </app-row-input-radio>
+
+    <app-row-input *ngIf="!registrationNoStatus"
+            id='block-{{questionaryFormFields.registrationAddress.id}}'
+            [showErrorStatus]=questionaryFormFields.registrationAddress.showErrorStatus
+            [errorText]=questionaryFormFields.registrationAddress.errorText
+            [type]=questionaryFormFields.registrationAddress.type
+            [labelText]=questionaryFormFields.registrationAddress.labelText
+            [placeholder]=questionaryFormFields.registrationAddress.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.registrationAddress.id
+            [idInput]=questionaryFormFields.registrationAddress.id
+            [nameInput]=questionaryFormFields.registrationAddress.nameInput
+            (errorStatusChange)="questionaryFormFields.registrationAddress.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-radio *ngIf="!registrationNoStatus"
+            [labelText]=questionaryFormFields.registrationEquals.labelText
+            [group]="group"
+            [currentValue]=questionaryFormFields.registrationEquals.currentValue
+            [nameInput]=questionaryFormFields.registrationEquals.nameInput
+            [inputs]="questionaryFormFields.registrationEquals.inputs"
+            (changeCurrentValue)="changeCurrentValueRegistrationEquals($event)">
+    </app-row-input-radio>
+
+    <app-row-input *ngIf="currentAddressStatus"
+                   id='block-{{questionaryFormFields.currentAddress.id}}'
+                   [showErrorStatus]=questionaryFormFields.currentAddress.showErrorStatus
+                   [errorText]=questionaryFormFields.currentAddress.errorText
+                   [type]=questionaryFormFields.currentAddress.type
+                   [labelText]=questionaryFormFields.currentAddress.labelText
+                   [placeholder]=questionaryFormFields.currentAddress.placeholder
+                   [group]="group"
+                   [formControlName]=questionaryFormFields.currentAddress.id
+                   [idInput]=questionaryFormFields.currentAddress.id
+                   [nameInput]=questionaryFormFields.currentAddress.nameInput
+                   (errorStatusChange)="questionaryFormFields.currentAddress.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-mask
+            id='block-{{questionaryFormFields.insurance.id}}'
+            [showErrorStatus]=questionaryFormFields.insurance.showErrorStatus
+            [errorText]=questionaryFormFields.insurance.errorText
+            [type]=questionaryFormFields.insurance.type
+            [labelText]=questionaryFormFields.insurance.labelText
+            [placeholder]=questionaryFormFields.insurance.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.insurance.id
+            [idInput]=questionaryFormFields.insurance.id
+            [nameInput]=questionaryFormFields.insurance.nameInput
+            [mask]=questionaryFormFields.insurance.mask
+            (errorStatusChange)="questionaryFormFields.unitCodePrev.showErrorStatus = $event">
+    </app-row-input-mask>
+
+    <app-row-input-autocomplete
+            id='block-{{questionaryFormFields.regions.id}}'
+            [showErrorStatus]=questionaryFormFields.regions.showErrorStatus
+            [errorText]=questionaryFormFields.regions.errorText
+            [list]="regions"
+            [labelText]=questionaryFormFields.regions.labelText
+            [placeholder]=questionaryFormFields.regions.placeholder
+            [group]="group"
+            [idInput]=questionaryFormFields.regions.id
+            [formControlName]=questionaryFormFields.regions.id
+            (errorStatusChange)="questionaryFormFields.regions.showErrorStatus = $event">
+    </app-row-input-autocomplete>
+
+    <app-checkbox-with-link
+            id='block-{{questionaryFormFields.agree.id}}'
+            [nameInput]=questionaryFormFields.agree.nameInput
+            [idInput]=questionaryFormFields.agree.id
+            [group]="group"
+            [formControlName]=questionaryFormFields.agree.id
+            [label]=questionaryFormFields.agree.label
+            [value]=questionaryFormFields.agree.value
+            [linkText]=questionaryFormFields.agree.linkText
+            (fn) = "showPersonalDataPopup($event)"
+            (changeCurrentValue)="changeCurrentValueAgree($event)"
+            [display] = display
+            [statusFalseAgree]=statusFalseAgree
+            [disabled]=questionaryFormFields.agree.disabled
+    >
+    </app-checkbox-with-link>
+
+    <div *ngIf="!showSms" class="b-questionary__checkbox-faq">
+        Чтобы продолжить оформление примите условия
+        пользовательского соглашения
+    </div>
+
+    <app-questionary-sms-code *ngIf="showSms" [group]="group" [(showNextStep)]="showNextStep" (changeNextState)="changeNextState($event)"></app-questionary-sms-code>
+
+</section>
+
+<app-personal-data-agree-popup [display]="display" (fn)="showPersonalDataPopup($event)" ></app-personal-data-agree-popup>

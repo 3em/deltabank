@@ -1,0 +1,56 @@
+<div class="b-title">
+  <h1>
+    Расскажите о недвижимости,
+    которую вы покупаете
+  </h1>
+</div>
+
+<form [formGroup]="propertyform" (ngSubmit)="onSubmit()" class="b-property__primary">
+
+  <div class="b-property__primary-wrapper">
+
+    <app-row-dropdown id='block-{{propertyFormFields.developer.id}}'
+                      [showErrorStatus]=propertyFormFields.developer.showErrorStatus
+                      [errorText]=propertyFormFields.developer.errorText
+                      [labelText]=propertyFormFields.developer.labelText
+                      [placeholder]=propertyFormFields.developer.placeholder
+                      [group]="propertyform"
+                      [formControlName]=propertyFormFields.developer.id
+                      [idInput]=propertyFormFields.developer.id
+                      [nameInput]=propertyFormFields.developer.nameInput
+                      [values]=propertyFormFields.developer.values
+                      [selectedItem]=propertyFormFields.developer.selectedItem
+                      [panelClass]=propertyFormFields.developer.panelClass
+                      (errorStatusChange)="propertyFormFields.developer.showErrorStatus = $event"
+                      (changeCurrentValue)="changeCurrentValueDeveloper($event)">
+    </app-row-dropdown>
+
+    <app-row-dropdown id='block-{{propertyFormFields.object.id}}'
+                      [showErrorStatus]=propertyFormFields.object.showErrorStatus
+                      [errorText]=propertyFormFields.object.errorText
+                      [labelText]=propertyFormFields.object.labelText
+                      [placeholder]=propertyFormFields.object.placeholder
+                      [group]="propertyform"
+                      [formControlName]=propertyFormFields.object.id
+                      [idInput]=propertyFormFields.object.id
+                      [nameInput]=propertyFormFields.object.nameInput
+                      [values]=propertyFormFields.object.values
+                      [selectedItem]=propertyFormFields.object.selectedItem
+                      [panelClass]=propertyFormFields.object.panelClass
+                      (errorStatusChange)="propertyFormFields.object.showErrorStatus = $event"
+                      (changeCurrentValue)="changeCurrentValueObject($event)">
+    </app-row-dropdown>
+
+    <div class="b-property__primary_faq">
+      Если застройщика нет в базе, свяжитесь
+      с консультанотом по телефону +7 (900) 666-94-04 или <a href="#" (click)="showCallPopupLink($event)">оставьте заявку</a> и мы вам перезвоним
+    </div>
+
+  </div>
+
+  <div class="b-property__primary-button">
+    <button pButton type="submit"  label="Далее"></button>
+  </div>
+</form>
+
+<app-call-popup [display]="display" (fn)="showCallPopup()"></app-call-popup>

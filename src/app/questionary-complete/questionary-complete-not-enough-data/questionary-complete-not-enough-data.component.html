@@ -1,0 +1,30 @@
+<div class="b-wrapper">
+
+  <div class="b-title">
+    <h1>Ожидайте звонка</h1>
+    <p>
+      Недостаточно сведений для выяснения предварительного решения. Ожидайте, в ближайшее время с Вами  свяжется менеджер для уточнения данных.
+    </p>
+  </div>
+
+  <form [formGroup]="questionaryDopCreditForm" (ngSubmit)="onSubmit()">
+
+    <app-questionary-complete-checkbox
+            id='block-{{questionaryDopCreditFormFields.dopCredit.id}}'
+            [nameInput]=questionaryDopCreditFormFields.dopCredit.nameInput
+            [idInput]=questionaryDopCreditFormFields.dopCredit.id
+            [group]=questionaryDopCreditForm
+            [formControlName]=questionaryDopCreditFormFields.dopCredit.id
+            [label]=questionaryDopCreditFormFields.dopCredit.label
+            [labelSum]=questionaryDopCreditFormFields.dopCredit.labelSum
+            [value]=questionaryDopCreditFormFields.dopCredit.value
+            (changeCurrentValue)="changeCurrentValueDropCredit($event)">
+    </app-questionary-complete-checkbox>
+
+    <div class="b-result-step__submit">
+      <button pButton type="submit"  label="Оформить онлайн"></button>
+    </div>
+
+  </form>
+
+</div>

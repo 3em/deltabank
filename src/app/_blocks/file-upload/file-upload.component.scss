@@ -1,0 +1,21 @@
+@import "../../../assets/scss/variables";
+
+.b-upload__box{
+  position: relative;
+
+  .b-upload__title{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .b-upload__box{
+    .b-upload__title{
+      font-size: $regularFontSize_phone;
+      line-height: $regularFontLineHeight_phone;
+    }
+  }
+}

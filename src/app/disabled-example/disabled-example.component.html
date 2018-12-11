@@ -1,0 +1,154 @@
+<div id="wrapper" class="b-wrapper b-wrapper_top">
+
+  <form id="deal-form" [formGroup]="exampleForm" (ngSubmit)="onSubmit()" class="b-deal">
+
+    <div class="b-deal__main">
+
+      <app-row-input-price
+              id='block-{{exampleFormFields.creditSum.id}}'
+              [showErrorStatus]=exampleFormFields.creditSum.showErrorStatus
+              [errorText]=exampleFormFields.creditSum.errorText
+              [type]=exampleFormFields.creditSum.type
+              [labelText]=exampleFormFields.creditSum.labelText
+              [placeholder]=exampleFormFields.creditSum.placeholder
+              [group]="exampleForm"
+              [formControlName]=exampleFormFields.creditSum.id
+              [idInput]=exampleFormFields.creditSum.id
+              [nameInput]=exampleFormFields.creditSum.nameInput
+              [someVal]=exampleFormFields.creditSum.someVal
+              [disabledStatus]=exampleFormFields.creditSum.disabledStatus
+              (errorStatusChange)="exampleFormFields.creditSum.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-input-price
+              id='block-{{exampleFormFields.prepaid.id}}'
+              [showErrorStatus]=exampleFormFields.prepaid.showErrorStatus
+              [errorText]=exampleFormFields.prepaid.errorText
+              [type]=exampleFormFields.prepaid.type
+              [labelText]=exampleFormFields.prepaid.labelText
+              [placeholder]=exampleFormFields.prepaid.placeholder
+              [group]="exampleForm"
+              [formControlName]=exampleFormFields.prepaid.id
+              [idInput]=exampleFormFields.prepaid.id
+              [nameInput]=exampleFormFields.prepaid.nameInput
+              [someVal]=exampleFormFields.prepaid.someVal
+              [disabledStatus]=exampleFormFields.prepaid.disabledStatus
+              (errorStatusChange)="exampleFormFields.prepaid.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-dropdown
+              id='block-{{exampleFormFields.feature.id}}'
+              [showErrorStatus]=exampleFormFields.feature.showErrorStatus
+              [errorText]=exampleFormFields.feature.errorText
+              [labelText]=exampleFormFields.feature.labelText
+              [placeholder]=exampleFormFields.feature.placeholder
+              [group]="exampleForm"
+              [formControlName]=exampleFormFields.feature.id
+              [idInput]=exampleFormFields.feature.id
+              [nameInput]=exampleFormFields.feature.nameInput
+              [values]=exampleFormFields.feature.values
+              [selectedItem]=exampleFormFields.feature.selectedItem
+              [panelClass]=exampleFormFields.feature.panelClass
+              [disabledStatus]=exampleFormFields.feature.disabledStatus
+              (errorStatusChange)="exampleFormFields.feature.showErrorStatus = $event"
+              (changeCurrentValue)="changeCurrentValueFeature($event)">
+      </app-row-dropdown>
+
+      <app-row-input-price *ngIf="showSumTangibleCapital"
+                           id='block-{{exampleFormFields.motherCapital.id}}'
+                           [showErrorStatus]=exampleFormFields.motherCapital.showErrorStatus
+                           [errorText]=exampleFormFields.motherCapital.errorText
+                           [type]=exampleFormFields.motherCapital.type
+                           [labelText]=exampleFormFields.motherCapital.labelText
+                           [placeholder]=exampleFormFields.motherCapital.placeholder
+                           [group]="exampleForm"
+                           [formControlName]=exampleFormFields.motherCapital.id
+                           [idInput]=exampleFormFields.motherCapital.id
+                           [nameInput]=exampleFormFields.motherCapital.nameInput
+                           [someVal]=exampleFormFields.motherCapital.someVal
+                           [disabledStatus]=exampleFormFields.motherCapital.disabledStatus
+                           (errorStatusChange)="exampleFormFields.motherCapital.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-dropdown
+              id='block-{{exampleFormFields.paymentForm.id}}'
+              [showErrorStatus]=exampleFormFields.paymentForm.showErrorStatus
+              [errorText]=exampleFormFields.paymentForm.errorText
+              [labelText]=exampleFormFields.paymentForm.labelText
+              [placeholder]=exampleFormFields.paymentForm.placeholder
+              [group]="exampleForm"
+              [formControlName]=exampleFormFields.paymentForm.id
+              [idInput]=exampleFormFields.paymentForm.id
+              [nameInput]=exampleFormFields.paymentForm.nameInput
+              [values]=exampleFormFields.paymentForm.values
+              [selectedItem]=exampleFormFields.paymentForm.selectedItem
+              [panelClass]=exampleFormFields.paymentForm.panelClass
+              [disabledStatus]=exampleFormFields.paymentForm.disabledStatus
+              (errorStatusChange)="exampleFormFields.paymentForm.showErrorStatus = $event"
+              (changeCurrentValue)="changeCurrentValuePaymentForm($event)">
+      </app-row-dropdown>
+
+      <app-row-dropdown
+              id='block-{{exampleFormFields.lawType.id}}'
+              [showErrorStatus]=exampleFormFields.lawType.showErrorStatus
+              [errorText]=exampleFormFields.lawType.errorText
+              [labelText]=exampleFormFields.lawType.labelText
+              [placeholder]=exampleFormFields.lawType.placeholder
+              [group]="exampleForm"
+              [formControlName]=exampleFormFields.lawType.id
+              [idInput]=exampleFormFields.lawType.id
+              [nameInput]=exampleFormFields.lawType.nameInput
+              [values]=exampleFormFields.lawType.values
+              [selectedItem]=exampleFormFields.lawType.selectedItem
+              [panelClass]=exampleFormFields.lawType.panelClass
+              [disabledStatus]=exampleFormFields.lawType.disabledStatus
+              (errorStatusChange)="exampleFormFields.lawType.showErrorStatus = $event"
+              (changeCurrentValue)="changeCurrentValueLawType($event)">
+      </app-row-dropdown>
+
+      <app-row-input-price
+              id='block-{{exampleFormFields.propertyCost.id}}'
+              [showErrorStatus]=exampleFormFields.propertyCost.showErrorStatus
+              [errorText]=exampleFormFields.propertyCost.errorText
+              [type]=exampleFormFields.propertyCost.type
+              [labelText]=exampleFormFields.propertyCost.labelText
+              [placeholder]=exampleFormFields.propertyCost.placeholder
+              [group]="exampleForm"
+              [formControlName]=exampleFormFields.propertyCost.id
+              [idInput]=exampleFormFields.propertyCost.id
+              [nameInput]=exampleFormFields.propertyCost.nameInput
+              [someVal]=exampleFormFields.propertyCost.someVal
+              [disabledStatus]=exampleFormFields.propertyCost.disabledStatus
+              (errorStatusChange)="exampleFormFields.propertyCost.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-input-price
+              id='block-{{exampleFormFields.initialFee.id}}'
+              [showErrorStatus]=exampleFormFields.initialFee.showErrorStatus
+              [errorText]=exampleFormFields.initialFee.errorText
+              [type]=exampleFormFields.initialFee.type
+              [labelText]=exampleFormFields.initialFee.labelText
+              [placeholder]=exampleFormFields.initialFee.placeholder
+              [group]="exampleForm"
+              [formControlName]=exampleFormFields.initialFee.id
+              [idInput]=exampleFormFields.initialFee.id
+              [nameInput]=exampleFormFields.initialFee.nameInput
+              [someVal]=exampleFormFields.initialFee.someVal
+              [disabledStatus]=exampleFormFields.initialFee.disabledStatus
+              (errorStatusChange)="exampleFormFields.initialFee.showErrorStatus = $event">
+      </app-row-input-price>
+
+      <app-row-input-radio
+              [labelText]=exampleFormFields.changeName.labelText
+              [group]="exampleForm"
+              [currentValue]=exampleFormFields.changeName.currentValue
+              [nameInput]=exampleFormFields.changeName.nameInput
+              [inputs]="exampleFormFields.changeName.inputs"
+              (changeCurrentValue)="changeCurrentValueChangeName($event)">
+      </app-row-input-radio>
+
+    </div>
+    
+  </form>
+
+</div>

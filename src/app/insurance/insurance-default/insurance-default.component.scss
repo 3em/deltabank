@@ -1,0 +1,35 @@
+.b-insurance-wrapper{
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 50px 50px rgba(0,0,0, .1);
+  margin-top: 18px;
+}
+
+.b-insurance__section{
+  position: relative;
+  padding: 50px 60px;
+  border-top: 1px solid rgba(0,0,0, .2);
+
+  &:first-child{
+    border-top: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .b-insurance__section{
+    padding: 35px 5% 40px;
+
+    .b-button{
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .b-wrapper{
+    &.b-wrapper_top{
+      padding-top: 0;
+    }
+  }
+
+}

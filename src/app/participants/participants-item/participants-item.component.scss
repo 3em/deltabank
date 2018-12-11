@@ -1,0 +1,232 @@
+@import "../../../assets/scss/variables";
+
+.b-participants{
+  position: relative;
+  background: #fff;
+  padding: 20px 55px 75px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 50px 50px rgba(0,0,0, .1);
+}
+
+.b-participants__agreement-box{
+  position: relative;
+  padding-top: 100px;
+}
+
+.b-participants__agreement-upload{
+  position: relative;
+  margin: 50px 0 0 220px;
+}
+
+.b-participants__upload-list{
+  position: relative;
+  counter-reset: list;
+
+  .b-participants__upload-list_item{
+    position: relative;
+    padding-left: 67px;
+    font-size: $biggerFontSize;
+    line-height: $biggerFontLineHeight;
+    margin-bottom: 35px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    &:before{
+      counter-increment: list;
+      content: counter(list);
+      position: absolute;
+      left: 0;
+      top: -7px;
+      width: 49px;
+      height: 49px;
+      border: 1px solid rgba(0,0,0, .1);
+      border-radius: 50%;
+      line-height: 49px;
+      text-align: center;
+    }
+
+    .b-link-icon{
+      margin-top: 10px;
+      font-size: $biggerFontSize;
+      color: $linkColor;
+    }
+  }
+}
+
+.b-participants__toogle{
+  position: relative;
+  background: #fff;
+  padding: 23px 110px 23px 275px;
+  border-radius: 6px;
+  box-shadow: 0 50px 50px rgba(0,0,0, .1);
+  text-decoration: none;
+  display: block;
+  border: none;
+  margin-bottom: 10px;
+  min-height: 83px;
+
+  &.open{
+    &:before{
+      transform: translate(0, -50%) rotate(180deg);
+    }
+  }
+
+  &:hover{
+    &:before{
+      background: $linkColor url("../../../assets/i/i-dropdown_hover.svg") no-repeat center 53%;
+      background-size: 15px auto;
+    }
+  }
+
+  &:before{
+    content: "";
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(227, 51, 78, 0.1) url('../../../assets/i/i-dropdown.svg') no-repeat center 53%;
+    background-size: 15px auto;
+    transform: translate(0, -50%);
+    transition: background-color .25s, transform .25s;
+  }
+
+  .b-participants__toogle_title{
+    font-size: $biggerFontSize;
+    line-height: $biggerFontLineHeight;
+  }
+
+  .b-participants__status{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 57px;
+
+    &.disabled{
+      display: none;
+    }
+
+    &.proved{
+      &:before{
+        background: url("../../../assets/i/i-participants-proved.svg") no-repeat center;
+        background-size: 20px auto;
+      }
+    }
+
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 44px;
+      height: 44px;
+      background: $linkColor url("../../../assets/i/i-time.svg") no-repeat center;
+      background-size: 11px auto;
+      border-radius: 50%;
+    }
+  }
+}
+
+.b-participants__del{
+  position: relative;
+  margin: 40px 0 0 220px;
+
+  .b-link-icon{
+    color: $linkColor;
+  }
+}
+
+@media only screen and (max-width: 1064px){
+
+  .b-participants__agreement-upload{
+    margin-left: 0;
+  }
+
+  .b-participants__del{
+    margin-left: 25%;
+  }
+
+}
+
+@media only screen and (max-width: 767px){
+
+  .b-participants{
+    margin-left: -2.5%;
+    margin-right: -2.5%;
+    padding: 0 2.5% 30px;
+  }
+
+  .b-participants__agreement-box{
+    padding-top: 60px;
+  }
+
+  .b-participants__agreement-upload{
+    margin-top: 25px;
+  }
+
+  .b-participants__upload-list{
+    .b-participants__upload-list_item{
+      font-size: 15px;
+      line-height: 25px;
+      padding-left: 40px;
+      margin-bottom: 25px;
+
+      .b-link-icon{
+        font-size: 15px;
+        margin-top: 0;
+      }
+
+      &:before{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        top: -5px;
+      }
+    }
+  }
+
+  .b-participants__toogle{
+    margin-left: -2.5%;
+    margin-right: -2.5%;
+    padding: 10px 2.5% 13px;
+    min-height: 0;
+
+    &:before{
+      right: 2.5%;
+    }
+
+    .b-participants__toogle_title{
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .b-participants__status{
+      position: relative;
+      left: 0;
+      top: 0;
+      transform: none;
+      font-size: 10px;
+      line-height: 21px;
+      display: block;
+      padding-left: 30px;
+      margin-top: 3px;
+
+      &:before{
+        transform: translate(0, -50%) scale(.5);
+        transform-origin: left;
+      }
+    }
+  }
+
+  .b-participants__del{
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+}

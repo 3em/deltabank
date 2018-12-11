@@ -1,0 +1,36 @@
+<section id="costs" class="b-questionary" [formGroup]="group">
+
+  <div class="b-title">
+    <h1>Расходы</h1>
+  </div>
+
+  <app-row-input-price
+          id='block-{{questionaryFormFields.creditsPayment.id}}'
+          [showErrorStatus]=questionaryFormFields.creditsPayment.showErrorStatus
+          [errorText]=questionaryFormFields.creditsPayment.errorText
+          [type]=questionaryFormFields.creditsPayment.type
+          [labelText]=questionaryFormFields.creditsPayment.labelText
+          [placeholder]=questionaryFormFields.creditsPayment.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.creditsPayment.id
+          [idInput]=questionaryFormFields.creditsPayment.id
+          [nameInput]=questionaryFormFields.creditsPayment.nameInput
+          (errorStatusChange)="questionaryFormFields.creditsPayment.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-input-price
+          id='block-{{questionaryFormFields.alimony.id}}'
+          [showErrorStatus]=questionaryFormFields.alimony.showErrorStatus
+          [errorText]=questionaryFormFields.alimony.errorText
+          [type]=questionaryFormFields.alimony.type
+          [labelText]=questionaryFormFields.alimony.labelText
+          [placeholder]=questionaryFormFields.alimony.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.alimony.id
+          [idInput]=questionaryFormFields.alimony.id
+          [nameInput]=questionaryFormFields.alimony.nameInput
+          (errorStatusChange)="questionaryFormFields.alimony.showErrorStatus = $event">
+  </app-row-input-price>
+
+
+</section>

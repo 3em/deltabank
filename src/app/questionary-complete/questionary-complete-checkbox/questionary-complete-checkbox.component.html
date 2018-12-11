@@ -1,0 +1,28 @@
+<div class="b-checkbox__box" [formGroup]="group"  (click)="clickInput($event)">
+
+  <div class="ui-chkbox ui-widget">
+    <div class="ui-helper-hidden-accessible">
+      <input  type="checkbox" [(ngModel)]="valueMod" [value]="value" [formControlName]="formControlName" id="{{idInput}}" name="{{nameInput}}">
+    </div>
+    <label for="{{idInput}}" class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" [class.ui-state-active]="value">
+      <span class="ui-chkbox-icon ui-clickable"></span>
+    </label>
+  </div>
+  <label class="ui-chkbox-label" for="{{idInput}}">
+    {{label}}
+    <span class="no-wrap red">
+      {{formating(labelSum)}}
+      <span class="b-rub">a</span>
+    </span>
+
+    <div class="b-alert-icon__box">
+      <span data-letters="?" class="b-alert-icon" (mouseenter)="alertShow($event, alert)" (mouseleave)="alertHide($event, alert)"></span>
+      <p-overlayPanel #alert>
+        <p>
+          Какой то текст
+        </p>
+      </p-overlayPanel>
+    </div>
+
+  </label>
+</div>

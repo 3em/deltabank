@@ -1,0 +1,17 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="false" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div class="b-result-step">
+
+    <app-documents-complete-wait *ngIf="statusWait"></app-documents-complete-wait>
+
+    <app-documents-complete-success *ngIf="!statusWait && success" [creditSum]=creditSum></app-documents-complete-success>
+
+    <div class="b-wrapper">
+        <div class="b-button__box">
+            <a href="#" class="b-button" routerLink="/insurance" >Продолжить оформление</a>
+        </div>
+    </div>
+
+</div>

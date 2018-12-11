@@ -1,0 +1,111 @@
+<div class="b-calculation" [formGroup]="group">
+  <div class="b-title">
+    <p>
+      Вы можете произвести несколько расчетов кредита и сравнить их в таблице ниже.<br>
+      Расчеты сохраняются автоматически
+    </p>
+  </div>
+
+  <app-row-input-radio
+          [labelText]=questionaryFormFields.calculateBy.labelText
+          [group]="group"
+          [currentValue]=questionaryFormFields.calculateBy.currentValue
+          [nameInput]=questionaryFormFields.calculateBy.nameInput
+          [inputs]="questionaryFormFields.calculateBy.inputs"
+          (changeCurrentValue)="changeCurrentValueCalculateBy($event)">
+  </app-row-input-radio>
+
+  <app-row-input-price *ngIf="questionaryFormFields.calculateBy.currentValue === 'realty'"
+          id='block-{{questionaryFormFields.realtyPrice.id}}'
+          [showErrorStatus]=questionaryFormFields.realtyPrice.showErrorStatus
+          [errorText]=questionaryFormFields.realtyPrice.errorText
+          [type]=questionaryFormFields.realtyPrice.type
+          [labelText]=questionaryFormFields.realtyPrice.labelText
+          [placeholder]=questionaryFormFields.realtyPrice.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.realtyPrice.id
+          [idInput]=questionaryFormFields.realtyPrice.id
+          [nameInput]=questionaryFormFields.realtyPrice.nameInput
+          (errorStatusChange)="questionaryFormFields.realtyPrice.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-input-price *ngIf="questionaryFormFields.calculateBy.currentValue === 'credit'"
+          id='block-{{questionaryFormFields.creditSum.id}}'
+          [showErrorStatus]=questionaryFormFields.creditSum.showErrorStatus
+          [errorText]=questionaryFormFields.creditSum.errorText
+          [type]=questionaryFormFields.creditSum.type
+          [labelText]=questionaryFormFields.creditSum.labelText
+          [placeholder]=questionaryFormFields.creditSum.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.creditSum.id
+          [idInput]=questionaryFormFields.creditSum.id
+          [nameInput]=questionaryFormFields.creditSum.nameInput
+          (errorStatusChange)="questionaryFormFields.creditSum.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-input-price *ngIf="questionaryFormFields.calculateBy.currentValue === 'paymets'"
+          id='block-{{questionaryFormFields.paymetsSum.id}}'
+          [showErrorStatus]=questionaryFormFields.paymetsSum.showErrorStatus
+          [errorText]=questionaryFormFields.paymetsSum.errorText
+          [type]=questionaryFormFields.paymetsSum.type
+          [labelText]=questionaryFormFields.paymetsSum.labelText
+          [placeholder]=questionaryFormFields.paymetsSum.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.paymetsSum.id
+          [idInput]=questionaryFormFields.paymetsSum.id
+          [nameInput]=questionaryFormFields.paymetsSum.nameInput
+          (errorStatusChange)="questionaryFormFields.paymetsSum.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-input-price *ngIf="questionaryFormFields.calculateBy.currentValue === 'salary'"
+          id='block-{{questionaryFormFields.salarySum.id}}'
+          [showErrorStatus]=questionaryFormFields.salarySum.showErrorStatus
+          [errorText]=questionaryFormFields.salarySum.errorText
+          [type]=questionaryFormFields.salarySum.type
+          [labelText]=questionaryFormFields.salarySum.labelText
+          [placeholder]=questionaryFormFields.salarySum.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.salarySum.id
+          [idInput]=questionaryFormFields.salarySum.id
+          [nameInput]=questionaryFormFields.salarySum.nameInput
+          (errorStatusChange)="questionaryFormFields.salarySum.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-input-price
+          id='block-{{questionaryFormFields.initialFee.id}}'
+          [showErrorStatus]=questionaryFormFields.initialFee.showErrorStatus
+          [errorText]=questionaryFormFields.initialFee.errorText
+          [type]=questionaryFormFields.initialFee.type
+          [labelText]=questionaryFormFields.initialFee.labelText
+          [placeholder]=questionaryFormFields.initialFee.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.initialFee.id
+          [idInput]=questionaryFormFields.initialFee.id
+          [nameInput]=questionaryFormFields.initialFee.nameInput
+          [descText]=questionaryFormFields.initialFee.descText
+          (errorStatusChange)="questionaryFormFields.initialFee.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-input
+          id='block-{{questionaryFormFields.term.id}}'
+          [showErrorStatus]=questionaryFormFields.term.showErrorStatus
+          [errorText]=questionaryFormFields.term.errorText
+          [type]=questionaryFormFields.term.type
+          [labelText]=questionaryFormFields.term.labelText
+          [placeholder]=questionaryFormFields.term.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.term.id
+          [idInput]=questionaryFormFields.term.id
+          [nameInput]=questionaryFormFields.term.nameInput
+          [someVal]=questionaryFormFields.term.someVal
+          (errorStatusChange)="questionaryFormFields.term.showErrorStatus = $event"
+          (changeCurrentValue)="changeCurrentValueTerm($event)">
+  </app-row-input>
+
+  <div class="b-calculation__button">
+    <button class="b-button__light" pButton type="submit"  label="Рассчитать"></button>
+  </div>
+
+  <app-questionary-calculation-result *ngIf="showCalcBottom"></app-questionary-calculation-result>
+
+</div>

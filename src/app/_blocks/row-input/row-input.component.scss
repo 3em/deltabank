@@ -1,0 +1,171 @@
+@import "../../../assets/scss/variables";
+
+.b-form__row{
+  position: relative;
+  padding-top: 17px;
+
+  &.inline-datapicker{
+    padding-top: 0;
+
+    .b-form__input{
+      &:before{
+        display: none;
+      }
+    }
+  }
+
+  &.disabled{
+    .b-form__label{
+      opacity: .6;
+      cursor: default;
+    }
+    .b-form__input{
+      &:after{
+        content: "";
+        position: absolute;
+        right: 4px;
+        top: 21px;
+        width: 13px;
+        height: 19px;
+        background: url("../../../assets/i/i-input-disabled.svg") no-repeat;
+        background-size: 100% auto;
+        z-index: 3;
+      }
+      &:before{
+        background: rgba(0,0,0, .2) !important;
+      }
+      .ui-inputtext{
+        opacity: .6;
+      }
+    }
+  }
+
+  .b-form__input_desc{
+    float: left;
+    width: 100%;
+    font-size: 13px;
+    line-height: 17px;
+    opacity: .6;
+    margin-top: 11px;
+
+    &.visibility{
+      visibility: hidden;
+      margin-bottom: -22px;
+    }
+  }
+
+  &.b-form__row_error{
+    padding-bottom: 22px;
+
+    .b-form__input{
+      &:before{
+        background: $linkColor;
+      }
+    }
+  }
+
+  .b-form__label{
+    float: left;
+    vertical-align: top;
+    font-size: $regularFontSize;
+    line-height: 21px;
+    padding-top: 22px;
+    margin-bottom: 2px;
+    cursor: pointer;
+  }
+
+  .b-form__input{
+    float: left;
+    vertical-align: top;
+    position: relative;
+    padding-bottom: 1px;
+
+    &.focus{
+      &:before{
+        background: $linkColor !important;
+        width: 1000%;
+        transition: background .25s, width 2s;
+      }
+    }
+
+    &:before{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      height: 1px;
+      background: $borderColor;
+      transition: background .25s, width 1s;
+      backface-visibility: hidden;
+    }
+
+    &:hover{
+      &:before{
+        background: $regularColor;
+      }
+    }
+  }
+
+  .ui-inputtext{
+    font-family: $mainFont;
+    font-size: $biggerFontSize;
+    line-height: $regularFontLineHeight;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    background: none;
+    color: $regularColor;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none !important;
+    cursor: url('../../../assets/i/i-cursor-input.png'), auto;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .b-form__row{
+    padding-top: 13px;
+
+    &.disabled{
+      .b-form__input{
+        &:after{
+          top: 3px;
+        }
+      }
+    }
+
+    &.b-form__row_error{
+      padding-bottom: 17px;
+    }
+
+    .b-form__input_desc{
+      font-size: 10px;
+      line-height: 15px;
+      margin-top: 5px;
+    }
+
+    .b-form__label{
+      width: 100%;
+      margin-right: 0;
+      font-size: 10px;
+      padding-top: 0;
+      line-height: $regularFontLineHeight_phone;
+      margin-bottom: -2px;
+    }
+    .b-form__input{
+      width: 100%;
+    }
+    .ui-inputtext{
+      font-size: $regularFontSize_phone;
+      line-height: $regularFontLineHeight_phone;
+      padding-bottom: 10px;
+      padding-top: 0;
+    }
+  }
+}

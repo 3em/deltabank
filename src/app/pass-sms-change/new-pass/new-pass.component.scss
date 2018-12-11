@@ -1,0 +1,39 @@
+.b-form__row_button{
+  padding-left: 130px;
+  margin-top: 40px;
+}
+
+.b-title{
+  margin-bottom: 0;
+
+  h1{
+    margin-bottom: 11px;
+  }
+}
+
+.b-sms-prove{
+  display: inline-block;
+  vertical-align: top;
+  height: 62px;
+  line-height: 62px;
+  padding: 0 30px 0 60px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(0,0,0, .06) url("assets/i-right.svg") no-repeat 20px 50%;
+  background-size: 23px auto;
+  color: #000;
+  position: relative;
+  margin-bottom: 33px;
+  position: relative;
+}
+
+@media only screen and (max-width: 767px){
+  .b-form__row_button{
+    padding-left: 0;
+    margin-top: 36px;
+
+    button{
+      width: 100%;
+    }
+  }
+}

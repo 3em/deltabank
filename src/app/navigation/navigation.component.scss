@@ -1,0 +1,217 @@
+@import "../../assets/scss/variables";
+
+.b-main-nav__wrapper{
+  position: relative;
+  padding: 0;
+  z-index: 10;
+  min-height: 105px;
+  margin-top: -23px;
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0,0,0, .2);
+  }
+
+  &.short{
+    .b-main-nav__overlay{
+      right: 42px;
+    }
+
+    .b-main-nav__icon{
+      //margin-left: -2%;
+    }
+
+    .b-main-nav{
+      .b-main-nav__item{
+        min-width: 14.5%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.b-main-nav__overlay{
+  position: absolute;
+  top: 23px;
+  left: 20px;
+  width: auto;
+  padding-left: 70px;
+
+  &:before{
+    content: "–0,1%";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 13px;
+    padding: 0 6px 0 4px;
+    line-height: 21px;
+    height: 21px;
+    border-radius: 21px;
+    color: $linkColor;
+    background: rgba(227,51,78, .08);
+    margin-top: 1px;
+  }
+}
+
+.b-main-nav__icon{
+  position: absolute;
+  top: -23px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: $linkColor url("../../assets/i/i-time.svg") no-repeat center;
+  background-size: 11px auto;
+
+  &:before{
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 1px;
+    background: $linkColor;
+    width: 100000%;
+  }
+
+  &.finish{
+    background: $linkColor url("../../assets/i/i-nav-done.svg") no-repeat center;
+    background-size: 18px auto;
+  }
+}
+
+.b-main-nav{
+  white-space: nowrap;
+
+  .b-main-nav__item{
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 100px;
+    position: relative;
+
+    &.unactive{
+      .b-main-nav__link{
+        cursor: default;
+        color: rgba(0,0,0, .4);
+
+        &:hover{
+          color: rgba(0,0,0, .4);
+        }
+
+        .b-main-nav__link_percent-box{
+          display: none;
+        }
+      }
+
+      &.available{
+        .b-main-nav__link{
+          cursor: pointer;
+
+          &:hover{
+            color: $linkColor;
+          }
+        }
+      }
+    }
+
+    &.active{
+      .b-main-nav__link{
+        cursor: default;
+
+        &:hover{
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .b-main-nav__link{
+    display: block;
+    border-bottom: none;
+    text-decoration: none;
+    position: relative;
+    padding: 26px 0;
+    transition: color .25s;
+
+    &:hover{
+      color: $linkColor;
+    }
+
+    &.wait{
+      &:before{
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0) scale(.58);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: $linkColor url("../../assets/i/i-time.svg") no-repeat center;
+        background-size: 11px auto;
+        top: -23px;
+        backface-visibility: hidden;
+      }
+    }
+  }
+
+  .b-main-nav__link_percent-box{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-left: 6px;
+    font-size: 13px;
+    padding: 0 6px 0 4px;
+    line-height: 21px;
+    height: 21px;
+    border-radius: 21px;
+    color: $linkColor;
+    background: rgba(227,51,78, .08);
+    margin-top: 6px;
+    transition: color .25s, background .25s;
+
+    &.hover{
+      cursor: pointer;
+
+      &:hover{
+        background: $linkColor;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .b-main-nav__wrapper{
+    margin-top: 7px;
+  }
+  .b-main-nav__overlay{
+    left: 2.5%;
+    padding-left: 70px;
+
+    &:before{
+      font-size: 10px;
+      //margin-top: 1px;
+    }
+  }
+
+  .b-main-nav{
+    .b-main-nav__link{
+      padding: 20px 0;
+    }
+    .b-main-nav__item{
+      padding-right: 30px;
+    }
+    .b-main-nav__link_percent-box{
+      font-size: 10px;
+      margin-top: 3px;
+    }
+  }
+  .b-main-nav__icon{
+    transform: scale(.78);
+  }
+}

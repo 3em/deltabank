@@ -1,0 +1,98 @@
+@import "../../assets/scss/variables";
+
+.b-mortgage-decision{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: $linkColor;
+  z-index: 30;
+}
+
+.b-mortgage-decision__text{
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 6px;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 20px 40px rgba(0,0,0, .1);
+  font-size: 13px;
+  line-height: 22px;
+  padding: 13px 17px 14px;
+  width: 225px;
+  right: 0;
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 0;
+    height: 0;
+  }
+
+  &.right{
+    &:before{
+      border-right: 18px solid #fff;
+      border-left: 18px solid transparent;
+      border-bottom: 16px solid transparent;
+      right: 0;
+    }
+  }
+
+
+  &.left{
+    right: auto;
+    left: 100%;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 0;
+
+    &:before{
+      border-left: 18px solid #fff;
+      border-right: 18px solid transparent;
+      border-bottom: 16px solid transparent;
+      left: 0;
+    }
+  }
+
+  .b-mortgage-decision__text_amount{
+    font-size: 22px;
+    font-weight: 600;
+  }
+}
+
+.b-result-step{
+  padding-bottom: 100px;
+}
+
+@media only screen and (max-width: 767px){
+  .b-mortgage-decision__text{
+    width: 158px;
+    font-size: 10px;
+    line-height: 17px;
+    padding: 5px 10px 6px;
+    margin-bottom: 15px;
+
+    .b-mortgage-decision__text_amount{
+      font-size: 15px;
+    }
+
+    &.right{
+      &:before{
+        border-right: 10px solid #fff;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+    }
+
+
+    &.left{
+
+      &:before{
+        border-left: 10px solid #fff;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+    }
+  }
+}

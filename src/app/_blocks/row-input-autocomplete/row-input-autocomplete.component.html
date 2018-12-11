@@ -1,0 +1,26 @@
+<div #formItem class="u-clear-fix b-form__row" [formGroup]="group" [class.b-form__row_error]="showErrorStatus" >
+  <label class="b-form__label" [for]="idInput">{{labelText}}</label>
+  <div class="b-form__input" [class.focus]="statusFocus">
+    <p-autoComplete
+            [formControlName]="formControlName"
+            [dropdown]="true"
+            [minLength]="1"
+            (onFocus)="focus()"
+            [forceSelection]="true"
+            [placeholder]="placeholder"
+            (focusout)="focusOut()"
+            [(ngModel)]="value"
+            [suggestions]="filteredList"
+            (completeMethod)="search($event)"
+            [inputId]="idInput">
+
+      <ng-template let-text pTemplate="item">
+        <div class="ui-helper-clearfix">
+          <div><span class="autocomplete-highlight">{{highlightText}}</span>{{text.replace(highlightText, '')}}</div>
+        </div>
+      </ng-template>
+
+    </p-autoComplete>
+    <p-message *ngIf="errorText && showErrorStatus" severity="error" [text]=errorText></p-message>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.b-calculation{
+  position: relative;
+  margin: 55px -75px 0;
+  padding: 65px 75px 0;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0, .1);
+
+  .b-title{
+    max-width: none;
+  }
+
+  .b-calculation__button{
+    margin: 50px 0 0 240px;
+    padding-bottom: 90px;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 1064px){
+  .b-calculation{
+    .b-calculation__button{
+      margin-left: 25%;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .b-calculation{
+    .b-calculation__button{
+      margin-top: 40px;
+      padding-bottom: 80px;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+}

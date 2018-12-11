@@ -1,0 +1,20 @@
+<div class="u-clear-fix b-upload__box">
+  <h6 *ngIf="title" #titleId class="b-upload__title" (window:resize)="onResizeTitle($event)">{{title}}</h6>
+  <p-fileUpload
+          [style]="{'padding-top': minHeightUploadBox}"
+          name="file[]"
+          url="./upload.php"
+          customUpload="true"
+          (uploadHandler)="myUploader($event)"
+          (onSelect)="onSelect($event)"
+          (onRemove)="onRemove($event)"
+          multiple="multiple"
+          maxFileSize="4000000"
+          [showUploadButton]=false
+          [showCancelButton]=false
+          [chooseLabel]=chooseTextLabel
+          [styleClass]=uploadClass
+          [previewWidth]=0>
+
+  </p-fileUpload>
+</div>

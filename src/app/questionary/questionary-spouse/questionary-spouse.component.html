@@ -1,0 +1,86 @@
+<section id="spouse" class="b-questionary" [formGroup]="group">
+
+  <div class="b-title">
+    <h1>Данные по {{titleWord}}</h1>
+  </div>
+
+  <app-row-input-phone
+                 id='block-{{questionaryFormFields.spousePhone.id}}'
+                 [showErrorStatus]=questionaryFormFields.spousePhone.showErrorStatus
+                 [errorText]=questionaryFormFields.spousePhone.errorText
+                 [type]=questionaryFormFields.spousePhone.type
+                 [labelText]=questionaryFormFields.spousePhone.labelText
+                 [placeholder]=questionaryFormFields.spousePhone.placeholder
+                 [group]="group"
+                 [formControlName]=questionaryFormFields.spousePhone.id
+                 [idInput]=questionaryFormFields.spousePhone.id
+                 [nameInput]=questionaryFormFields.spousePhone.nameInput
+                 [alertHtmlShow]=questionaryFormFields.spousePhone.alertHtmlShow
+                 [mask]=questionaryFormFields.spousePhone.mask
+                 (errorStatusChange)="questionaryFormFields.spousePhone.showErrorStatus = $event">
+  </app-row-input-phone>
+
+  <app-row-input
+          id='block-{{questionaryFormFields.spouseEmail.id}}'
+          [showErrorStatus]=questionaryFormFields.spouseEmail.showErrorStatus
+          [errorText]=questionaryFormFields.spouseEmail.errorText
+          [type]=questionaryFormFields.spouseEmail.type
+          [labelText]=questionaryFormFields.spouseEmail.labelText
+          [placeholder]=questionaryFormFields.spouseEmail.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.spouseEmail.id
+          [idInput]=questionaryFormFields.spouseEmail.id
+          [nameInput]=questionaryFormFields.spouseEmail.nameInput
+          (errorStatusChange)="questionaryFormFields.spouseEmail.showErrorStatus = $event">
+  </app-row-input>
+
+  <app-row-input-radio
+          [labelText]=questionaryFormFields.statusSpouseIncome.labelText
+          [group]="group"
+          [currentValue]=questionaryFormFields.statusSpouseIncome.currentValue
+          [nameInput]=questionaryFormFields.statusSpouseIncome.nameInput
+          [inputs]="questionaryFormFields.statusSpouseIncome.inputs"
+          (changeCurrentValue)="changeCurrentValueStatusSpouseIncome($event)">
+  </app-row-input-radio>
+
+  <app-row-input-price *ngIf="statusSpouseIncome"
+          id='block-{{questionaryFormFields.spouseIncome.id}}'
+          [showErrorStatus]=questionaryFormFields.spouseIncome.showErrorStatus
+          [errorText]=questionaryFormFields.spouseIncome.errorText
+          [type]=questionaryFormFields.spouseIncome.type
+          [labelText]=questionaryFormFields.spouseIncome.labelText
+          [placeholder]=questionaryFormFields.spouseIncome.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.spouseIncome.id
+          [idInput]=questionaryFormFields.spouseIncome.id
+          [nameInput]=questionaryFormFields.spouseIncome.nameInput
+          (errorStatusChange)="questionaryFormFields.spouseIncome.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-dropdown
+          id='block-{{questionaryFormFields.propertyOwner.id}}'
+          [showErrorStatus]=questionaryFormFields.propertyOwner.showErrorStatus
+          [errorText]=questionaryFormFields.propertyOwner.errorText
+          [labelText]=questionaryFormFields.propertyOwner.labelText
+          [placeholder]=questionaryFormFields.propertyOwner.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.propertyOwner.id
+          [idInput]=questionaryFormFields.propertyOwner.id
+          [nameInput]=questionaryFormFields.propertyOwner.nameInput
+          [values]=questionaryFormFields.propertyOwner.values
+          [selectedItem]=questionaryFormFields.propertyOwner.selectedItem
+          [panelClass]=questionaryFormFields.propertyOwner.panelClass
+          (errorStatusChange)="questionaryFormFields.propertyOwner.showErrorStatus = $event"
+          (changeCurrentValue)="changeCurrentValuePropertyOwner($event)">
+  </app-row-dropdown>
+
+  <app-row-input-radio *ngIf="!statusSpouseIncome && statusSpouseLoanRespons"
+          [labelText]=questionaryFormFields.spouseLoanRespons.labelText
+          [group]="group"
+          [currentValue]=questionaryFormFields.spouseLoanRespons.currentValue
+          [nameInput]=questionaryFormFields.spouseLoanRespons.nameInput
+          [inputs]="questionaryFormFields.spouseLoanRespons.inputs"
+          (changeCurrentValue)="changeCurrentValueSpouseLoanRespons($event)">
+  </app-row-input-radio>
+
+</section>

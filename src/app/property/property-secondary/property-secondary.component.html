@@ -1,0 +1,3 @@
+<app-property-secondary-edit (saveAddress)="saveAddress($event)" (changeSubmittedStatus)="changeSubmittedStatus($event)" *ngIf="!submittedForm"></app-property-secondary-edit>
+
+<app-property-secondary-success (changeSubmittedStatus)="changeSubmittedStatus($event)" *ngIf="submittedForm" [address]='address'></app-property-secondary-success>

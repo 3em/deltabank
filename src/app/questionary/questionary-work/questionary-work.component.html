@@ -1,0 +1,599 @@
+<section id="work" class="b-questionary b-questionary__work" [formGroup]="group">
+
+    <div class="b-title">
+        <h1>Сведения о работе</h1>
+        <p>
+            Чем больше информации заполнено, тем выше вероятность одобрения кредита
+        </p>
+    </div>
+
+    <app-row-checkbox
+            id='block-{{questionaryFormFields.officialWork.id}}'
+            [nameInput]=questionaryFormFields.officialWork.nameInput
+            [idInput]=questionaryFormFields.officialWork.id
+            [group]="group"
+            [formControlName]=questionaryFormFields.officialWork.id
+            [label]=questionaryFormFields.officialWork.label
+            [labelText]=questionaryFormFields.officialWork.labelText
+            [value]=questionaryFormFields.officialWork.value
+            (changeCurrentValue)="changeCurrentValueOfficialWork($event)">
+    </app-row-checkbox>
+
+    <app-row-input *ngIf="!questionaryFormFields.officialWork.value"
+                   id='block-{{questionaryFormFields.companyName.id}}'
+                   [showErrorStatus]=questionaryFormFields.companyName.showErrorStatus
+                   [errorText]=questionaryFormFields.companyName.errorText
+                   [type]=questionaryFormFields.companyName.type
+                   [labelText]=questionaryFormFields.companyName.labelText
+                   [placeholder]=questionaryFormFields.companyName.placeholder
+                   [group]="group"
+                   [formControlName]=questionaryFormFields.companyName.id
+                   [idInput]=questionaryFormFields.companyName.id
+                   [nameInput]=questionaryFormFields.companyName.nameInput
+                   (errorStatusChange)="questionaryFormFields.companyName.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input-mask *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.INN.id}}'
+            [showErrorStatus]=questionaryFormFields.INN.showErrorStatus
+            [errorText]=questionaryFormFields.INN.errorText
+            [type]=questionaryFormFields.INN.type
+            [labelText]=questionaryFormFields.INN.labelText
+            [placeholder]=questionaryFormFields.INN.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.INN.id
+            [idInput]=questionaryFormFields.INN.id
+            [nameInput]=questionaryFormFields.INN.nameInput
+            [descText]=questionaryFormFields.INN.descText
+            [descTextLink]=questionaryFormFields.INN.descTextLink
+            [descTextLinkUrl]=questionaryFormFields.INN.descTextLinkUrl
+            [mask]=questionaryFormFields.INN.mask
+            (errorStatusChange)="questionaryFormFields.INN.showErrorStatus = $event">
+    </app-row-input-mask>
+
+    <app-row-input-phone *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.companyPhone.id}}'
+            [showErrorStatus]=questionaryFormFields.companyPhone.showErrorStatus
+            [errorText]=questionaryFormFields.companyPhone.errorText
+            [type]=questionaryFormFields.companyPhone.type
+            [labelText]=questionaryFormFields.companyPhone.labelText
+            [placeholder]=questionaryFormFields.companyPhone.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.companyPhone.id
+            [idInput]=questionaryFormFields.companyPhone.id
+            [nameInput]=questionaryFormFields.companyPhone.nameInput
+            [alertHtmlShow]=questionaryFormFields.companyPhone.alertHtmlShow
+            [mask]=questionaryFormFields.companyPhone.mask
+            (errorStatusChange)="questionaryFormFields.companyPhone.showErrorStatus = $event">
+    </app-row-input-phone>
+
+    <app-row-input *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.companyAddress.id}}'
+            [showErrorStatus]=questionaryFormFields.companyAddress.showErrorStatus
+            [errorText]=questionaryFormFields.companyAddress.errorText
+            [type]=questionaryFormFields.companyAddress.type
+            [labelText]=questionaryFormFields.companyAddress.labelText
+            [placeholder]=questionaryFormFields.companyAddress.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.companyAddress.id
+            [idInput]=questionaryFormFields.companyAddress.id
+            [nameInput]=questionaryFormFields.companyAddress.nameInput
+            [descText]=questionaryFormFields.companyAddress.descText
+            (errorStatusChange)="questionaryFormFields.companyAddress.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-input *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.companySite.id}}'
+            [showErrorStatus]=questionaryFormFields.companySite.showErrorStatus
+            [errorText]=questionaryFormFields.companySite.errorText
+            [type]=questionaryFormFields.companySite.type
+            [labelText]=questionaryFormFields.companySite.labelText
+            [placeholder]=questionaryFormFields.companySite.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.companySite.id
+            [idInput]=questionaryFormFields.companySite.id
+            [nameInput]=questionaryFormFields.companySite.nameInput
+            (errorStatusChange)="questionaryFormFields.companySite.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-dropdown *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.employment.id}}'
+            [showErrorStatus]=questionaryFormFields.employment.showErrorStatus
+            [errorText]=questionaryFormFields.employment.errorText
+            [labelText]=questionaryFormFields.employment.labelText
+            [placeholder]=questionaryFormFields.employment.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.employment.id
+            [idInput]=questionaryFormFields.employment.id
+            [nameInput]=questionaryFormFields.employment.nameInput
+            [values]=questionaryFormFields.employment.values
+            [selectedItem]=questionaryFormFields.employment.selectedItem
+            [panelClass]=questionaryFormFields.employment.panelClass
+            (errorStatusChange)="questionaryFormFields.employment.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueEmployment($event)">
+    </app-row-dropdown>
+
+    <app-row-dropdown *ngIf="statusShareBusiness"
+                      id='block-{{questionaryFormFields.shareBusiness.id}}'
+                      [showErrorStatus]=questionaryFormFields.shareBusiness.showErrorStatus
+                      [errorText]=questionaryFormFields.shareBusiness.errorText
+                      [labelText]=questionaryFormFields.shareBusiness.labelText
+                      [placeholder]=questionaryFormFields.shareBusiness.placeholder
+                      [group]="group"
+                      [formControlName]=questionaryFormFields.shareBusiness.id
+                      [idInput]=questionaryFormFields.shareBusiness.id
+                      [nameInput]=questionaryFormFields.shareBusiness.nameInput
+                      [values]=questionaryFormFields.shareBusiness.values
+                      [selectedItem]=questionaryFormFields.shareBusiness.selectedItem
+                      [panelClass]=questionaryFormFields.shareBusiness.panelClass
+                      (errorStatusChange)="questionaryFormFields.shareBusiness.showErrorStatus = $event"
+                      (changeCurrentValue)="changeCurrentValueShareBusiness($event)">
+    </app-row-dropdown>
+
+    <app-row-dropdown *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.schedule.id}}'
+            [showErrorStatus]=questionaryFormFields.schedule.showErrorStatus
+            [errorText]=questionaryFormFields.schedule.errorText
+            [labelText]=questionaryFormFields.schedule.labelText
+            [placeholder]=questionaryFormFields.schedule.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.schedule.id
+            [idInput]=questionaryFormFields.schedule.id
+            [nameInput]=questionaryFormFields.schedule.nameInput
+            [values]=questionaryFormFields.schedule.values
+            [selectedItem]=questionaryFormFields.schedule.selectedItem
+            [panelClass]=questionaryFormFields.schedule.panelClass
+            (errorStatusChange)="questionaryFormFields.schedule.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueSchedule($event)">
+    </app-row-dropdown>
+
+    <app-row-dropdown *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.workNature.id}}'
+            [showErrorStatus]=questionaryFormFields.workNature.showErrorStatus
+            [errorText]=questionaryFormFields.workNature.errorText
+            [labelText]=questionaryFormFields.workNature.labelText
+            [placeholder]=questionaryFormFields.workNature.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.workNature.id
+            [idInput]=questionaryFormFields.workNature.id
+            [nameInput]=questionaryFormFields.workNature.nameInput
+            [values]=questionaryFormFields.workNature.values
+            [selectedItem]=questionaryFormFields.workNature.selectedItem
+            [panelClass]=questionaryFormFields.workNature.panelClass
+            (errorStatusChange)="questionaryFormFields.workNature.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueWorkNature($event)">
+    </app-row-dropdown>
+
+    <app-row-datapicker *ngIf="!questionaryFormFields.officialWork.value && statusMoreCompomyInfo"
+            id='block-{{questionaryFormFields.companyDate.id}}'
+            [showErrorStatus]=questionaryFormFields.companyDate.showErrorStatus
+            [errorText]=questionaryFormFields.companyDate.errorText
+            [labelText]=questionaryFormFields.companyDate.labelText
+            [placeholder]=questionaryFormFields.companyDate.placeholder
+            [group]="group"
+            [date]=questionaryFormFields.companyDate.date
+            [formControlName]=questionaryFormFields.companyDate.id
+            [idInput]=questionaryFormFields.companyDate.id
+            [nameInput]=questionaryFormFields.companyDate.nameInput
+            (errorStatusChange)="questionaryFormFields.companyDate.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueCompanyDate($event)">
+    </app-row-datapicker>
+
+    <app-row-dropdown *ngIf="!questionaryFormFields.officialWork.value && statusMoreCompomyInfo"
+            id='block-{{questionaryFormFields.taxation.id}}'
+            [showErrorStatus]=questionaryFormFields.taxation.showErrorStatus
+            [errorText]=questionaryFormFields.taxation.errorText
+            [labelText]=questionaryFormFields.taxation.labelText
+            [placeholder]=questionaryFormFields.taxation.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.taxation.id
+            [idInput]=questionaryFormFields.taxation.id
+            [nameInput]=questionaryFormFields.taxation.nameInput
+            [values]=questionaryFormFields.taxation.values
+            [selectedItem]=questionaryFormFields.taxation.selectedItem
+            [panelClass]=questionaryFormFields.taxation.panelClass
+            (errorStatusChange)="questionaryFormFields.taxation.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueTaxation($event)">
+    </app-row-dropdown>
+
+    <app-row-input *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.position.id}}'
+            [showErrorStatus]=questionaryFormFields.position.showErrorStatus
+            [errorText]=questionaryFormFields.position.errorText
+            [type]=questionaryFormFields.position.type
+            [labelText]=questionaryFormFields.position.labelText
+            [placeholder]=questionaryFormFields.position.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.position.id
+            [idInput]=questionaryFormFields.position.id
+            [nameInput]=questionaryFormFields.position.nameInput
+            (errorStatusChange)="questionaryFormFields.position.showErrorStatus = $event">
+    </app-row-input>
+
+    <app-row-dropdown *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.isLawyer.id}}'
+            [showErrorStatus]=questionaryFormFields.isLawyer.showErrorStatus
+            [errorText]=questionaryFormFields.isLawyer.errorText
+            [labelText]=questionaryFormFields.isLawyer.labelText
+            [placeholder]=questionaryFormFields.isLawyer.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.isLawyer.id
+            [idInput]=questionaryFormFields.isLawyer.id
+            [nameInput]=questionaryFormFields.isLawyer.nameInput
+            [values]=questionaryFormFields.isLawyer.values
+            [selectedItem]=questionaryFormFields.isLawyer.selectedItem
+            [panelClass]=questionaryFormFields.isLawyer.panelClass
+            (errorStatusChange)="questionaryFormFields.isLawyer.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueIsLawyer($event)">
+    </app-row-dropdown>
+
+    <app-row-dropdown *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.jobLadder.id}}'
+            [showErrorStatus]=questionaryFormFields.jobLadder.showErrorStatus
+            [errorText]=questionaryFormFields.jobLadder.errorText
+            [labelText]=questionaryFormFields.jobLadder.labelText
+            [placeholder]=questionaryFormFields.jobLadder.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.jobLadder.id
+            [idInput]=questionaryFormFields.jobLadder.id
+            [nameInput]=questionaryFormFields.jobLadder.nameInput
+            [values]=questionaryFormFields.jobLadder.values
+            [selectedItem]=questionaryFormFields.jobLadder.selectedItem
+            [panelClass]=questionaryFormFields.jobLadder.panelClass
+            (errorStatusChange)="questionaryFormFields.jobLadder.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueJobLadder($event)">
+    </app-row-dropdown>
+
+    <app-row-input-autocomplete *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.activityInCompany.id}}'
+            [showErrorStatus]=questionaryFormFields.activityInCompany.showErrorStatus
+            [errorText]=questionaryFormFields.activityInCompany.errorText
+            [list]="activityInCompany_List"
+            [labelText]=questionaryFormFields.activityInCompany.labelText
+            [placeholder]=questionaryFormFields.activityInCompany.placeholder
+            [group]="group"
+            [idInput]=questionaryFormFields.activityInCompany.id
+            [formControlName]=questionaryFormFields.activityInCompany.id
+            (errorStatusChange)="questionaryFormFields.activityInCompany.showErrorStatus = $event">
+    </app-row-input-autocomplete>
+
+    <app-row-input-autocomplete *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.companyActivity.id}}'
+            [showErrorStatus]=questionaryFormFields.companyActivity.showErrorStatus
+            [errorText]=questionaryFormFields.companyActivity.errorText
+            [list]="companyActivity_List"
+            [labelText]=questionaryFormFields.companyActivity.labelText
+            [placeholder]=questionaryFormFields.companyActivity.placeholder
+            [group]="group"
+            [idInput]=questionaryFormFields.companyActivity.id
+            [formControlName]=questionaryFormFields.companyActivity.id
+            (errorStatusChange)="questionaryFormFields.companyActivity.showErrorStatus = $event">
+    </app-row-input-autocomplete>
+
+    <app-row-datapicker *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.employmentDate.id}}'
+            [showErrorStatus]=questionaryFormFields.employmentDate.showErrorStatus
+            [errorText]=questionaryFormFields.employmentDate.errorText
+            [labelText]=questionaryFormFields.employmentDate.labelText
+            [placeholder]=questionaryFormFields.employmentDate.placeholder
+            [group]="group"
+            [date]=questionaryFormFields.employmentDate.date
+            [formControlName]=questionaryFormFields.employmentDate.id
+            [idInput]=questionaryFormFields.employmentDate.id
+            [nameInput]=questionaryFormFields.employmentDate.nameInput
+            (errorStatusChange)="questionaryFormFields.employmentDate.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueEmploymentDate($event)">
+    </app-row-datapicker>
+
+    <app-row-dropdown *ngIf="!questionaryFormFields.officialWork.value"
+            id='block-{{questionaryFormFields.experience.id}}'
+            [showErrorStatus]=questionaryFormFields.experience.showErrorStatus
+            [errorText]=questionaryFormFields.experience.errorText
+            [labelText]=questionaryFormFields.experience.labelText
+            [placeholder]=questionaryFormFields.experience.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.experience.id
+            [idInput]=questionaryFormFields.experience.id
+            [nameInput]=questionaryFormFields.experience.nameInput
+            [values]=questionaryFormFields.experience.values
+            [selectedItem]=questionaryFormFields.experience.selectedItem
+            [panelClass]=questionaryFormFields.experience.panelClass
+            (errorStatusChange)="questionaryFormFields.experience.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueExperience($event)">
+    </app-row-dropdown>
+
+    <app-row-input-radio
+            [labelText]=questionaryFormFields.anotherJob.labelText
+            [group]="group"
+            [currentValue]=questionaryFormFields.anotherJob.currentValue
+            [nameInput]=questionaryFormFields.anotherJob.nameInput
+            [inputs]="questionaryFormFields.anotherJob.inputs"
+            (changeCurrentValue)="changeCurrentValueAnotherJob($event)">
+    </app-row-input-radio>
+
+    <div *ngIf="statusShowDopWork" class="b-questionary__work_dop">
+
+        <div class="b-title">
+            <h6>Сведения о работе по совместительству</h6>
+        </div>
+
+        <app-row-input
+                       id='block-{{questionaryFormFields.companyName_dop.id}}'
+                       [showErrorStatus]=questionaryFormFields.companyName_dop.showErrorStatus
+                       [errorText]=questionaryFormFields.companyName_dop.errorText
+                       [type]=questionaryFormFields.companyName_dop.type
+                       [labelText]=questionaryFormFields.companyName_dop.labelText
+                       [placeholder]=questionaryFormFields.companyName_dop.placeholder
+                       [group]="group"
+                       [formControlName]=questionaryFormFields.companyName_dop.id
+                       [idInput]=questionaryFormFields.companyName_dop.id
+                       [nameInput]=questionaryFormFields.companyName_dop.nameInput
+                       (errorStatusChange)="questionaryFormFields.companyName_dop.showErrorStatus = $event">
+        </app-row-input>
+
+        <app-row-input-mask
+                id='block-{{questionaryFormFields.INN_dop.id}}'
+                [showErrorStatus]=questionaryFormFields.INN_dop.showErrorStatus
+                [errorText]=questionaryFormFields.INN_dop.errorText
+                [type]=questionaryFormFields.INN_dop.type
+                [labelText]=questionaryFormFields.INN_dop.labelText
+                [placeholder]=questionaryFormFields.INN_dop.placeholder
+                [group]="group"
+                [formControlName]=questionaryFormFields.INN_dop.id
+                [idInput]=questionaryFormFields.INN_dop.id
+                [nameInput]=questionaryFormFields.INN_dop.nameInput
+                [descText]=questionaryFormFields.INN_dop.descText
+                [descTextLink]=questionaryFormFields.INN_dop.descTextLink
+                [descTextLinkUrl]=questionaryFormFields.INN_dop.descTextLinkUrl
+                [mask]=questionaryFormFields.INN_dop.mask
+                (errorStatusChange)="questionaryFormFields.INN_dop.showErrorStatus = $event">
+        </app-row-input-mask>
+
+        <app-row-input-phone
+                             id='block-{{questionaryFormFields.companyPhone_dop.id}}'
+                             [showErrorStatus]=questionaryFormFields.companyPhone_dop.showErrorStatus
+                             [errorText]=questionaryFormFields.companyPhone_dop.errorText
+                             [type]=questionaryFormFields.companyPhone_dop.type
+                             [labelText]=questionaryFormFields.companyPhone_dop.labelText
+                             [placeholder]=questionaryFormFields.companyPhone_dop.placeholder
+                             [group]="group"
+                             [formControlName]=questionaryFormFields.companyPhone_dop.id
+                             [idInput]=questionaryFormFields.companyPhone_dop.id
+                             [nameInput]=questionaryFormFields.companyPhone_dop.nameInput
+                             [alertHtmlShow]=questionaryFormFields.companyPhone_dop.alertHtmlShow
+                             [mask]=questionaryFormFields.companyPhone_dop.mask
+                             (errorStatusChange)="questionaryFormFields.companyPhone_dop.showErrorStatus = $event">
+        </app-row-input-phone>
+
+        <app-row-input
+                       id='block-{{questionaryFormFields.companyAddress_dop.id}}'
+                       [showErrorStatus]=questionaryFormFields.companyAddress_dop.showErrorStatus
+                       [errorText]=questionaryFormFields.companyAddress_dop.errorText
+                       [type]=questionaryFormFields.companyAddress_dop.type
+                       [labelText]=questionaryFormFields.companyAddress_dop.labelText
+                       [placeholder]=questionaryFormFields.companyAddress_dop.placeholder
+                       [group]="group"
+                       [formControlName]=questionaryFormFields.companyAddress_dop.id
+                       [idInput]=questionaryFormFields.companyAddress_dop.id
+                       [nameInput]=questionaryFormFields.companyAddress_dop.nameInput
+                       [descText]=questionaryFormFields.companyAddress_dop.descText
+                       (errorStatusChange)="questionaryFormFields.companyAddress_dop.showErrorStatus = $event">
+        </app-row-input>
+
+        <app-row-input
+                       id='block-{{questionaryFormFields.companySite_dop.id}}'
+                       [showErrorStatus]=questionaryFormFields.companySite_dop.showErrorStatus
+                       [errorText]=questionaryFormFields.companySite_dop.errorText
+                       [type]=questionaryFormFields.companySite_dop.type
+                       [labelText]=questionaryFormFields.companySite_dop.labelText
+                       [placeholder]=questionaryFormFields.companySite_dop.placeholder
+                       [group]="group"
+                       [formControlName]=questionaryFormFields.companySite_dop.id
+                       [idInput]=questionaryFormFields.companySite_dop.id
+                       [nameInput]=questionaryFormFields.companySite_dop.nameInput
+                       (errorStatusChange)="questionaryFormFields.companySite_dop.showErrorStatus = $event">
+        </app-row-input>
+
+        <app-row-dropdown id='block-{{questionaryFormFields.employment_dop.id}}'
+                          [showErrorStatus]=questionaryFormFields.employment_dop.showErrorStatus
+                          [errorText]=questionaryFormFields.employment_dop.errorText
+                          [labelText]=questionaryFormFields.employment_dop.labelText
+                          [placeholder]=questionaryFormFields.employment_dop.placeholder
+                          [group]="group"
+                          [formControlName]=questionaryFormFields.employment_dop.id
+                          [idInput]=questionaryFormFields.employment_dop.id
+                          [nameInput]=questionaryFormFields.employment_dop.nameInput
+                          [values]=questionaryFormFields.employment_dop.values
+                          [selectedItem]=questionaryFormFields.employment_dop.selectedItem
+                          [panelClass]=questionaryFormFields.employment_dop.panelClass
+                          (errorStatusChange)="questionaryFormFields.employment_dop.showErrorStatus = $event"
+                          (changeCurrentValue)="changeCurrentValueEmploymentDop($event)">
+        </app-row-dropdown>
+
+        <app-row-dropdown *ngIf="statusShareBusinessDop"
+                          id='block-{{questionaryFormFields.shareBusiness_dop.id}}'
+                          [showErrorStatus]=questionaryFormFields.shareBusiness_dop.showErrorStatus
+                          [errorText]=questionaryFormFields.shareBusiness_dop.errorText
+                          [labelText]=questionaryFormFields.shareBusiness_dop.labelText
+                          [placeholder]=questionaryFormFields.shareBusiness_dop.placeholder
+                          [group]="group"
+                          [formControlName]=questionaryFormFields.shareBusiness_dop.id
+                          [idInput]=questionaryFormFields.shareBusiness_dop.id
+                          [nameInput]=questionaryFormFields.shareBusiness_dop.nameInput
+                          [values]=questionaryFormFields.shareBusiness_dop.values
+                          [selectedItem]=questionaryFormFields.shareBusiness_dop.selectedItem
+                          [panelClass]=questionaryFormFields.shareBusiness_dop.panelClass
+                          (errorStatusChange)="questionaryFormFields.shareBusiness_dop.showErrorStatus = $event"
+                          (changeCurrentValue)="changeCurrentValueShareBusinessDop($event)">
+        </app-row-dropdown>
+
+        <app-row-dropdown id='block-{{questionaryFormFields.schedule_dop.id}}'
+                          [showErrorStatus]=questionaryFormFields.schedule_dop.showErrorStatus
+                          [errorText]=questionaryFormFields.schedule_dop.errorText
+                          [labelText]=questionaryFormFields.schedule_dop.labelText
+                          [placeholder]=questionaryFormFields.schedule_dop.placeholder
+                          [group]="group"
+                          [formControlName]=questionaryFormFields.schedule_dop.id
+                          [idInput]=questionaryFormFields.schedule_dop.id
+                          [nameInput]=questionaryFormFields.schedule_dop.nameInput
+                          [values]=questionaryFormFields.schedule_dop.values
+                          [selectedItem]=questionaryFormFields.schedule_dop.selectedItem
+                          [panelClass]=questionaryFormFields.schedule_dop.panelClass
+                          (errorStatusChange)="questionaryFormFields.schedule_dop.showErrorStatus = $event"
+                          (changeCurrentValue)="changeCurrentValueScheduleDop($event)">
+        </app-row-dropdown>
+
+        <app-row-dropdown id='block-{{questionaryFormFields.workNature_dop.id}}'
+                          [showErrorStatus]=questionaryFormFields.workNature_dop.showErrorStatus
+                          [errorText]=questionaryFormFields.workNature_dop.errorText
+                          [labelText]=questionaryFormFields.workNature_dop.labelText
+                          [placeholder]=questionaryFormFields.workNature_dop.placeholder
+                          [group]="group"
+                          [formControlName]=questionaryFormFields.workNature_dop.id
+                          [idInput]=questionaryFormFields.workNature_dop.id
+                          [nameInput]=questionaryFormFields.workNature_dop.nameInput
+                          [values]=questionaryFormFields.workNature_dop.values
+                          [selectedItem]=questionaryFormFields.workNature_dop.selectedItem
+                          [panelClass]=questionaryFormFields.workNature_dop.panelClass
+                          (errorStatusChange)="questionaryFormFields.workNature_dop.showErrorStatus = $event"
+                          (changeCurrentValue)="changeCurrentValueWorkNatureDop($event)">
+        </app-row-dropdown>
+
+        <app-row-datapicker *ngIf="statusMoreCompomyInfoDop"
+                            id='block-{{questionaryFormFields.companyDate_dop.id}}'
+                            [showErrorStatus]=questionaryFormFields.companyDate_dop.showErrorStatus
+                            [errorText]=questionaryFormFields.companyDate_dop.errorText
+                            [labelText]=questionaryFormFields.companyDate_dop.labelText
+                            [placeholder]=questionaryFormFields.companyDate_dop.placeholder
+                            [group]="group"
+                            [date]=questionaryFormFields.companyDate_dop.date
+                            [formControlName]=questionaryFormFields.companyDate_dop.id
+                            [idInput]=questionaryFormFields.companyDate_dop.id
+                            [nameInput]=questionaryFormFields.companyDate_dop.nameInput
+                            (errorStatusChange)="questionaryFormFields.companyDate_dop.showErrorStatus = $event"
+                            (changeCurrentValue)="changeCurrentValueCompanyDateDop($event)">
+        </app-row-datapicker>
+
+        <app-row-dropdown *ngIf="statusMoreCompomyInfoDop"
+            id='block-{{questionaryFormFields.taxation_dop.id}}'
+            [showErrorStatus]=questionaryFormFields.taxation_dop.showErrorStatus
+            [errorText]=questionaryFormFields.taxation_dop.errorText
+            [labelText]=questionaryFormFields.taxation_dop.labelText
+            [placeholder]=questionaryFormFields.taxation_dop.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFields.taxation_dop.id
+            [idInput]=questionaryFormFields.taxation_dop.id
+            [nameInput]=questionaryFormFields.taxation_dop.nameInput
+            [values]=questionaryFormFields.taxation_dop.values
+            [selectedItem]=questionaryFormFields.taxation_dop.selectedItem
+            [panelClass]=questionaryFormFields.taxation_dop.panelClass
+            (errorStatusChange)="questionaryFormFields.taxation_dop.showErrorStatus = $event"
+            (changeCurrentValue)="changeCurrentValueTaxationDop($event)">
+        </app-row-dropdown>
+
+        <app-row-input
+                id='block-{{questionaryFormFields.position_dop.id}}'
+                [showErrorStatus]=questionaryFormFields.position_dop.showErrorStatus
+                [errorText]=questionaryFormFields.position_dop.errorText
+                [type]=questionaryFormFields.position_dop.type
+                [labelText]=questionaryFormFields.position_dop.labelText
+                [placeholder]=questionaryFormFields.position_dop.placeholder
+                [group]="group"
+                [formControlName]=questionaryFormFields.position_dop.id
+                [idInput]=questionaryFormFields.position_dop.id
+                [nameInput]=questionaryFormFields.position_dop.nameInput
+                (errorStatusChange)="questionaryFormFields.position_dop.showErrorStatus = $event">
+        </app-row-input>
+
+        <app-row-dropdown id='block-{{questionaryFormFields.isLawyer_dop.id}}'
+                          [showErrorStatus]=questionaryFormFields.isLawyer_dop.showErrorStatus
+                          [errorText]=questionaryFormFields.isLawyer_dop.errorText
+                          [labelText]=questionaryFormFields.isLawyer_dop.labelText
+                          [placeholder]=questionaryFormFields.isLawyer_dop.placeholder
+                          [group]="group"
+                          [formControlName]=questionaryFormFields.isLawyer_dop.id
+                          [idInput]=questionaryFormFields.isLawyer_dop.id
+                          [nameInput]=questionaryFormFields.isLawyer_dop.nameInput
+                          [values]=questionaryFormFields.isLawyer_dop.values
+                          [selectedItem]=questionaryFormFields.isLawyer_dop.selectedItem
+                          [panelClass]=questionaryFormFields.isLawyer_dop.panelClass
+                          (errorStatusChange)="questionaryFormFields.isLawyer_dop.showErrorStatus = $event"
+                          (changeCurrentValue)="changeCurrentValueIsLawyerDop($event)">
+        </app-row-dropdown>
+
+        <app-row-dropdown id='block-{{questionaryFormFields.jobLadder_dop.id}}'
+                          [showErrorStatus]=questionaryFormFields.jobLadder_dop.showErrorStatus
+                          [errorText]=questionaryFormFields.jobLadder_dop.errorText
+                          [labelText]=questionaryFormFields.jobLadder_dop.labelText
+                          [placeholder]=questionaryFormFields.jobLadder_dop.placeholder
+                          [group]="group"
+                          [formControlName]=questionaryFormFields.jobLadder_dop.id
+                          [idInput]=questionaryFormFields.jobLadder_dop.id
+                          [nameInput]=questionaryFormFields.jobLadder_dop.nameInput
+                          [values]=questionaryFormFields.jobLadder_dop.values
+                          [selectedItem]=questionaryFormFields.jobLadder_dop.selectedItem
+                          [panelClass]=questionaryFormFields.jobLadder_dop.panelClass
+                          (errorStatusChange)="questionaryFormFields.jobLadder_dop.showErrorStatus = $event"
+                          (changeCurrentValue)="changeCurrentValueJobLadderDop($event)">
+        </app-row-dropdown>
+
+        <app-row-input-autocomplete
+                                    id='block-{{questionaryFormFields.activityInCompany_dop.id}}'
+                                    [showErrorStatus]=questionaryFormFields.activityInCompany_dop.showErrorStatus
+                                    [errorText]=questionaryFormFields.activityInCompany_dop.errorText
+                                    [list]="activityInCompany_List"
+                                    [labelText]=questionaryFormFields.activityInCompany_dop.labelText
+                                    [placeholder]=questionaryFormFields.activityInCompany_dop.placeholder
+                                    [group]="group"
+                                    [idInput]=questionaryFormFields.activityInCompany_dop.id
+                                    [formControlName]=questionaryFormFields.activityInCompany_dop.id
+                                    (errorStatusChange)="questionaryFormFields.activityInCompany_dop.showErrorStatus = $event">
+        </app-row-input-autocomplete>
+
+        <app-row-input-autocomplete
+                                    id='block-{{questionaryFormFields.companyActivity_dop.id}}'
+                                    [showErrorStatus]=questionaryFormFields.companyActivity_dop.showErrorStatus
+                                    [errorText]=questionaryFormFields.companyActivity_dop.errorText
+                                    [list]="companyActivity_List"
+                                    [labelText]=questionaryFormFields.companyActivity_dop.labelText
+                                    [placeholder]=questionaryFormFields.companyActivity_dop.placeholder
+                                    [group]="group"
+                                    [idInput]=questionaryFormFields.companyActivity_dop.id
+                                    [formControlName]=questionaryFormFields.companyActivity_dop.id
+                                    (errorStatusChange)="questionaryFormFields.companyActivity_dop.showErrorStatus = $event">
+        </app-row-input-autocomplete>
+
+        <app-row-datapicker id='block-{{questionaryFormFields.employmentDate_dop.id}}'
+                            [showErrorStatus]=questionaryFormFields.employmentDate_dop.showErrorStatus
+                            [errorText]=questionaryFormFields.employmentDate_dop.errorText
+                            [labelText]=questionaryFormFields.employmentDate_dop.labelText
+                            [placeholder]=questionaryFormFields.employmentDate_dop.placeholder
+                            [group]="group"
+                            [date]=questionaryFormFields.employmentDate_dop.date
+                            [formControlName]=questionaryFormFields.employmentDate_dop.id
+                            [idInput]=questionaryFormFields.employmentDate_dop.id
+                            [nameInput]=questionaryFormFields.employmentDate_dop.nameInput
+                            (errorStatusChange)="questionaryFormFields.employmentDate_dop.showErrorStatus = $event"
+                            (changeCurrentValue)="changeCurrentValueEmploymentDateDop($event)">
+        </app-row-datapicker>
+
+        <app-row-dropdown id='block-{{questionaryFormFields.experience_dop.id}}'
+                          [showErrorStatus]=questionaryFormFields.experience_dop.showErrorStatus
+                          [errorText]=questionaryFormFields.experience_dop.errorText
+                          [labelText]=questionaryFormFields.experience_dop.labelText
+                          [placeholder]=questionaryFormFields.experience_dop.placeholder
+                          [group]="group"
+                          [formControlName]=questionaryFormFields.experience_dop.id
+                          [idInput]=questionaryFormFields.experience_dop.id
+                          [nameInput]=questionaryFormFields.experience_dop.nameInput
+                          [values]=questionaryFormFields.experience_dop.values
+                          [selectedItem]=questionaryFormFields.experience_dop.selectedItem
+                          [panelClass]=questionaryFormFields.experience_dop.panelClass
+                          (errorStatusChange)="questionaryFormFields.experience_dop.showErrorStatus = $event"
+                          (changeCurrentValue)="changeCurrentValueExperienceDop($event)">
+        </app-row-dropdown>
+
+    </div>
+
+
+</section>

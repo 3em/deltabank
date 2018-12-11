@@ -1,0 +1,85 @@
+<p-sidebar [(visible)]="display" [fullScreen]=true [blockScroll]=true class="b-agree__overlay" [appendTo]="'body'" (onHide)="hideFn()">
+
+  <div class="b-popup__overlay" (click)="hideOverlay($event)">
+
+    <div class="b-popup b-popup__call" [class.with-manager]="managerStatus">
+
+    <div *ngIf="managerStatus">
+
+      <div class="b-title">
+        <h1>Иванов Александр</h1>
+        <p>Менеджер по продажам АО «КБ ДельтаКредит»</p>
+      </div>
+
+      <div class="u-clear-fix b-popup__call_column-box">
+        <div class="b-popup__call_column">
+          <span class="b-popup__call_label">Телефоны</span>
+          <div class="u-clear-fix b-popup__call_column-block">
+            <a href="tel:+74959603161">+7 (495) 960 31 61</a>
+            <span class="b-popup__call_label-dop">доб. 34685</span>
+          </div>
+          <div class="u-clear-fix b-popup__call_column-block">
+            <a href="tel:+74959603162">+7 (495) 960 31 62</a>
+            <span class="b-popup__call_label-dop">доб. 39680</span>
+          </div>
+        </div>
+        <div class="b-popup__call_column">
+          <span class="b-popup__call_label">Почта</span>
+          <div class="u-clear-fix b-popup__call_column-block">
+            <a href="mailto:ivanov.a@deltacredit.ru">ivanov.a@deltacredit.ru</a>
+          </div>
+        </div>
+      </div>
+
+      <form *ngIf="!submittedForm" [formGroup]="callform" (ngSubmit)="onSubmit()" class="u-clear-fix b-popup__call_form b-popup__call_column-box">
+        <div class="b-popup__call_column">
+          <app-row-input
+                  id='block-{{callFormFields.from.id}}'
+                  [showErrorStatus]=callFormFields.from.showErrorStatus
+                  [errorText]=callFormFields.from.errorText
+                  [type]=callFormFields.from.type
+                  [labelText]=callFormFields.from.labelText
+                  [placeholder]=callFormFields.from.placeholder
+                  [group]="callform"
+                  [formControlName]=callFormFields.from.id
+                  [idInput]=callFormFields.from.id
+                  [nameInput]=callFormFields.from.nameInput
+                  (errorStatusChange)="callFormFields.from.showErrorStatus = $event">
+          </app-row-input>
+        </div>
+        <div class="b-popup__call_column">
+          <app-row-input
+                  id='block-{{callFormFields.to.id}}'
+                  [showErrorStatus]=callFormFields.to.showErrorStatus
+                  [errorText]=callFormFields.to.errorText
+                  [type]=callFormFields.to.type
+                  [labelText]=callFormFields.to.labelText
+                  [placeholder]=callFormFields.to.placeholder
+                  [group]="callform"
+                  [formControlName]=callFormFields.to.id
+                  [idInput]=callFormFields.to.id
+                  [nameInput]=callFormFields.to.nameInput
+                  (errorStatusChange)="callFormFields.to.showErrorStatus = $event">
+          </app-row-input>
+        </div>
+
+        <div class="b-popup__call_submit">
+          <button pButton type="submit"  label="Заказать звонок"></button>
+        </div>
+      </form>
+
+      <h6 *ngIf="submittedForm">Спасибо!<br>В ближайшее время мы свяжемся с вами.</h6>
+
+    </div>
+
+    <div *ngIf="!managerStatus">
+      <div class="b-title">
+        <h6>Ваша заявка еще не распределена на менеджера.</h6>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+
+</p-sidebar>

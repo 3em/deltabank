@@ -1,0 +1,53 @@
+@import "../property-secondary-edit/property-secondary-edit.component";
+@import "../../../assets/scss/variables";
+
+.b-property__primary-button{
+  padding-top: 20px;
+  margin-bottom: 70px;
+
+  .b-button{
+    width: 200px;
+    text-align: center;
+    margin-right: 50px;
+    float: left;
+    vertical-align: top;
+  }
+
+  .b-link-icon{
+    float: left;
+    vertical-align: top;
+    margin-top: 8px;
+    color: $linkColor;
+    font-size: $biggerFontSize;
+  }
+}
+
+@media only screen and (max-width: 767px){
+
+  .b-property__primary-button{
+    text-align: center;
+    padding-top: 65px;
+    position: relative;
+
+    .b-button{
+      width: 100%;
+      float: none;
+      margin-bottom: 12px;
+      margin-right: 0;
+    }
+
+    .b-link-icon{
+      display: inline-block;
+      vertical-align: top;
+      float: none;
+      font-size: $regularFontSize_phone;
+      margin-top: 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      white-space: nowrap;
+    }
+  }
+
+}

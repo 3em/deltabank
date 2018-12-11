@@ -1,0 +1,9 @@
+<app-header [headerStatusFull]="headerStatusFull"></app-header>
+
+<div class="b-login b-login__sms">
+  <div class="b-login__blur" [ngStyle]="{width: windowWidth+'px'}"></div>
+  <div class="b-login__sms_wrapper">
+    <app-sms-code *ngIf="!showChangePass" [(changePassState)]="showChangePass" (changePassChange)="changePassStateUpdate($event)"></app-sms-code>
+    <app-new-pass *ngIf="showChangePass"></app-new-pass>
+  </div>
+</div>

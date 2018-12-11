@@ -1,0 +1,27 @@
+<div #formItem class="u-clear-fix b-form__row" [formGroup]="group" [class.b-form__row_error]="showErrorStatus" [class.inline-datapicker]="navigator">
+  <label *ngIf="labelText" class="b-form__label" [for]="idInput">{{labelText}}</label>
+  <div class="b-form__input" [class.focus]="statusFocus">
+
+    <p-calendar class="b-datapicker"
+            [(ngModel)]="date"
+            [name]="nameInput"
+            [formControlName]="formControlName"
+            [placeholder]="placeholder"
+            [inputId]="idInput"
+            dateFormat="dd.mm.yy"
+            [monthNavigator]="(navigator === true) ? false : true"
+            [showIcon]="true"
+            [yearNavigator]="(navigator === true) ? false : true"
+            [yearRange]="yearsRange"
+            (onFocus)="focus()"
+            (focusout)="focusOut()"
+            (onSelect)="selectValue()"
+            [locale]="ru"
+            (onInput)="onType($event)"
+            [minDate]="minDate"
+            [inline]="(inlineStatus) ? inlineStatus : false"
+            [maxDate]="maxDate">
+    </p-calendar>
+    <p-message *ngIf="errorText && showErrorStatus" severity="error" [text]=errorText></p-message>
+  </div>
+</div>

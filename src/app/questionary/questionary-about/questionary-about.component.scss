@@ -1,0 +1,49 @@
+.b-questionary{
+  position: relative;
+  padding: 48px 55px 75px;
+}
+
+.b-questionary__checkbox-faq{
+  margin-left: 337px;
+  margin-top: 20px;
+  padding-top: 40px;
+  font-size: 15px;
+  line-height: 27px;
+  position: relative;
+  width: 380px;
+
+  &:before{
+    content: "";
+    position: absolute;
+    right: 100%;
+    margin-right: 18px;
+    top: 7px;
+    background: url("assets/i-faq-line.svg") no-repeat;
+    width: 60px;
+    height: 47px;
+  }
+}
+
+@media only screen and (max-width: 1064px){
+  .b-questionary__checkbox-faq{
+    margin-left: 25%;
+    left: 92px;
+  }
+}
+@media only screen and (max-width: 767px){
+  .b-questionary__checkbox-faq{
+    margin-left: 88px;
+    left: 0;
+    font-size: 10px;
+    line-height: 17px;
+    width: 215px;
+    margin-top: -15px;
+    margin-left: 70px;
+
+    &:before{
+      transform: scale(.8);
+      transform-origin: left center;
+      margin-right: 0;
+    }
+  }
+}

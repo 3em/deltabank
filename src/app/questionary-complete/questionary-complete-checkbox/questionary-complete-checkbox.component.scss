@@ -1,0 +1,33 @@
+@import "../../../assets/scss/variables";
+
+.b-checkbox__box{
+  position: relative;
+
+  .ui-chkbox-label{
+    font-size: 20px;
+  }
+
+  .red{
+    color: $linkColor;
+  }
+
+  .b-alert-icon__box{
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+    margin-top: -6px;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .b-checkbox__box{
+    .ui-chkbox-label{
+      font-size: 15px;
+    }
+    .b-alert-icon__box{
+      margin-top: -2px;
+      margin-left: 5px;
+    }
+  }
+}

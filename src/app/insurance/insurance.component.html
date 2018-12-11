@@ -1,0 +1,16 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="false" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div class="b-wrapper b-wrapper_top">
+
+  <app-insurance-default *ngIf="!finishStep"></app-insurance-default>
+
+  <app-insurance-success *ngIf="finishStep"></app-insurance-success>
+
+  <div class="b-insurance__next">
+    <a routerLink="/property" class="b-button">Далее</a>
+  </div>
+
+
+</div>

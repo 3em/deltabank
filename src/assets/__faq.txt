@@ -1,0 +1,46 @@
+1. Отображение пустого попапа звонка.
+В deltabank/src/app/call-popup/call-popup.component.ts переменная managerStatus отвечает за отображение.
+True - если мененджер присвоен клиенту.
+
+2. Отображение попапа оценки в любой момент на сайте
+В deltabank/src/app/property-valued-popup/property-valued-popup.component.ts переменная display
+True - покажет попап.
+
+3. Во всех эатпах прува шагов, есть переменная statusWait (например deltabank/src/app/documents-complete/documents-complete.component.ts)
+Если true то рендерится компонента ожидания
+
+4. Отображение ошибки неверного пароля или телефона при входе
+deltabank/src/app/login/enter/enter.component.ts
+переменная globalError
+
+5. Отказ ипотеки
+deltabank/src/app/questionary-complete/questionary-complete.component.ts
+successQuestionary = false если отказ
+
+6. Блокировка оценки и вывод вьюхи что надо пройти шаги ранее
+deltabank/src/app/valuation/valuation.component.ts
+showForm = false если надо пройти шаги
+
+7. Состояние расширеной навигации
+В кажой вьюхе есть переменная bigNavStatus которая передается в компоненту навигации, если false то это короткий список навигации.
+
+8. Для пункта верхней навигации «Участники» есть состояние когда участники еще прувятся. Тогда над этим пунктом должна быть иконка.
+Это переменная participantsProveStatus
+Пример в deltabank/src/app/participants-docs/participants-docs.component.html
+
+9. Для оценки и вообще на инпуты, есть состояние дисейбл
+disabledStatus: true
+пример deltabank/src/app/deal/deal.component.ts
+
+10. Для того что бы пункт навигации стал активный для клика, если клиент прошел какой то шаг но вернулся назад,
+ а потом хочет по верхней навигации опять пойти на последний шаг.
+  В deltabank/src/app/navigation/navigation.component.ts
+  есть переменная lastCompleteStep = id последнего шага на котором находится юзер
+ + после прохождения анкеты lastCompleteStep должен быть минимум равен 1, что бы юзер мог пройти со странице подтверждения анкеты на документы по навигации
+
+11. Когда с первичного рынка недвижемости переходим на страницу статуса оценки,
+в deltabank/src/app/valuation-complete/valuation-complete.component.ts
+переменной bigNavStatus, отвечающую за расширеную/дифолтную навигацию, надо поставить false
+
+12. Loader
+В deltabank/src/app/app.component.ts есть переменная statusShowLoader, true показывает лоудер

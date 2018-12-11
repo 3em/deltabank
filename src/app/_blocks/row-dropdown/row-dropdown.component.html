@@ -1,0 +1,23 @@
+<div #formItem class="u-clear-fix b-form__row" [formGroup]="group" [class.b-form__row_error]="showErrorStatus" [class.disabled]="disabledStatus">
+  <label *ngIf="labelText" class="b-form__label" [for]="idInput">{{labelText}}</label>
+  <div class="b-form__input" [class.focus]="statusFocus">
+
+    <p-dropdown class="b-dropdown"
+            [panelStyleClass]="panelClass"
+            [options]=values
+            [(ngModel)]="valueMod"
+            [placeholder]=placeholder
+            optionLabel="name"
+            [showClear]=false
+            [autoDisplayFirst]=false
+            [inputId]=idInput
+            (onFocus)="focus()"
+            (onChange)="changeValue()"
+            (focusout)="focusOut()"
+            [appendTo]= "(appendElem) ? appendElem : null"
+            [formControlName]=formControlName>
+    </p-dropdown>
+
+    <p-message *ngIf="errorText && showErrorStatus" severity="error" [text]=errorText></p-message>
+  </div>
+</div>

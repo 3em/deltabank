@@ -1,0 +1,6 @@
+<div class="u-clear-fix b-form__row b-form__row_checkbox" [formGroup]="group">
+    <label *ngIf="labelText" class="b-form__label" [for]="idInput">{{labelText}}</label>
+    <div class="b-checkbox__box">
+        <p-checkbox [formControlName]="formControlName" [name]=nameInput [value]="value" [label]="label" [inputId]="idInput" [(ngModel)]="valueMod" binary="true"></p-checkbox>
+    </div>
+</div>

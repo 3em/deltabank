@@ -1,0 +1,34 @@
+<p-sidebar [(visible)]="popupShow" [fullScreen]=true [blockScroll]=true styleClass="b-burger__popup" [appendTo]="'body'" (onHide)="hideFn()">
+
+  <div class="b-burger__overlay" (click)="hideOverlay($event)">
+
+    <div class="b-burger__wrapper">
+      <div class="u-clear-fix b-burger__header">
+        <span class="b-burger__logo">ДельтаЭкспресс</span>
+      </div>
+
+      <ul class="b-burger__list">
+        <li class="b-burger__list_item">
+          <a href="#" class="b-link-icon chat">
+            <span class="b-link-icon__i"></span>
+            Чат
+          </a>
+        </li>
+        <li class="b-burger__list_item">
+          <a href="#" (click)="showCallPopupLinkBurger($event)" class="b-link-icon call">
+            <span class="b-link-icon__i"></span>
+            Заказать звонок
+          </a>
+        </li>
+        <li class="b-burger__list_item">
+          <a href="#" class="b-link-icon exit">
+            <span class="b-link-icon__i"></span>
+            Выйти
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</p-sidebar>

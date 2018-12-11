@@ -1,0 +1,126 @@
+<section id="mortgage" class="b-questionary b-questionary__mortgage" [formGroup]="group">
+
+  <div class="b-title">
+    <h1>Выбор ипотеки</h1>
+  </div>
+
+  <app-row-input-autocomplete
+          id='block-{{questionaryFormFields.acquisitionRegion.id}}'
+          [showErrorStatus]=questionaryFormFields.acquisitionRegion.showErrorStatus
+          [errorText]=questionaryFormFields.acquisitionRegion.errorText
+          [list]="regions"
+          [labelText]=questionaryFormFields.acquisitionRegion.labelText
+          [placeholder]=questionaryFormFields.acquisitionRegion.placeholder
+          [group]="group"
+          [idInput]=questionaryFormFields.acquisitionRegion.id
+          [formControlName]=questionaryFormFields.acquisitionRegion.id
+          (errorStatusChange)="questionaryFormFields.acquisitionRegion.showErrorStatus = $event">
+  </app-row-input-autocomplete>
+
+  <app-row-dropdown id='block-{{questionaryFormFields.loanObject.id}}'
+                    [showErrorStatus]=questionaryFormFields.loanObject.showErrorStatus
+                    [errorText]=questionaryFormFields.loanObject.errorText
+                    [labelText]=questionaryFormFields.loanObject.labelText
+                    [placeholder]=questionaryFormFields.loanObject.placeholder
+                    [group]="group"
+                    [formControlName]=questionaryFormFields.loanObject.id
+                    [idInput]=questionaryFormFields.loanObject.id
+                    [nameInput]=questionaryFormFields.loanObject.nameInput
+                    [values]=questionaryFormFields.loanObject.values
+                    [selectedItem]=questionaryFormFields.loanObject.selectedItem
+                    [panelClass]=questionaryFormFields.loanObject.panelClass
+                    (errorStatusChange)="questionaryFormFields.loanObject.showErrorStatus = $event"
+                    (changeCurrentValue)="changeCurrentValueLoanObject($event)">
+  </app-row-dropdown>
+
+  <app-row-input-radio
+          [labelText]=questionaryFormFields.readyStatus.labelText
+          [group]="group"
+          [currentValue]=questionaryFormFields.readyStatus.currentValue
+          [nameInput]=questionaryFormFields.readyStatus.nameInput
+          [inputs]="questionaryFormFields.readyStatus.inputs"
+          (changeCurrentValue)="changeCurrentValueReadyStatus($event)">
+  </app-row-input-radio>
+
+  <app-row-input-radio
+          [labelText]=questionaryFormFields.realtyGuaranty.labelText
+          [group]="group"
+          [currentValue]=questionaryFormFields.realtyGuaranty.currentValue
+          [nameInput]=questionaryFormFields.realtyGuaranty.nameInput
+          [inputs]="questionaryFormFields.realtyGuaranty.inputs"
+          (changeCurrentValue)="changeCurrentValueRealtyGuaranty($event)">
+  </app-row-input-radio>
+
+  <app-row-input-price
+          id='block-{{questionaryFormFields.salaryAfterTaxation.id}}'
+          [showErrorStatus]=questionaryFormFields.salaryAfterTaxation.showErrorStatus
+          [errorText]=questionaryFormFields.salaryAfterTaxation.errorText
+          [type]=questionaryFormFields.salaryAfterTaxation.type
+          [labelText]=questionaryFormFields.salaryAfterTaxation.labelText
+          [placeholder]=questionaryFormFields.salaryAfterTaxation.placeholder
+          [group]="group"
+          [formControlName]=questionaryFormFields.salaryAfterTaxation.id
+          [idInput]=questionaryFormFields.salaryAfterTaxation.id
+          [nameInput]=questionaryFormFields.salaryAfterTaxation.nameInput
+          (errorStatusChange)="questionaryFormFields.salaryAfterTaxation.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-dropdown id='block-{{questionaryFormFields.ratesProgram.id}}'
+                    [showErrorStatus]=questionaryFormFields.ratesProgram.showErrorStatus
+                    [errorText]=questionaryFormFields.ratesProgram.errorText
+                    [labelText]=questionaryFormFields.ratesProgram.labelText
+                    [placeholder]=questionaryFormFields.ratesProgram.placeholder
+                    [group]="group"
+                    [formControlName]=questionaryFormFields.ratesProgram.id
+                    [idInput]=questionaryFormFields.ratesProgram.id
+                    [nameInput]=questionaryFormFields.ratesProgram.nameInput
+                    [values]=questionaryFormFields.ratesProgram.values
+                    [selectedItem]=questionaryFormFields.ratesProgram.selectedItem
+                    [panelClass]=questionaryFormFields.ratesProgram.panelClass
+                    (errorStatusChange)="questionaryFormFields.ratesProgram.showErrorStatus = $event"
+                    (changeCurrentValue)="changeCurrentValueRatesProgram($event)">
+  </app-row-dropdown>
+
+  <app-row-checkbox class="b-questionary__mortgage_checkbox"
+                    id='block-{{questionaryFormFields.salaryRosbank.id}}'
+                    [nameInput]=questionaryFormFields.salaryRosbank.nameInput
+                    [idInput]=questionaryFormFields.salaryRosbank.id
+                    [group]="group"
+                    [formControlName]=questionaryFormFields.salaryRosbank.id
+                    [label]=questionaryFormFields.salaryRosbank.label
+                    [labelText]=questionaryFormFields.salaryRosbank.labelText
+                    [value]=questionaryFormFields.salaryRosbank.value
+                    (changeCurrentValue)="changeCurrentValueSalaryRosbank($event)">
+  </app-row-checkbox>
+
+  <app-row-checkbox class="b-questionary__mortgage_checkbox"
+                    id='block-{{questionaryFormFields.corporateRosbank.id}}'
+                    [nameInput]=questionaryFormFields.corporateRosbank.nameInput
+                    [idInput]=questionaryFormFields.corporateRosbank.id
+                    [group]="group"
+                    [formControlName]=questionaryFormFields.corporateRosbank.id
+                    [label]=questionaryFormFields.corporateRosbank.label
+                    [labelText]=questionaryFormFields.corporateRosbank.labelText
+                    [value]=questionaryFormFields.corporateRosbank.value
+                    (changeCurrentValue)="changeCurrentValueCorporateRosbank($event)">
+  </app-row-checkbox>
+
+  <app-row-checkbox class="b-questionary__mortgage_checkbox"
+                    id='block-{{questionaryFormFields.lifeInsurance.id}}'
+                    [nameInput]=questionaryFormFields.lifeInsurance.nameInput
+                    [idInput]=questionaryFormFields.lifeInsurance.id
+                    [group]="group"
+                    [formControlName]=questionaryFormFields.lifeInsurance.id
+                    [label]=questionaryFormFields.lifeInsurance.label
+                    [labelText]=questionaryFormFields.lifeInsurance.labelText
+                    [value]=questionaryFormFields.lifeInsurance.value
+                    (changeCurrentValue)="changeCurrentValueLifeInsurance($event)">
+  </app-row-checkbox>
+
+  <app-questionary-calculation [showCalcBottom]="showCalcBottom" [group]=group [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock"></app-questionary-calculation>
+
+  <div *ngIf="showCalcBottom" class="b-questionary__mortgage_result-button">
+    <a routerLink="/questionary-complete" class="b-button">Узнать решение</a>
+  </div>
+
+</section>

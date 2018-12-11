@@ -1,0 +1,29 @@
+<div class="b-login__box">
+  <div class="b-title">
+    <h1>Введите код из СМС</h1>
+  </div>
+
+  <form [formGroup]="smscodeform" (ngSubmit)="onSubmit(smscodeform.value)">
+    <app-row-input-mask
+            id='block-{{smscodeFormFields.code.id}}'
+            [showErrorStatus]=smscodeFormFields.code.showErrorStatus
+            [errorText]=smscodeFormFields.code.errorText
+            [type]=smscodeFormFields.code.type
+            [labelText]=smscodeFormFields.code.labelText
+            [placeholder]=smscodeFormFields.code.placeholder
+            [group]="smscodeform"
+            [formControlName]=smscodeFormFields.code.id
+            [idInput]=smscodeFormFields.code.id
+            [nameInput]=smscodeFormFields.code.nameInput
+            [mask]=smscodeFormFields.code.mask
+            [slotChar]=smscodeFormFields.code.slotChar
+            (errorStatusChange)="smscodeFormFields.code.showErrorStatus = $event">
+    </app-row-input-mask>
+    <div class="b-sms__change">
+      <a class="b-button" href="#" *ngIf="!changeSms" (click)="sendNewSms($event)">Отправить снова</a>
+      <p class="b-sms__change_text" *ngIf="changeSms">Отправить снова можно через {{timing}} {{timingWord}}</p>
+    </div>
+    <button id="submit" pButton type="submit" class="hidden"  label=""></button>
+  </form>
+
+</div>

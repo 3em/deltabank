@@ -1,0 +1,17 @@
+.b-popup__property{
+  width: 650px;
+}
+.b-button__box{
+  padding-top: 30px;
+}
+
+@media only screen and (max-width: 767px){
+  .b-popup__property{
+    width: 100%;
+  }
+  .b-button__box{
+    .ui-button{
+      width: 100%;
+    }
+  }
+}

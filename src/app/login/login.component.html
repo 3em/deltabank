@@ -1,0 +1,22 @@
+<app-header [headerStatusFull]="headerStatusFull"></app-header>
+
+<div class="b-login">
+  <div class="b-login__blur" [ngStyle]="{width: windowWidth+'px'}"></div>
+
+  <div class="b-login__box">
+    <div class="b-title">
+      <h1>Узнайте решение по ипотеке уже через 15 минут</h1>
+      <p *ngIf="!hideText">
+        Понизим ставку по ипотеке на <span class="b-title__percent"><span>0,25%</span></span> после получения предварительного решения онлайн
+      </p>
+    </div>
+    <p-tabView [activeIndex]="activeTab" (onChange)="handleChange($event)">
+      <p-tabPanel header="Зарегистрироваться">
+        <app-registration></app-registration>
+      </p-tabPanel>
+      <p-tabPanel header="Войти">
+        <app-enter></app-enter>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>

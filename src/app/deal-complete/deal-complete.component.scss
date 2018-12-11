@@ -1,0 +1,155 @@
+@import "../../assets/scss/variables";
+
+.b-deal-info{
+  margin-top: -10px;
+  position: relative;
+  margin-bottom: 50px;
+  font-size: $biggerFontSize;
+
+  .b-deal-info__time{
+    float: left;
+    vertical-align: top;
+    padding-right: 30px;
+    margin-right: 30px;
+    position: relative;
+
+    &:before{
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 1px;
+      background: rgba(0,0,0, .2);
+      height: 20px;
+    }
+  }
+
+  .b-deal-info__address{
+    float: left;
+    vertical-align: top;
+  }
+}
+
+.b-deal-text{
+  background: #fff;
+  box-shadow: 0 50px 50px rgba(0,0,0, .1);
+  position: relative;
+  padding: 50px;
+  font-size: $biggerFontSize;
+  border-radius: 6px;
+  margin-bottom: 60px;
+}
+
+.b-deal-text__docs{
+  margin-top: 50px;
+  padding-top: 45px;
+  border-top: 1px solid rgba(0,0,0, .2);
+}
+
+.b-deal__docs_list{
+  position: relative;
+  padding-top: 27px;
+
+  .b-deal__docs_item{
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+
+    &:nth-child(even){
+      margin-left: 8%;
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  .b-deal__docs_link{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    padding-top: 4px;
+    padding-left: 70px;
+    text-decoration: none;
+    border: none;
+    min-height: 55px;
+    transition: color .25s;
+
+    &:hover{
+      color: $linkColor;
+    }
+
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 47px;
+      height: 51px;
+      background: url("../../assets/i/i-pdf.svg") no-repeat;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .b-wrapper{
+    &.b-wrapper_top{
+      padding-top: 0;
+    }
+  }
+
+  .b-deal-text{
+    padding: 20px 5% 30px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .b-deal-info{
+    .b-deal-info__time{
+      width: 100%;
+      padding-right: 0;
+      margin-right: 0;
+
+      &:before{
+        display: none;
+      }
+    }
+    .b-deal-info__address{
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+
+  .b-deal-text__docs{
+    margin-top: 30px;
+    padding-top: 25px;
+  }
+
+  .b-deal__docs_list{
+
+    .b-deal__docs_item{
+      width: 100%;
+      margin: 0 0 20px !important;
+    }
+
+    .b-deal__docs_link{
+      padding-left: 42px;
+      font-size: 15px;
+      line-height: 24px;
+      padding-top: 0;
+      min-height: 35px;
+
+      &:before{
+        width: 32px;
+        height: 35px;
+      }
+    }
+  }
+
+}

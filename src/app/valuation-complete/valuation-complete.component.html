@@ -1,0 +1,7 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="bigNavStatus" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<app-valuation-complete-wait *ngIf="statusWait"></app-valuation-complete-wait>
+
+<app-valuation-complete-success *ngIf="!statusWait" [creditSum]=creditSum></app-valuation-complete-success>

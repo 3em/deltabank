@@ -1,0 +1,24 @@
+.b-title{
+  margin-bottom: 0;
+
+  h1{
+    margin-bottom: 11px;
+  }
+}
+.b-sms__change{
+  float: left;
+  vertical-align: top;
+  width: 100%;
+  margin-top: 23px;
+  position: relative;
+  font-size: 17px;
+  line-height: 24px;
+
+  .b-sms__change_text{
+    opacity: .6;
+  }
+
+  .b-button{
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,109 @@
+@import "../../assets/scss/variables";
+
+.b-sign{
+  margin-bottom: 60px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0, .2);
+  padding: 0 170px 65px;
+
+  .b-sign__title{
+    margin-bottom: 30px;
+    font-size: $biggerFontSize;
+    line-height: $biggerFontLineHeight;
+  }
+}
+
+.b-documents-form{
+  position: relative;
+  padding: 0 170px;
+}
+
+.b-documents-wrapper{
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 50px 50px rgba(0,0,0, .1);
+  padding: 60px 0 100px;
+}
+
+.b-sign__button-box{
+  padding-top: 12px;
+
+  .b-button{
+    float: left;
+    vertical-align: top;
+    margin-right: 50px;
+  }
+
+  .b-link-icon{
+    margin-top: 6px;
+    color: $linkColor;
+  }
+}
+
+.b-documents-form__submit{
+  position: relative;
+  margin-top: 60px;
+
+  .ui-button{
+    width: 220px;
+  }
+}
+
+.b-documents-form__list{
+  position: relative;
+}
+
+@media only screen and (max-width: 1024px){
+
+  .b-sign,
+  .b-documents-form{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+}
+
+@media only screen and (max-width: 767px){
+
+  .b-documents-wrapper{
+    padding: 30px 0 50px;
+  }
+
+  .b-sign{
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+
+    .b-sign__title{
+      font-size: $regularFontSize_phone;
+      line-height: $regularFontLineHeight_phone;
+    }
+  }
+
+  .b-sign__button-box{
+    padding-top: 0;
+    text-align: center;
+
+    .b-button{
+      width: 100%;
+    }
+
+    .b-link-icon{
+      margin-top: 20px;
+    }
+  }
+
+  .b-documents-form__submit{
+    margin-top: 40px;
+
+    .ui-button{
+      width: 100%;
+    }
+  }
+
+  .b-wrapper{
+    &.b-wrapper_top{
+      padding-top: 0;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.b-valuation__wrapper{
+  padding: 20px 55px 75px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.b-valuation__upload{
+  position: relative;
+  margin: 50px 0 0 240px;
+}
+
+.b-valuation__button{
+  position: relative;
+  margin-top: 60px;
+}
+
+@media only screen and (max-width: 1064px){
+  .b-valuation__wrapper {
+    padding: 30px 5% 50px;
+  }
+  .b-valuation__upload{
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .b-valuation__wrapper {
+    padding: 10px 5% 30px;
+  }
+  .b-valuation__button{
+    margin-top: 40px;
+
+    .ui-button{
+      width: 100%;
+    }
+  }
+  .b-wrapper{
+    &.b-wrapper_top{
+      padding-top: 0;
+    }
+  }
+}

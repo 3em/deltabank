@@ -1,0 +1,19 @@
+.b-questionary__questions-prove{
+  padding: 25px 55px 75px;
+  position: relative;
+
+  .b-title{
+    margin-bottom: 0;
+
+    h6{
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1064px){
+  .b-questionary__questions-prove{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}

@@ -1,0 +1,46 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="false" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div id="wrapper" class="b-wrapper b-wrapper_top">
+
+  <div class="b-title">
+    <h1>Вы записаны на сделку</h1>
+  </div>
+
+  <div class="u-clear-fix b-deal-info">
+    <div class="b-deal-info__time">
+      {{time}}
+    </div>
+    <div class="b-deal-info__address">
+      по адресу {{address}}
+    </div>
+  </div>
+
+  <div class="b-deal-text">
+    <div class="b-text">
+      <p>Не забудьте взять с собой:</p>
+      <ul>
+        <li>Паспорт</li>
+        <li>Заверенная копия трудовой книжки</li>
+        <li>Результат оценки стоимости недвижимости</li>
+        <li>Договор купли-продажи</li>
+      </ul>
+    </div>
+    <div class="b-deal-text__docs">
+      <p>Перед сделкой ознакомьтесь с документами:</p>
+      <ul class="u-clear-fix b-deal__docs_list">
+        <li class="b-deal__docs_item">
+          <a href="" download class="b-deal__docs_link">Права и обязанности граждан и банков в ипотечном кредитовании.pdf</a>
+        </li>
+        <li class="b-deal__docs_item">
+          <a href="" download class="b-deal__docs_link">Права и обязанности созаемщика.pdf</a>
+        </li>
+        <li class="b-deal__docs_item">
+          <a href="" download class="b-deal__docs_link">Виды ипотечного кредита в Росбанке.pdf</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

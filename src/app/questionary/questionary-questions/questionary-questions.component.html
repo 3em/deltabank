@@ -1,0 +1,37 @@
+<section id="questions" class="b-questionary" [formGroup]="group">
+
+  <div class="b-title">
+    <h1>Уточняющие вопросы</h1>
+  </div>
+
+
+  <div *ngFor="let key of objectKeys(questionaryFormFields)">
+    <app-row-checkbox *ngIf="key != 'question7' || (key === 'question7' && questionaryFormFields['question6'].value === true)"
+                      id='block-{{questionaryFormFields[key].id}}'
+                      [nameInput]=questionaryFormFields[key].nameInput
+                      [idInput]=questionaryFormFields[key].id
+                      [group]="group"
+                      [formControlName]=questionaryFormFields[key].id
+                      [label]=questionaryFormFields[key].label
+                      [labelText]=questionaryFormFields[key].labelText
+                      [value]=questionaryFormFields[key].value
+                      (changeCurrentValue)="changeCurrentValueQuestion($event, key)">
+    </app-row-checkbox>
+
+    <app-row-input *ngIf="key === 'question4' && statusDopTextInfluence"
+            id='block-{{questionaryFormFieldsDop.dopTextInfluence.id}}'
+            [showErrorStatus]=questionaryFormFieldsDop.dopTextInfluence.showErrorStatus
+            [errorText]=questionaryFormFieldsDop.dopTextInfluence.errorText
+            [type]=questionaryFormFieldsDop.dopTextInfluence.type
+            [labelText]=questionaryFormFieldsDop.dopTextInfluence.labelText
+            [placeholder]=questionaryFormFieldsDop.dopTextInfluence.placeholder
+            [group]="group"
+            [formControlName]=questionaryFormFieldsDop.dopTextInfluence.id
+            [idInput]=questionaryFormFieldsDop.dopTextInfluence.id
+            [nameInput]=questionaryFormFieldsDop.dopTextInfluence.nameInput
+            [descText]=questionaryFormFieldsDop.dopTextInfluence.descText
+            (errorStatusChange)="questionaryFormFieldsDop.dopTextInfluence.showErrorStatus = $event">
+    </app-row-input>
+  </div>
+
+</section>

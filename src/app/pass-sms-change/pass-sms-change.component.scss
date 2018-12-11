@@ -1,0 +1,18 @@
+@import "../login/login.component";
+
+.b-login{
+  width: 650px;
+  padding-left: 85px;
+  padding-right: 85px;
+}
+.b-login__sms_wrapper{
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .b-login {
+    width: 95%;
+    padding: 50px 5% 25px;
+  }
+}

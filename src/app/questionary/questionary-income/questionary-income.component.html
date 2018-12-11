@@ -1,0 +1,125 @@
+<section id="income" class="b-questionary b-questionary__work" [formGroup]="group">
+
+  <div class="b-title">
+    <h1>Доходы</h1>
+  </div>
+
+  <app-row-input-price
+                 id='block-{{questionaryFormFields.salary.id}}'
+                 [showErrorStatus]=questionaryFormFields.salary.showErrorStatus
+                 [errorText]=questionaryFormFields.salary.errorText
+                 [type]=questionaryFormFields.salary.type
+                 [labelText]=questionaryFormFields.salary.labelText
+                 [placeholder]=questionaryFormFields.salary.placeholder
+                 [group]="group"
+                 [formControlName]=questionaryFormFields.salary.id
+                 [idInput]=questionaryFormFields.salary.id
+                 [nameInput]=questionaryFormFields.salary.nameInput
+                 (errorStatusChange)="questionaryFormFields.salary.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-dropdown id='block-{{questionaryFormFields.docSalary.id}}'
+                    [showErrorStatus]=questionaryFormFields.docSalary.showErrorStatus
+                    [errorText]=questionaryFormFields.docSalary.errorText
+                    [labelText]=questionaryFormFields.docSalary.labelText
+                    [placeholder]=questionaryFormFields.docSalary.placeholder
+                    [group]="group"
+                    [formControlName]=questionaryFormFields.docSalary.id
+                    [idInput]=questionaryFormFields.docSalary.id
+                    [nameInput]=questionaryFormFields.docSalary.nameInput
+                    [values]=questionaryFormFields.docSalary.values
+                    [selectedItem]=questionaryFormFields.docSalary.selectedItem
+                    [panelClass]=questionaryFormFields.docSalary.panelClass
+                    (errorStatusChange)="questionaryFormFields.docSalary.showErrorStatus = $event"
+                    (changeCurrentValue)="changeCurrentValueDocSalary($event)">
+  </app-row-dropdown>
+
+  <app-row-input *ngIf="showOtherDocSalary"
+                 id='block-{{questionaryFormFields.otherDocSalary.id}}'
+                 [showErrorStatus]=questionaryFormFields.otherDocSalary.showErrorStatus
+                 [errorText]=questionaryFormFields.otherDocSalary.errorText
+                 [type]=questionaryFormFields.otherDocSalary.type
+                 [labelText]=questionaryFormFields.otherDocSalary.labelText
+                 [placeholder]=questionaryFormFields.otherDocSalary.placeholder
+                 [group]="group"
+                 [formControlName]=questionaryFormFields.otherDocSalary.id
+                 [idInput]=questionaryFormFields.otherDocSalary.id
+                 [nameInput]=questionaryFormFields.otherDocSalary.nameInput
+                 (errorStatusChange)="questionaryFormFields.otherDocSalary.showErrorStatus = $event">
+  </app-row-input>
+
+  <app-row-input-price *ngIf="isAnotherJob"
+                 id='block-{{questionaryFormFields.salaryDop.id}}'
+                 [showErrorStatus]=questionaryFormFields.salaryDop.showErrorStatus
+                 [errorText]=questionaryFormFields.salaryDop.errorText
+                 [type]=questionaryFormFields.salaryDop.type
+                 [labelText]=questionaryFormFields.salaryDop.labelText
+                 [placeholder]=questionaryFormFields.salaryDop.placeholder
+                 [group]="group"
+                 [formControlName]=questionaryFormFields.salaryDop.id
+                 [idInput]=questionaryFormFields.salaryDop.id
+                 [nameInput]=questionaryFormFields.salaryDop.nameInput
+                 (errorStatusChange)="questionaryFormFields.salaryDop.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-dropdown *ngIf="isAnotherJob"
+          id='block-{{questionaryFormFields.docSalaryDop.id}}'
+                    [showErrorStatus]=questionaryFormFields.docSalaryDop.showErrorStatus
+                    [errorText]=questionaryFormFields.docSalaryDop.errorText
+                    [labelText]=questionaryFormFields.docSalaryDop.labelText
+                    [placeholder]=questionaryFormFields.docSalaryDop.placeholder
+                    [group]="group"
+                    [formControlName]=questionaryFormFields.docSalaryDop.id
+                    [idInput]=questionaryFormFields.docSalaryDop.id
+                    [nameInput]=questionaryFormFields.docSalaryDop.nameInput
+                    [values]=questionaryFormFields.docSalaryDop.values
+                    [selectedItem]=questionaryFormFields.docSalaryDop.selectedItem
+                    [panelClass]=questionaryFormFields.docSalaryDop.panelClass
+                    (errorStatusChange)="questionaryFormFields.docSalaryDop.showErrorStatus = $event"
+                    (changeCurrentValue)="changeCurrentValueDocSalaryDop($event)">
+  </app-row-dropdown>
+
+  <app-row-input *ngIf="isAnotherJob && showOtherDocSalaryDop"
+                 id='block-{{questionaryFormFields.otherDocSalaryDop.id}}'
+                 [showErrorStatus]=questionaryFormFields.otherDocSalaryDop.showErrorStatus
+                 [errorText]=questionaryFormFields.otherDocSalaryDop.errorText
+                 [type]=questionaryFormFields.otherDocSalaryDop.type
+                 [labelText]=questionaryFormFields.otherDocSalaryDop.labelText
+                 [placeholder]=questionaryFormFields.otherDocSalaryDop.placeholder
+                 [group]="group"
+                 [formControlName]=questionaryFormFields.otherDocSalaryDop.id
+                 [idInput]=questionaryFormFields.otherDocSalaryDop.id
+                 [nameInput]=questionaryFormFields.otherDocSalaryDop.nameInput
+                 (errorStatusChange)="questionaryFormFields.otherDocSalaryDop.showErrorStatus = $event">
+  </app-row-input>
+
+  <app-row-input-price
+                       id='block-{{questionaryFormFields.rentIncome.id}}'
+                       [showErrorStatus]=questionaryFormFields.rentIncome.showErrorStatus
+                       [errorText]=questionaryFormFields.rentIncome.errorText
+                       [type]=questionaryFormFields.rentIncome.type
+                       [labelText]=questionaryFormFields.rentIncome.labelText
+                       [placeholder]=questionaryFormFields.rentIncome.placeholder
+                       [group]="group"
+                       [formControlName]=questionaryFormFields.rentIncome.id
+                       [idInput]=questionaryFormFields.rentIncome.id
+                       [nameInput]=questionaryFormFields.rentIncome.nameInput
+                       (errorStatusChange)="questionaryFormFields.rentIncome.showErrorStatus = $event">
+  </app-row-input-price>
+
+  <app-row-input-price
+                       id='block-{{questionaryFormFields.pension.id}}'
+                       [showErrorStatus]=questionaryFormFields.pension.showErrorStatus
+                       [errorText]=questionaryFormFields.pension.errorText
+                       [type]=questionaryFormFields.pension.type
+                       [labelText]=questionaryFormFields.pension.labelText
+                       [placeholder]=questionaryFormFields.pension.placeholder
+                       [group]="group"
+                       [formControlName]=questionaryFormFields.pension.id
+                       [idInput]=questionaryFormFields.pension.id
+                       [nameInput]=questionaryFormFields.pension.nameInput
+                       (errorStatusChange)="questionaryFormFields.pension.showErrorStatus = $event">
+  </app-row-input-price>
+
+
+</section>

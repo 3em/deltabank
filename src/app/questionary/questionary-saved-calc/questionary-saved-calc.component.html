@@ -1,0 +1,92 @@
+<section id="savedCalc" class="b-questionary" >
+
+  <div class="b-title">
+    <h1>Сохраненные расчеты</h1>
+    <p>
+      Вы можете сравнить свои расчеты и выбрать наиболее удобные условия.<br>
+      Когда определитесь с выбором –нажмите на расчет, чтобы узнать
+      предварительное решение по ипотеке.
+    </p>
+  </div>
+
+  <div class="b-calc-result">
+
+    <div class="u-clear-fix b-calc-result__title">
+      <div class="b-calc-result__column">
+        Рассчет по
+      </div>
+      <div class="b-calc-result__column">
+        Сумма кредита
+      </div>
+      <div class="b-calc-result__column">
+        Первый взнос
+      </div>
+      <div class="b-calc-result__column">
+        Ежемес. платеж
+      </div>
+      <div class="b-calc-result__column">
+        Срок
+      </div>
+      <div class="b-calc-result__column">
+        Ставка
+      </div>
+      <div class="b-calc-result__column">
+        &nbsp;
+      </div>
+    </div>
+
+    <div class="b-calc-result__item_wrapper">
+
+      <a href="#" *ngFor="let savedItem of savedItems" (click)="clickItem($event, savedItem.error)" class="u-clear-fix b-calc-result__item" [class.error]="savedItem.error">
+        <div class="b-calc-result__column">
+          {{savedItem.type}}
+        </div>
+        <div class="no-wrap b-calc-result__column">
+          {{formating(savedItem.credit)}}
+          <span class="b-rub">a</span>
+        </div>
+        <div class="no-wrap b-calc-result__column">
+          {{formating(savedItem.firstPay)}}
+          <span class="b-rub">a</span>
+        </div>
+        <div class="no-wrap b-calc-result__column">
+          {{formating(savedItem.monthPay)}}
+          <span class="b-rub">a</span>
+
+          <div class="b-alert-icon__box" *ngIf="savedItem.error">
+            <span data-letters="!" class="b-alert-icon" (mouseenter)="alertShow($event, alertCalc)" (mouseleave)="alertHide($event, alertCalc)"></span>
+            <p-overlayPanel #alertCalc>
+              <p>
+                Что бы узнать решение по ипотеке
+                уменьшите сумму кредита,
+                увеличьте срок выплат
+                или первоначальный взнос
+              </p>
+            </p-overlayPanel>
+          </div>
+
+        </div>
+        <div class="b-calc-result__column">
+          {{savedItem.period}} {{getYearsWord(savedItem.period)}}
+        </div>
+        <div class="b-calc-result__column">
+          {{savedItem.percent}} %
+        </div>
+        <div class="b-calc-result__column">
+          &nbsp;
+          <span class="b-button">Узнать решение</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="b-calc-result__download">
+      <a href="#" class="b-link-icon download">
+        <span class="b-link-icon__i"></span>
+        Скачать расчеты
+      </a>
+    </div>
+
+  </div>
+
+</section>

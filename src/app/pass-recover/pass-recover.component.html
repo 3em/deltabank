@@ -1,0 +1,39 @@
+<app-header [headerStatusFull]="headerStatusFull"></app-header>
+
+<div class="b-login b-login__pass-recover">
+  <div class="b-login__blur" [ngStyle]="{width: windowWidth+'px'}"></div>
+
+  <div class="b-login__box">
+    <div class="b-title">
+      <h1>Сброс пароля</h1>
+      <p>Ведите номер телефона на который
+        мы вам отправим код для сброса пароля</p>
+    </div>
+
+    <form [formGroup]="passrecoverform" class="b-pass-recover" (ngSubmit)="onSubmit(passrecoverform.value)">
+      <app-row-input-phone
+              id='block-{{passrecoverFromFields.phone.id}}'
+              [showErrorStatus]=passrecoverFromFields.phone.showErrorStatus
+              [errorText]=passrecoverFromFields.phone.errorText
+              [type]=passrecoverFromFields.phone.type
+              [labelText]=passrecoverFromFields.phone.labelText
+              [placeholder]=passrecoverFromFields.phone.placeholder
+              [group]="passrecoverform"
+              [formControlName]=passrecoverFromFields.phone.id
+              [idInput]=passrecoverFromFields.phone.id
+              [nameInput]=passrecoverFromFields.phone.nameInput
+              [mask]=passrecoverFromFields.phone.mask
+              (errorStatusChange)="passrecoverFromFields.phone.showErrorStatus = $event">
+      </app-row-input-phone>
+
+      <div class="b-form__row b-form__row_button">
+        <button pButton type="submit"  label="Сбросить пароль"></button>
+        <a routerLink="/login/enter" class="b-link">Вернуться назад</a>
+      </div>
+    </form>
+
+  </div>
+
+
+
+</div>

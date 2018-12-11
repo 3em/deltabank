@@ -1,0 +1,19 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="false" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div class="b-result-step">
+
+    <app-questionary-complete-not-enough-data *ngIf="!statusWait && !successQuestionary"></app-questionary-complete-not-enough-data>
+
+    <app-questionary-complete-wait *ngIf="statusWait"></app-questionary-complete-wait>
+
+    <app-questionary-complete-success *ngIf="!statusWait && successQuestionary" [creditSum]=creditSum></app-questionary-complete-success>
+
+</div>
+
+<div class="b-mortgage-decision" [ngStyle]="{width: widthPanel+'%'}" *ngIf="!statusWait && successQuestionary && leftDays">
+    <div class="b-mortgage-decision__text" [class.left]="widthPanel < 35" [class.right]="widthPanel >= 35">
+        Срок решения по ипотеке истекает через<span class="b-mortgage-decision__text_amount"> {{leftDays}} {{wordDays}}</span>
+    </div>
+</div>

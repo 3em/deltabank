@@ -1,0 +1,28 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="true" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div class="b-wrapper b-wrapper_top">
+
+  <div class="b-title">
+    <h1>Расскажите об участниках сделки</h1>
+  </div>
+
+  <form [formGroup]="participantsform" (ngSubmit)="onSubmit()" class="b-participants__form">
+
+    <div class="b-participants__list" *ngFor="let item of objectKeys(participantsform.controls)" [id]="'participants-list-'+item">
+      <app-participants-item [arrInvalidFirst]="arrInvalidFirst" [proveStatus]="proveStatusList[item]" [hideStatus]="toggleAccordionList[item]" [item]="item" [group]="participantsform.controls[item]" [showErrors]="showErrors" [showErrorScrollBlock]="showErrorScrollBlock" (pushRoleArr)="pushRoleArr($event)" (changeStatusPersonalType)="changeStatusPersonalType($event)" (changeStatusSignType)="changeStatusSignType($event)" (deleteUser)="deleteUser($event)"></app-participants-item>
+    </div>
+
+
+    <div class="u-clear-fix b-participants__form-button">
+      <button pButton type="submit"  label="Далее"></button>
+      <a href="#" class="b-link-icon add" (click)="addParticipant($event)">
+        <span class="b-link-icon__i"></span>
+        Добавить участника сделки
+      </a>
+    </div>
+
+  </form>
+
+</div>

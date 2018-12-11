@@ -1,0 +1,18 @@
+.b-form__input_alert{
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  background: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 24px 20px 40px;
+  font-size: 20px;
+  line-height: 33px;
+  z-index: 2;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.06);
+
+  .b-form__input_alert-text{
+    margin-bottom: 15px;
+  }
+}

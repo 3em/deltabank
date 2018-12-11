@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-23929.5 -1154.373 19.184 21.445">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="Group_590" data-name="Group 590" transform="translate(-23929.5 -1154.373)">
+    <path id="Path_570" data-name="Path 570" class="cls-1" d="M16.266,20.583H2.8a2.308,2.308,0,0,1-2.3-2.3V4.7A2.308,2.308,0,0,1,2.8,2.4h13.58a2.308,2.308,0,0,1,2.3,2.3v13.58A2.41,2.41,0,0,1,16.266,20.583Z" transform="translate(0 0.362)"/>
+    <line id="Line_422" data-name="Line 422" class="cls-2" y1="4.718" transform="translate(5.909)"/>
+    <line id="Line_423" data-name="Line 423" class="cls-2" y1="4.718" transform="translate(12.814)"/>
+    <path id="Path_571" data-name="Path 571" class="cls-3" d="M10,8.351,11.726,7.2v7.135" transform="translate(1.433 1.086)"/>
+    <path id="Path_572" data-name="Path 572" class="cls-3" d="M4.56,7.991a1.9,1.9,0,0,1,2.532-.345c1.151.806.46,2.877-.806,2.762,0,0,2.187,0,2.071,2.071-.115,2.3-3.452,2.187-4.258.921" transform="translate(0.543 1.101)"/>
+  </g>
+</svg>

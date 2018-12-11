@@ -1,0 +1,22 @@
+.b-questionary{
+  position: relative;
+  padding: 118px 55px 75px;
+
+  .b-title{
+    max-width: none;
+  }
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1000%;
+    right: -1000%;
+    height: 1px;
+    background: rgba(0,0,0, .2);
+  }
+}
+
+.b-questionary__work_dop{
+  padding-top: 96px;
+}

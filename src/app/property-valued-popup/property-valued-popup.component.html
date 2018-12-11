@@ -1,0 +1,13 @@
+<p-sidebar [(visible)]="display" [fullScreen]=true [blockScroll]=true class="b-agree__overlay" [appendTo]="'body'" (onHide)="hideFn()">
+
+  <div class="b-popup b-popup__property">
+    <div class="b-title">
+      <h1>Недвижимость оценена на <span class="no-wrap">{{formating(propertySum)}} <span class="b-rub">a</span></span></h1>
+      <p><a href="#" download>Отчет об оценке стоимости недвижимости</a></p>
+    </div>
+    <div class="b-button__box">
+      <button pButton type="button" (click)="hideFn()" label="Продолжить оформление"></button>
+    </div>
+  </div>
+
+</p-sidebar>

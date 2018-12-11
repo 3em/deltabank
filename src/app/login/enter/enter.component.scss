@@ -1,0 +1,39 @@
+@import "../../../assets/scss/variables";
+
+.b-form__row_button{
+  padding-left: 200px;
+  margin-top: 60px;
+}
+.b-enter__field{
+  position: relative;
+
+  .b-link{
+    position: absolute;
+    right: 0;
+    top: 35px;
+    z-index: 2;
+  }
+}
+.b-enter__error{
+  color: $linkColor;
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 767px){
+  .b-form__row_button{
+    padding-left: 0;
+    margin-top: 36px;
+
+    button{
+      width: 100%;
+    }
+  }
+  .b-enter__field{
+    .b-link{
+      position: relative;
+      top: 0;
+      margin-top: 15px;
+      display: inline-block;
+    }
+  }
+}

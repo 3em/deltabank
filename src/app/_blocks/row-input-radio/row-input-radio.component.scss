@@ -1,0 +1,7 @@
+@import "../row-input/row-input.component";
+
+.b-form__input{
+  &:before{
+    background: $borderColor !important;
+  }
+}

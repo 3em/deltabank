@@ -1,0 +1,8 @@
+<div class="u-clear-fix b-form__row" [formGroup]="group" [class.b-form__row_error]="showErrorStatus" [class.disabled]="disabledStatus">
+  <label *ngIf="labelText" class="b-form__label" [for]="idInput">{{labelText}}</label>
+  <div class="b-form__input" [class.focus]="statusFocus">
+    <p-inputMask class="b-mask-input" [slotChar]="slotChar" [mask]="mask"  [(ngModel)]="value" [inputId]="idInput" [formControlName]="formControlName" [name]="nameInput" [type]="type" [placeholder]="placeholder" pInputText (onFocus)="focus()" (focusout)="focusOut()" ></p-inputMask>
+    <p-message *ngIf="errorText && showErrorStatus" severity="error" [text]=errorText></p-message>
+  </div>
+  <p *ngIf="descText" class="b-form__input_desc" [class.visibility]="showErrorStatus">{{descText}} <a [href]=descTextLinkUrl *ngIf="descTextLink">{{descTextLink}}</a></p>
+</div>

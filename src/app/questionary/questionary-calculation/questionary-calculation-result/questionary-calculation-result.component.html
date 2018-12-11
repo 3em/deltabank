@@ -1,0 +1,59 @@
+<div class="u-clear-fix b-calculation__result">
+
+  <div class="u-clear-fix b-calculation__result_column">
+    <span class="b-calculation__result_label">Сумма кредита</span>
+    <div class="u-clear-fix b-calculation__result-price">
+      <span class="no-wrap b-calculation__price">
+        {{formating(creditSum)}}
+        <span class="b-rub">a</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="u-clear-fix b-calculation__result_column" [class.error]="monthPaymentError">
+    <span class="b-calculation__result_label">Ежемес. платеж</span>
+    <div class="u-clear-fix b-calculation__result-price">
+      <span class="no-wrap b-calculation__price">
+        {{formating(monthPayment)}}
+        <span class="b-rub">a</span>
+      </span>
+
+      <div *ngIf="monthPaymentError" class="b-alert-icon__box">
+        <span data-letters="!" class="b-alert-icon" (click)="alertClick($event, alert1)"></span>
+        <p-overlayPanel #alert1>
+          <p>
+            Что бы узнать решение по ипотеке
+            уменьшите сумму кредита,
+            увеличьте срок выплат
+            или первоначальный взнос
+          </p>
+        </p-overlayPanel>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="u-clear-fix b-calculation__result_column" [class.red]="newRate">
+    <span class="b-calculation__result_label">Ставка</span>
+    <div class="u-clear-fix b-calculation__result-price">
+      <span class="b-calculation__price" [class.cross]="newRate">
+        {{rate}} %
+      </span>
+
+      <span class="b-calculation__price" *ngIf="newRate">
+        {{newRate}} %
+      </span>
+
+      <div class="b-alert-icon__box" *ngIf="newRate">
+        <span data-letters="?" class="b-alert-icon" (click)="alertClick($event, alert2)"></span>
+        <p-overlayPanel #alert2>
+          <p>
+            Какой то текст
+          </p>
+        </p-overlayPanel>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="b-content-wrapper" [class.blur]="statusShow">
+    <div class="b-bg">
+        <img src="../assets/i/main-bg.jpg" alt="" class="b-bg__pic">
+    </div>
+    <div class="b-content">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+    <app-property-valued-popup></app-property-valued-popup>
+</div>
+
+<app-loader *ngIf="statusShowLoader" [statusShow]="statusShowLoader"></app-loader>
+
+

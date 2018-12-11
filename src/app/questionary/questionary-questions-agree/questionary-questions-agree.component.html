@@ -1,0 +1,21 @@
+<div id="questions-agree" class="b-questionary__questions-prove" [formGroup]="group">
+
+  <div class="b-title">
+    <h6>Подвердите согласие на обработку данных</h6>
+  </div>
+
+  <app-checkbox-with-link *ngFor="let key of objectKeys(questionaryFormFields)"
+          id='block-{{questionaryFormFields[key].id}}'
+          [nameInput]=questionaryFormFields[key].nameInput
+          [idInput]=questionaryFormFields[key].id
+          [group]="group"
+          [formControlName]=questionaryFormFields[key].id
+          [label]=questionaryFormFields[key].label
+          [value]=questionaryFormFields[key].value
+          [linkText]=questionaryFormFields[key].linkText
+          (fn) = "showPersonalDataPopup($event)"
+          (changeCurrentValue)="changeCurrentValueQuestionAgree($event, key)">
+  </app-checkbox-with-link>
+</div>
+
+<app-personal-data-agree-popup [display]="display" (fn)="showPersonalDataPopup($event)" ></app-personal-data-agree-popup>

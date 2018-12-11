@@ -1,0 +1,6 @@
+<div class="u-clear-fix b-form__row" [formGroup]="group">
+  <label *ngIf="labelText" class="b-form__label">{{labelText}}</label>
+  <div class="u-clear-fix b-form__input" [class.focus]="statusFocus">
+    <p-radioButton class="b-radio" (focus)="focus()" (focusout)="focusOut()" *ngFor="let input of objectKeys(inputs)" [formControlName]="nameInput" [name]="nameInput" [value]="inputs[input].value" [label]="inputs[input].label" [class.disabled]="inputs[input].disabledStatus" [(ngModel)]="valueMod" [inputId]="inputs[input].id"></p-radioButton>
+  </div>
+</div>

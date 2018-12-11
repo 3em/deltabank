@@ -1,0 +1,25 @@
+<header class="u-clear-fix b-header">
+    <span class="b-logo">ДельтаЭкспресс</span>
+    <span class="b-breadcrumbs" *ngIf="headerStatusFull && breadcrums">{{breadcrums}}</span>
+
+    <a *ngIf="headerStatusFull" href="#" class="b-link-icon exit">
+        <span class="b-link-icon__i"></span>
+        Выйти
+    </a>
+    <a *ngIf="headerStatusFull" href="#" (click)="showCallPopupLink($event)" class="b-link-icon call">
+        <span class="b-link-icon__i"></span>
+        Заказать звонок
+    </a>
+    <a *ngIf="headerStatusFull" href="#" class="b-link-icon chat">
+        <span class="b-link-icon__i"></span>
+        Чат
+    </a>
+    <button (click)="showBurgerPopupLink($event)" pButton type="button" *ngIf="headerStatusFull" label=" " class="b-burger">
+        <span class="b-burger__line"></span>
+    </button>
+    <a *ngIf="!headerStatusFull" href="tel:+78002000707" class="b-header__phone">8 (800) 200-07-07</a>
+</header>
+
+<app-call-popup *ngIf="headerStatusFull" [display]="display" (fn)="showCallPopup()"></app-call-popup>
+
+<app-header-burger-popup *ngIf="headerStatusFull" (showCallPopupLink)="showCallPopupLink($event)" [popupShow]="popupShow" (fn)="showBurgerPopup()"></app-header-burger-popup>

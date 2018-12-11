@@ -1,0 +1,14 @@
+<div class="u-clear-fix b-form__row b-form__row_checkbox" [formGroup]="group">
+  <div class="b-checkbox__box" (click)="clickInput($event)">
+
+    <div class="ui-chkbox ui-widget">
+      <div class="ui-helper-hidden-accessible">
+        <input [attr.disabled]="disabled ? '' : null"  type="checkbox" [(ngModel)]="valueMod" [formControlName]="formControlName" id="{{idInput}}" name="{{nameInput}}">
+      </div>
+      <label for="{{idInput}}" class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" [class.ui-state-active]="value">
+        <span class="ui-chkbox-icon ui-clickable"></span>
+      </label>
+    </div>
+    <label class="ui-chkbox-label" for="{{idInput}}">{{label}} <a *ngIf="linkText" (click)="clickLinkLabel($event)"  [href]=linkUrl>{{linkText}}</a></label>
+  </div>
+</div>

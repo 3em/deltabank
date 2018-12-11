@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8715.658 3204.785 20.217 20.13">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e3334e;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Group_3451" data-name="Group 3451" transform="translate(-9230 448)">
+    <line id="Line_1149" data-name="Line 1149" class="cls-1" y2="13.846" transform="translate(524.324 2756.785)"/>
+    <path id="Path_1208" data-name="Path 1208" class="cls-1" d="M5.7,9.7l5.622,5.622,5.455-5.539" transform="translate(513.085 2755.225)"/>
+    <path id="Path_1209" data-name="Path 1209" class="cls-1" d="M1,13.736v6.21a2.473,2.473,0,0,0,2.518,2.518H17.7a2.473,2.473,0,0,0,2.518-2.518V13.4" transform="translate(513.841 2753.952)"/>
+  </g>
+</svg>

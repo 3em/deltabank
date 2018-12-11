@@ -1,0 +1,55 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="false" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div class="b-wrapper b-wrapper_top">
+
+    <div class="b-title">
+        <h1>Подпишите анкету <br>и загрузите документы</h1>
+        <p>
+            Понизим ставку на <span class="b-title__percent"><span>0,05%</span></span> при загрузке документов онлайн. Сэкономьте до 98 000 <span class="b-rub">a</span>
+        </p>
+    </div>
+
+    <div class="b-documents-wrapper">
+
+        <div class="b-sign">
+            <p class="b-sign__title">
+                Проверьте правильность заполненных полей и подпишите анкету
+            </p>
+
+            <div class="u-clear-fix b-sign__button-box">
+                <a href="#" class="b-button" (click)="showSignPopupLink($event)">Подписать анкету</a>
+                <a href="../../assets/i/__tmp.jpg" download class="b-link-icon download">
+                    <span class="b-link-icon__i"></span>
+                    Скачать анкету
+                </a>
+            </div>
+        </div>
+
+
+        <div class="b-documents-form" (window:resize)="onResize($event)">
+
+            <app-file-upload
+                    [uploadClass]="'b-custom-upload'"
+                    [chooseTextLabel]="fileUploadText">
+            </app-file-upload>
+
+            <div class="b-documents-form__list">
+                <app-file-upload *ngFor="let upload of uploadsList"
+                        [uploadClass]="'b-upload-list'"
+                        [chooseTextLabel]="'Загрузить'"
+                        [title]=upload>
+                </app-file-upload>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="b-documents-form__submit">
+        <button pButton type="button" (click)="submitFiles($event)"  label="Далее"></button>
+    </div>
+
+</div>
+
+<app-sign-popup [display]="display" (fn)="showSignPopup(false)"></app-sign-popup>

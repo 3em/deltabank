@@ -1,0 +1,25 @@
+$mainFont: 'Open Sans', sans-serif;
+$rouble: 'als_rublregular';
+$regularFontSize: 16px;
+$regularFontLineHeight: 30px;
+$biggerFontSize: 20px;
+$biggerFontLineHeight: 37px;
+$regularColor: #000;
+$linkColor: #E3334E;
+$linkColorActive: #DE213E;
+$linkColorOpacity: rgba(227,51,78, .1);
+$borderColor: rgba(0,0,0, .4);
+
+  // placeholder
+@mixin placeholder ($color, $selector)
+{
+  $selector: unquote($selector);
+#{$selector}::-webkit-input-placeholder{color: $color;}
+#{$selector}:-moz-placeholder{color: $color;}
+#{$selector}::-moz-placeholder{color: $color;}
+#{$selector}:-ms-input-placeholder{color: $color;}
+}
+
+
+$regularFontSize_phone: 16px;
+$regularFontLineHeight_phone: 25px;

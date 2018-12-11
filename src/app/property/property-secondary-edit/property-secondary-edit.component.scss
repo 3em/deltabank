@@ -1,0 +1,27 @@
+.b-property__secondary-form{
+  max-width: 670px;
+  margin-bottom: 70px;
+
+  .b-property__primary-button{
+    margin-top: 60px;
+
+    .ui-button{
+      width: 200px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px){
+
+  .b-property__secondary-form{
+
+    .b-property__primary-button{
+      margin-top: 40px;
+
+      .ui-button{
+        width: 100%;
+      }
+    }
+  }
+
+}

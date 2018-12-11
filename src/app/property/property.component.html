@@ -1,0 +1,11 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [bigNavStatus]="marketStatus" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div class="b-wrapper b-wrapper_top">
+
+    <app-property-primary *ngIf="!marketStatus"></app-property-primary>
+
+    <app-property-secondary *ngIf="marketStatus"></app-property-secondary>
+
+</div>

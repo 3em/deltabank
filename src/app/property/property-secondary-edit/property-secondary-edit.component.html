@@ -1,0 +1,28 @@
+<div class="b-title">
+  <h1>
+    Укажите адрес приобретаемой недвижимости
+  </h1>
+</div>
+
+<form [formGroup]="propertyform" (ngSubmit)="onSubmit()" class="b-property__secondary-form">
+
+  <app-row-input
+          id='block-{{propertyFormFields.address.id}}'
+          [showErrorStatus]=propertyFormFields.address.showErrorStatus
+          [errorText]=propertyFormFields.address.errorText
+          [type]=propertyFormFields.address.type
+          [labelText]=propertyFormFields.address.labelText
+          [placeholder]=propertyFormFields.address.placeholder
+          [group]="propertyform"
+          [formControlName]=propertyFormFields.address.id
+          [idInput]=propertyFormFields.address.id
+          [nameInput]=propertyFormFields.address.nameInput
+          (changeCurrentValue)="changeCurrentValue($event)"
+          (errorStatusChange)="propertyFormFields.address.showErrorStatus = $event">
+  </app-row-input>
+
+  <div class="b-property__primary-button">
+    <button pButton type="submit"  label="Далее"></button>
+  </div>
+
+</form>

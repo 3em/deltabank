@@ -1,0 +1,36 @@
+<app-header [headerStatusFull]="headerStatusFull" [breadcrums]="breadcrums" ></app-header>
+
+<app-navigation [participantsProveStatus]="true" [bigNavStatus]="true" [activeIndex]="activeIndexNav" [finish]="finishStep"></app-navigation>
+
+<div class="b-wrapper b-wrapper_top">
+
+  <div class="b-title">
+    <h1>Загрузите документы</h1>
+  </div>
+
+  <div class="b-documents-wrapper">
+    <div class="b-documents-form" (window:resize)="onResize($event)">
+
+      <app-file-upload
+              [uploadClass]="'b-custom-upload'"
+              [chooseTextLabel]="fileUploadText">
+      </app-file-upload>
+
+      <div class="b-documents-form__list">
+        <div class="b-documents-form__item" *ngFor="let item of objectKeys(uploadsList)">
+          <span class="b-documents-form__item_label">{{item}}</span>
+          <app-file-upload *ngFor="let upload of uploadsList[item]"
+            [uploadClass]="'b-upload-list'"
+            [chooseTextLabel]="'Загрузить'"
+            [title]=upload>
+          </app-file-upload>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-documents-form__submit">
+    <button pButton type="button" (click)="submitFiles($event)"  label="Перейти к оценке"></button>
+  </div>
+
+</div>
